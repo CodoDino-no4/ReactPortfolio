@@ -1,12 +1,8 @@
 import React, { useState } from "react";
 import { Link } from "react-router-dom";
-import './Navbar.css';
+import './Contact.css';
 
-function Navbar() {
-    const [click, setClick] = useState(false);
-    const handleClick = () => setClick(!click);
-    const closeMobileMenu = () => setClick(false);
-
+function Contact() {
     return (
         <>
             <nav className="navbar">

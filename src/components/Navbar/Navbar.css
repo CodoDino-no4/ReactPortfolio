@@ -6,7 +6,7 @@
 }
 
 .navbar {
-  background: #85d000;
+  background: none;
   height: 80px;
   display: flex;
   justify-content: center;
@@ -31,6 +31,7 @@
   text-decoration: none;
   font-size: 2rem;
   display: flex;
+  align-items: center;
 }
 
 .fa-ghost {
@@ -40,7 +41,7 @@
 
 .nav-menu {
   display: grid;
-  grid-template-columns: repeat(6, auto);
+  grid-template-columns: repeat(4, auto);
   list-style: none;
   text-align: center;
   width: 70vw;
@@ -63,7 +64,7 @@
 }
 
 .nav-links:hover {
-  border-bottom: 4px solid rgb(245,169,4);
+  border-bottom: 4px solid rgb(255 178 196);
   transition: all 0.2s ease-out;
 }
 
