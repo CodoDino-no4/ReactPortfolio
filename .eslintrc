@@ -26,7 +26,6 @@
         }
     },
     "rules": {
-        "indent": "off",
         "max-len": "off",
         "no-unsafe-innerhtml/no-unsafe-innerhtml": 2,
         "no-unused-vars": [
