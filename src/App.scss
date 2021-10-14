@@ -1,0 +1,38 @@
+// $btn--contact--primary: #ffbb2a;
+$text: #000;
+$bg: #fff;
+// $btn--contact--hover: #d8770e;
+// $blurple: #5865f2;
+// $main--color: #0972b8;
+// $footer--bg: #303030;
+$title--font: 'Atkinson Hyperlegible', sans-serif;
+$body--font: 'IBM Plex Sans KR', sans-serif;
+// $nav-height: 80px;
+
+$breakpoint-tablet: 768px;
+$breakpoint-screen: 960px;
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: $body--font;
+}
+
+body {
+  background-color: $bg;
+}
+
+h1 {
+  color: $text;
+  letter-spacing: 1px;
+  font-family: $title--font;
+}
+
+h2 {
+  color: $text;
+}
+
+p {
+  color: $text;
+}
