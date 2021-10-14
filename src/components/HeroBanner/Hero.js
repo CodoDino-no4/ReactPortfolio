@@ -1,15 +1,19 @@
-import React from 'react';
-import '../../App.css';
-import './Hero.css';
-import video from '../../video-2.mp4'
+import React, { Component } from 'react';
+import './Hero.scss';
+import video from '../../images/video-2.mp4';
 
-function Hero() {
+export default class Hero extends Component {
+  constructor(props) {
+    super(props);
+    this.state = {};
+  }
+
+  render() {
     return (
-        <div className='hero-container'>
-            <video src={video} autoPlay loop muted />
-            <h1>ALICE</h1>
-        </div>
+      <div className="hero-container">
+        <video src={video} autoPlay loop muted />
+        <h1>ALICE</h1>
+      </div>
     );
+  }
 }
-
-export default Hero;

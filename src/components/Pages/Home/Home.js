@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import About from '../About/About';
 import Projects from '../Projects/Projects';
 import Contact from '../Contact/Contact';
+import Hero from '../../HeroBanner/Hero';
 
 export default class Home extends Component {
   constructor(props) {
@@ -12,7 +13,7 @@ export default class Home extends Component {
   render() {
     return (
       <>
-        <p>this is home</p>
+        <Hero />
         <About />
         <Projects />
         <Contact />
