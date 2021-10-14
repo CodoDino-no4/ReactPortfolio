@@ -1,19 +1,19 @@
 {
-    "globals": {},
     "plugins": [
         "react",
-        "@typescript-eslint",
         "no-unsafe-innerhtml",
         "promise"
     ],
-    "parser": "babel-eslint",
+    "parser": "@babel/eslint-parser",
     "parserOptions": {
-        "ecmaVersion": 12,
+        "requireConfigFile": false,
         "sourceType": "module",
+        "allowImportExportEverywhere": true,
         "ecmaFeatures": {
-            "jsx": true,
-            "generators": true,
-            "experimentalObjectRestSpread": true
+            "globalReturn": false
+        },
+        "babelOptions": {
+            "configFile": "./.babelrc"
         }
     },
     "env": {
@@ -22,34 +22,47 @@
     },
     "settings": {
         "react": {
-            "version": ""
+            "version": "17.0.2"
         }
     },
     "rules": {
         "max-len": "off",
         "no-unsafe-innerhtml/no-unsafe-innerhtml": 2,
-        "no-unused-vars": 2,
-        "@typescript-eslint/explicit-module-boundary-types": "off",
-        "react/prop-types": "off",
-        "quotes": [
+        "no-unused-vars": [
             "error",
-            "single"
+            {
+                "ignoreRestSiblings": false
+            }
         ],
-        "semi": [
+        "react/prop-types": "off",
+        "object-curly-spacing": [
             "error",
             "always"
         ],
-        "indent": [
-            "error",
-            2
+        "react/jsx-equals-spacing": [
+            2,
+            "never"
         ],
-        "no-multi-spaces": [
-            "error"
-        ]
+        // "react/jsx-handler-names": [
+        //     2,
+        //     {
+        //         "eventHandlerPrefix": "_",
+        //         "eventHandlerPropPrefix": "off"
+        //     }
+        // ],
+        "react/jsx-pascal-case": [
+            2,
+            {
+                "allowAllCaps": true,
+                "ignore": []
+            }
+        ],
+        "react/require-render-return": 2,
+        "space-before-function-paren": "off"
     },
     "extends": [
         "eslint:recommended",
         "plugin:react/recommended",
-        "plugin:@typescript-eslint/recommended"
+        "react-app"
     ]
 }

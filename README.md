@@ -1,4 +1,4 @@
-UBG
+Alice React Portfolio
 
 ### `npm start`
 
