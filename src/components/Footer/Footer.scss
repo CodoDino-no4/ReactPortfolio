@@ -1,0 +1,9 @@
+@import '../../App';
+
+.footer {
+  height: 150px;
+  background-color: $footer--bg;
+  position: unset;
+  bottom: 0;
+  width: 100%;
+}
