@@ -1,11 +1,18 @@
 import React, { Component } from 'react';
 import { Link } from 'react-router-dom';
 import './Cards.scss';
+import placeholder from '../../../../images/img-1.jpg';
+// import Cards from './Cards'
 
 export default class CardItem extends Component {
   constructor(props) {
     super(props);
-    this.state = {};
+    this.state = {
+      path: 'www.google.com',
+      language: 'css',
+      src: placeholder,
+      text: 'blah blah'
+    };
   }
 
   render() {
@@ -20,7 +27,7 @@ export default class CardItem extends Component {
               >
                 <img
                   src={this.state.src}
-                  alt="Software Image"
+                  alt="Software"
                   className="cards-item-img"
                 />
               </figure>

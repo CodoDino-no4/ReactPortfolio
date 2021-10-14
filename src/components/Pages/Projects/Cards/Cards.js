@@ -1,25 +1,25 @@
 import React from 'react';
 import CardItem from './CardItem';
 import './Cards.scss';
-import img1 from '../../../../images/img-1.jpg';
+import placeholder from '../../../../images/img-1.jpg';
 //in a database preferably
 function Cards() {
   return (
     <>
+      <h1>PROJECTS</h1>
       <div className="cards">
-        <h1>PROJECTS</h1>
         <div className="cards-container">
           <div className="cards-wrapper">
             <ul className="cards-items">
               <CardItem
-                src={img1}
+                src={placeholder}
                 text="CSS used to create a stunning contact form"
                 language="CSS"
                 path="/project1"
                 colourCode="#1f98f4"
               />
               <CardItem
-                src={img1}
+                src={placeholder}
                 text="CSS used to create a stunning contact form"
                 language="CSS"
                 path="/project1"
@@ -28,21 +28,21 @@ function Cards() {
             </ul>
             <ul className="cards-items">
               <CardItem
-                src={img1}
+                src={placeholder}
                 text="CSS used to create a stunning contact form"
                 language="CSS"
                 path="/project1"
                 colourCode="#1f98f4"
               />
               <CardItem
-                src={img1}
+                src={placeholder}
                 text="CSS used to create a stunning contact form"
                 language="CSS"
                 path="/project1"
                 colourCode="#1f98f4"
               />
               <CardItem
-                src={img1}
+                src={placeholder}
                 text="CSS used to create a stunning contact form"
                 language="CSS"
                 path="/project1"
