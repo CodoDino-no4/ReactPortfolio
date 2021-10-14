@@ -1,0 +1,69 @@
+{
+    "plugins": [
+        "react",
+        "no-unsafe-innerhtml",
+        "promise"
+    ],
+    "parser": "@babel/eslint-parser",
+    "parserOptions": {
+        "requireConfigFile": false,
+        "sourceType": "module",
+        "allowImportExportEverywhere": true,
+        "ecmaFeatures": {
+            "globalReturn": false
+        },
+        "babelOptions": {
+            "configFile": "./.babelrc"
+        }
+    },
+    "env": {
+        "browser": true,
+        "es2021": true
+    },
+    "settings": {
+        "react": {
+            "version": "17.0.2"
+        }
+    },
+    "rules": {
+        "indent": "off",
+        "max-len": "off",
+        "no-unsafe-innerhtml/no-unsafe-innerhtml": 2,
+        "no-unused-vars": [
+            "error",
+            {
+                "ignoreRestSiblings": false
+            }
+        ],
+        "react/prop-types": "off",
+        "object-curly-spacing": [
+            "error",
+            "always"
+        ],
+        "react/jsx-equals-spacing": [
+            2,
+            "never"
+        ],
+        // "react/jsx-handler-names": [
+        //     2,
+        //     {
+        //         "eventHandlerPrefix": "_",
+        //         "eventHandlerPropPrefix": "off"
+        //     }
+        // ],
+        "react/jsx-pascal-case": [
+            2,
+            {
+                "allowAllCaps": true,
+                "ignore": []
+            }
+        ],
+        "react/require-render-return": 2,
+        "space-before-function-paren": "off"
+    },
+    "extends": [
+        "eslint:recommended",
+        "plugin:react/recommended",
+        "react-app"
+    ]
+}
