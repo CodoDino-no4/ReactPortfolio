@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import '../../../App.scss';
 import Cards from './Cards/Cards';
+import './Projects.scss';
 
 export default class Navbar extends Component {
   constructor(props) {
@@ -11,8 +12,10 @@ export default class Navbar extends Component {
   render() {
     return (
       <>
-        <p>this is projects</p>
-        <Cards />
+        <section className="projects">
+          <h1>PROJECTS</h1>
+          <Cards />
+        </section>
       </>
     );
   }

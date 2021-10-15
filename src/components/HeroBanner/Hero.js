@@ -1,6 +1,5 @@
 import React, { Component } from 'react';
 import './Hero.scss';
-import video from '../../images/video-2.mp4';
 
 export default class Hero extends Component {
   constructor(props) {
@@ -11,7 +10,6 @@ export default class Hero extends Component {
   render() {
     return (
       <div className="hero-container">
-        <video src={video} autoPlay loop muted />
         <h1>ALICE</h1>
       </div>
     );

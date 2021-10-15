@@ -1,16 +1,13 @@
-// $btn--contact--primary: #ffbb2a;
 $text: #000;
 $bg: #fff;
-// $btn--contact--hover: #d8770e;
-// $blurple: #5865f2;
-// $main--color: #0972b8;
 $footer--bg: #0e0f12;
 $title--font: 'Atkinson Hyperlegible', sans-serif;
 $body--font: 'IBM Plex Sans KR', sans-serif;
-// $nav-height: 80px;
+$title--size: 70px;
 
-$breakpoint-tablet: 768px;
-$breakpoint-screen: 960px;
+$breakpoint--mob: 480px;
+$breakpoint--tablet: 960px;
+$breakpoint--screen: 1200px;
 
 * {
   margin: 0;
@@ -27,6 +24,8 @@ h1 {
   color: $text;
   letter-spacing: 1px;
   font-family: $title--font;
+  font-size: $title--size;
+  text-align: center;
 }
 
 h2 {
