@@ -91,4 +91,7 @@
 }
 
 @media only screen and (min-width: $breakpoint--screen) {
+  .cards-item {
+    margin: 60px;
+  }
 }

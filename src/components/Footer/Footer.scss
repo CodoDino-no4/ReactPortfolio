@@ -1,9 +1,18 @@
 @import '../../App';
 
 .footer {
-  height: 150px;
-  background-color: $footer--bg;
+  height: 100px;
+  background-color: #0e0f12;
   position: unset;
   bottom: 0;
+  display: flex;
   width: 100%;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+}
+
+.footer-text > p {
+  text-align: center;
+  color: $bg;
 }
