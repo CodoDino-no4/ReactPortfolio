@@ -116,17 +116,17 @@
   .navbar-logo {
     position: absolute;
     top: 0;
-    left: 0;
+    right: 0;
     margin: 0;
-    transform: translate(25%, 50%);
+    transform: translate(-10%, 50%);
   }
 
   .menu-icon {
     display: block;
     position: absolute;
     top: 0;
-    right: 0;
-    transform: translate(-100%, 60%);
+    left: 0;
+    transform: translate(60%, 60%);
     font-size: 1.8rem;
     cursor: pointer;
   }
