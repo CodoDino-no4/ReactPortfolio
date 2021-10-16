@@ -4,9 +4,9 @@ import './App.scss';
 import Navbar from './components/Navbar/Navbar';
 import Footer from './components/Footer/Footer';
 import Home from './components/Pages/Home/Home';
-// import About from './components/Pages/About/About';
-// import Projects from './components/Pages/Projects/Projects';
-// import Contact from './components/Pages/Contact/Contact';
+import About from './components/Pages/About/About';
+import Projects from './components/Pages/Projects/Projects';
+import Contact from './components/Pages/Contact/Contact';
 // import NotFound from './components/Pages/404/NotFound';
 
 export default class App extends Component {
@@ -21,11 +21,11 @@ export default class App extends Component {
         <Router>
           <Navbar />
           <Switch>
-            <Route path="/" exact component={Home} />
-            {/* <Route path="#about" exact component={About} />
-            <Route path="#projects" exact component={Projects} />
-            <Route path="#contact" exact component={Contact} />
-            <Route path="/404" exact component={NotFound} /> */}
+            <Route exact component={Home} />
+            <Route exact component={About} />
+            <Route exact component={Projects} />
+            <Route exact component={Contact} />
+            {/* <Route path="/404" exact component={NotFound} /> */}
           </Switch>
           <Footer />
         </Router>

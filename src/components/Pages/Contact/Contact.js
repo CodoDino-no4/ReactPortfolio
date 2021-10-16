@@ -9,9 +9,9 @@ export default class Contact extends Component {
 
   render() {
     return (
-      <>
+      <section className="contact">
         <h1>CONTACT</h1>
-      </>
+      </section>
     );
   }
 }

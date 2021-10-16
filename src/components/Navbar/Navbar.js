@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
-import { Link } from 'react-router-dom';
 import './Navbar.scss';
+import { Link } from 'react-scroll';
 
 export default class Navbar extends Component {
   constructor(props) {
@@ -40,39 +40,62 @@ export default class Navbar extends Component {
               }
             >
               <li className="nav-item">
-                <Link to="/" className="nav-links" onClick={this._closeMobMenu}>
+                <Link
+                  to="home"
+                  className="nav-links"
+                  onClick={this._closeMobMenu}
+                  spy={true}
+                  smooth={true}
+                  duration={1000}
+                >
                   HOME
                 </Link>
               </li>
               <li className="nav-item">
                 <Link
-                  to="#about"
+                  to="about"
                   className="nav-links"
                   onClick={this._closeMobMenu}
+                  spy={true}
+                  smooth={true}
+                  duration={1000}
                 >
                   ABOUT
                 </Link>
               </li>
               <li className="nav-item">
                 <Link
-                  to="#projects"
+                  to="projects"
                   className="nav-links"
                   onClick={this._closeMobMenu}
+                  spy={true}
+                  smooth={true}
+                  duration={1000}
                 >
                   PROJECTS
                 </Link>
               </li>
               <li className="nav-item">
                 <Link
-                  to="#contact"
+                  to="contact"
                   className="nav-links"
                   onClick={this._closeMobMenu}
+                  spy={true}
+                  smooth={true}
+                  duration={1000}
                 >
                   CONTACT
                 </Link>
               </li>
             </ul>
-            <Link to="/" className="navbar-logo">
+            <Link
+              to="home"
+              className="navbar-logo"
+              onClick={this._closeMobMenu}
+              spy={true}
+              smooth={true}
+              duration={1000}
+            >
               ALICE <i className="fas fa-ghost" />
             </Link>
           </div>

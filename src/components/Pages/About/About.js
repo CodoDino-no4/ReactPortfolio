@@ -8,9 +8,9 @@ export default class About extends Component {
 
   render() {
     return (
-      <>
+      <section className="about">
         <h1>ABOUT</h1>
-      </>
+      </section>
     );
   }
 }
