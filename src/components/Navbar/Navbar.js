@@ -6,10 +6,12 @@ export default class Navbar extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      isMobMenuOpen: false
+      isMobMenuOpen: false.valueOf,
+      navbarOffset: -80
     };
-    // this._toggleMobMenu = this._toggleMobMenu.bind(this);
-    // this._closeMobMenu = this._closeMobMenu.bind(this);
+
+    this._toggleMobMenu = this._toggleMobMenu.bind(this);
+    this._closeMobMenu = this._closeMobMenu.bind(this);
   }
 
   _toggleMobMenu = () => {
@@ -47,6 +49,8 @@ export default class Navbar extends Component {
                   spy={true}
                   smooth={true}
                   duration={1000}
+                  isDynamic={true}
+                  offset={this.state.navbarOffset}
                 >
                   HOME
                 </Link>
@@ -59,6 +63,8 @@ export default class Navbar extends Component {
                   spy={true}
                   smooth={true}
                   duration={1000}
+                  isDynamic={true}
+                  offset={this.state.navbarOffset}
                 >
                   ABOUT
                 </Link>
@@ -71,6 +77,8 @@ export default class Navbar extends Component {
                   spy={true}
                   smooth={true}
                   duration={1000}
+                  isDynamic={true}
+                  offset={this.state.navbarOffset}
                 >
                   PROJECTS
                 </Link>
@@ -83,6 +91,8 @@ export default class Navbar extends Component {
                   spy={true}
                   smooth={true}
                   duration={1000}
+                  isDynamic={true}
+                  offset={this.state.navbarOffset}
                 >
                   CONTACT
                 </Link>
@@ -95,8 +105,11 @@ export default class Navbar extends Component {
               spy={true}
               smooth={true}
               duration={1000}
+              isDynamic={true}
+              offset={this.state.navbarOffset}
             >
-              ALICE <i className="fas fa-ghost" />
+              ALICE
+              <i className="fas fa-ghost" />
             </Link>
           </div>
         </nav>
