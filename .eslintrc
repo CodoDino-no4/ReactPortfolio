@@ -29,7 +29,7 @@
         "max-len": "off",
         "no-unsafe-innerhtml/no-unsafe-innerhtml": 2,
         "no-unused-vars": [
-            "error",
+            "warn",
             {
                 "ignoreRestSiblings": false
             }
