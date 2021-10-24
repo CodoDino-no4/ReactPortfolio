@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import './Hero.scss';
+// import placeholder_hero from './SVG/Placeholder_hero';
 
 export default class Hero extends Component {
   constructor(props) {
