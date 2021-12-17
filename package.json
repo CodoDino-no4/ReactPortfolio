@@ -5,24 +5,21 @@
   "scripts": {
     "start": "react-scripts start",
     "eject": "react-scripts eject",
-    "lint": "node_modules/.bin/eslint \"src/**/*.{js, css, html, json}\" -c .eslint",
-    "lint:fix": "npm run lint -- --fix",
+    "lint": "node_modules/.bin/eslint \"src/**/*\"",
+    "lint:fix": "node_modules/.bin/eslint --fix --ignore-pattern *.scss",
     "lint-staged": "lint-staged",
     "precommit": "npm run lint-staged",
-    "prettier:all": "node_modules/.bin/prettier --write \"src/**/*.{js, css, html, json}\"",
-    "prepush": "npm run run lint"
+    "prettier:all": "node_modules/.bin/prettier --write \"src/**/*.{js,scss}\""
   },
   "husky": {
     "hooks": {
-      "pre-commit": "npm run precommit",
-      "pre-push": "npm run prepush"
+      "pre-commit": "npm run precommit"
     }
   },
   "lint-staged": {
     "src/**/*": [
       "npm run prettier:all",
-      "npm run lint:fix",
-      "git add"
+      "npm run lint:fix"
     ]
   },
   "repository": {
@@ -66,7 +63,6 @@
     "eslint-config-prettier": "8.3.0",
     "husky": "4.0.7",
     "lint-staged": "^11.2.3",
-    "prettier": "^2.3.2",
-    "pre-commit": "1.2.2"
+    "prettier": "^2.3.2"
   }
 }

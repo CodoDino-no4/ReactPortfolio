@@ -1,13 +1,14 @@
 import React, { Component } from 'react';
 import './Navbar.scss';
 import { Link } from 'react-scroll';
-import NavHover from './SVG/NavHover';
+import NavHoverLeft from './SVG/NavHover-left';
+import NavHoverRight from './SVG/NavHover-right';
 
 export default class Navbar extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      isMobMenuOpen: false.valueOf,
+      isMobMenuOpen: false,
       navbarOffset: -80
     };
 
@@ -16,10 +17,8 @@ export default class Navbar extends Component {
   }
 
   _toggleMobMenu = () => {
-    console.log(this.state.isMobMenuOpen);
-    const open = this.state.isMobMenuOpen;
     this.setState({
-      isMobMenuOpen: !open
+      isMobMenuOpen: !this.state.isMobMenuOpen
     });
   };
 
@@ -39,6 +38,10 @@ export default class Navbar extends Component {
             </div>
             <ul className={this.state.isMobMenuOpen ? 'nav-menu active' : 'nav-menu'}>
               <li className="nav-item">
+                <div className="animation">
+                  <NavHoverRight style={this.state.isMobMenuOpen ? { display: 'none' } : {}} />
+                  <NavHoverLeft style={this.state.isMobMenuOpen ? { display: 'none' } : {}} />
+                </div>
                 <Link
                   to="home"
                   className="nav-links"
@@ -51,9 +54,9 @@ export default class Navbar extends Component {
                 >
                   HOME
                 </Link>
-                <NavHover />
               </li>
               <li className="nav-item">
+                <NavHoverRight style={this.state.isMobMenuOpen ? { display: 'none' } : {}} />
                 <Link
                   to="about"
                   className="nav-links"
@@ -66,9 +69,10 @@ export default class Navbar extends Component {
                 >
                   ABOUT
                 </Link>
-                <NavHover />
+                <NavHoverLeft style={this.state.isMobMenuOpen ? { display: 'none' } : {}} />
               </li>
               <li className="nav-item">
+                <NavHoverRight style={this.state.isMobMenuOpen ? { display: 'none' } : {}} />
                 <Link
                   to="projects"
                   className="nav-links"
@@ -81,9 +85,10 @@ export default class Navbar extends Component {
                 >
                   PROJECTS
                 </Link>
-                <NavHover />
+                <NavHoverLeft style={this.state.isMobMenuOpen ? { display: 'none' } : {}} />
               </li>
               <li className="nav-item">
+                <NavHoverRight style={this.state.isMobMenuOpen ? { display: 'none' } : {}} />
                 <Link
                   to="contact"
                   className="nav-links"
@@ -96,7 +101,7 @@ export default class Navbar extends Component {
                 >
                   CONTACT
                 </Link>
-                <NavHover />
+                <NavHoverLeft style={this.state.isMobMenuOpen ? { display: 'none' } : {}} />
               </li>
             </ul>
             <Link
@@ -112,7 +117,6 @@ export default class Navbar extends Component {
               ALICE
               <i className="fas fa-ghost" />
             </Link>
-            <NavHover />
           </div>
         </nav>
       </>
