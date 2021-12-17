@@ -56,7 +56,10 @@ export default class Navbar extends Component {
                 </Link>
               </li>
               <li className="nav-item">
-                <NavHoverRight style={this.state.isMobMenuOpen ? { display: 'none' } : {}} />
+                <div className="animation">
+                  <NavHoverRight style={this.state.isMobMenuOpen ? { display: 'none' } : {}} />
+                  <NavHoverLeft style={this.state.isMobMenuOpen ? { display: 'none' } : {}} />
+                </div>
                 <Link
                   to="about"
                   className="nav-links"
@@ -69,10 +72,12 @@ export default class Navbar extends Component {
                 >
                   ABOUT
                 </Link>
-                <NavHoverLeft style={this.state.isMobMenuOpen ? { display: 'none' } : {}} />
               </li>
               <li className="nav-item">
-                <NavHoverRight style={this.state.isMobMenuOpen ? { display: 'none' } : {}} />
+                <div className="animation">
+                  <NavHoverRight style={this.state.isMobMenuOpen ? { display: 'none' } : {}} />
+                  <NavHoverLeft style={this.state.isMobMenuOpen ? { display: 'none' } : {}} />
+                </div>
                 <Link
                   to="projects"
                   className="nav-links"
@@ -85,10 +90,12 @@ export default class Navbar extends Component {
                 >
                   PROJECTS
                 </Link>
-                <NavHoverLeft style={this.state.isMobMenuOpen ? { display: 'none' } : {}} />
               </li>
               <li className="nav-item">
-                <NavHoverRight style={this.state.isMobMenuOpen ? { display: 'none' } : {}} />
+                <div className="animation">
+                  <NavHoverRight style={this.state.isMobMenuOpen ? { display: 'none' } : {}} />
+                  <NavHoverLeft style={this.state.isMobMenuOpen ? { display: 'none' } : {}} />
+                </div>
                 <Link
                   to="contact"
                   className="nav-links"
@@ -101,7 +108,6 @@ export default class Navbar extends Component {
                 >
                   CONTACT
                 </Link>
-                <NavHoverLeft style={this.state.isMobMenuOpen ? { display: 'none' } : {}} />
               </li>
             </ul>
             <Link

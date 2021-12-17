@@ -36,7 +36,10 @@ const NavHoverLeft = props => {
 };
 
 const Wrapper = styled.div`
-
+.animated {
+          stroke-dasharray: 5;
+    stroke-dashoffset: 5;
+}
   .animated:hover {
     stroke-dasharray: 5;
     stroke-dashoffset: 5;

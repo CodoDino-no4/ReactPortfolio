@@ -39,22 +39,19 @@ const NavHoverRight = props => {
 };
 
 const Wrapper = styled.div`
-  .animated {
-    stroke-dasharray: ${props => props.pathLength};
-    stroke-dashoffset: ${props => props.pathLength};
-    position: absolute;
-  }
-  .animated.visible {
-    animation: draw 6s linear forwards;
-  }
+.animated {
+          stroke-dasharray: 5;
+    stroke-dashoffset: 5;
+}
+    .animated:hover {
+    stroke-dasharray: 5;
+    stroke-dashoffset: 5;
+    animation: draw 0.4s linear forwards;
 
-  @keyframes draw {
-    from {
-      stroke-dashoffset: ${props => props.pathLength};
-    }
-    to {
-      stroke-dashoffset: 0;
-    }
+@keyframes draw {
+  to {
+    stroke-dashoffset: 0;
   }
+}
 `;
 export default NavHoverRight;
