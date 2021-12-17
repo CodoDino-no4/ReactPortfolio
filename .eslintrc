@@ -26,6 +26,15 @@
         }
     },
     "rules": {
+        "indent": [
+            "error",
+            2,
+            {
+                "CallExpression": {
+                    "arguments": 1
+                }
+            }
+        ],
         "max-len": "off",
         "no-unsafe-innerhtml/no-unsafe-innerhtml": 2,
         "no-unused-vars": [
@@ -43,13 +52,6 @@
             2,
             "never"
         ],
-        // "react/jsx-handler-names": [
-        //     2,
-        //     {
-        //         "eventHandlerPrefix": "_",
-        //         "eventHandlerPropPrefix": "off"
-        //     }
-        // ],
         "react/jsx-pascal-case": [
             2,
             {
@@ -63,6 +65,7 @@
     "extends": [
         "eslint:recommended",
         "plugin:react/recommended",
-        "react-app"
+        "react-app",
+        "prettier"
     ]
 }
