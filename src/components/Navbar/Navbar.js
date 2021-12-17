@@ -1,15 +1,17 @@
 import React, { Component } from 'react';
-import { Link } from 'react-router-dom';
 import './Navbar.scss';
+import { Link } from 'react-scroll';
 
 export default class Navbar extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      isMobMenuOpen: false
+      isMobMenuOpen: false.valueOf,
+      navbarOffset: -80
     };
-    // this._toggleMobMenu = this._toggleMobMenu.bind(this);
-    // this._closeMobMenu = this._closeMobMenu.bind(this);
+
+    this._toggleMobMenu = this._toggleMobMenu.bind(this);
+    this._closeMobMenu = this._closeMobMenu.bind(this);
   }
 
   _toggleMobMenu = () => {
@@ -40,40 +42,74 @@ export default class Navbar extends Component {
               }
             >
               <li className="nav-item">
-                <Link to="/" className="nav-links" onClick={this._closeMobMenu}>
+                <Link
+                  to="home"
+                  className="nav-links"
+                  onClick={this._closeMobMenu}
+                  spy={true}
+                  smooth={true}
+                  duration={1000}
+                  isDynamic={true}
+                  offset={this.state.navbarOffset}
+                >
                   HOME
                 </Link>
               </li>
               <li className="nav-item">
                 <Link
-                  to="#about"
+                  to="about"
                   className="nav-links"
                   onClick={this._closeMobMenu}
+                  spy={true}
+                  smooth={true}
+                  duration={1000}
+                  isDynamic={true}
+                  offset={this.state.navbarOffset}
                 >
                   ABOUT
                 </Link>
               </li>
               <li className="nav-item">
                 <Link
-                  to="#projects"
+                  to="projects"
                   className="nav-links"
                   onClick={this._closeMobMenu}
+                  spy={true}
+                  smooth={true}
+                  duration={1000}
+                  isDynamic={true}
+                  offset={this.state.navbarOffset}
                 >
                   PROJECTS
                 </Link>
               </li>
               <li className="nav-item">
                 <Link
-                  to="#contact"
+                  to="contact"
                   className="nav-links"
                   onClick={this._closeMobMenu}
+                  spy={true}
+                  smooth={true}
+                  duration={1000}
+                  isDynamic={true}
+                  offset={this.state.navbarOffset}
                 >
                   CONTACT
                 </Link>
               </li>
             </ul>
-            <Link to="/" className="navbar-logo">
-              ALICE <i className="fas fa-ghost" />
+            <Link
+              to="home"
+              className="navbar-logo"
+              onClick={this._closeMobMenu}
+              spy={true}
+              smooth={true}
+              duration={1000}
+              isDynamic={true}
+              offset={this.state.navbarOffset}
+            >
+              ALICE
+              <i className="fas fa-ghost" />
             </Link>
           </div>
         </nav>

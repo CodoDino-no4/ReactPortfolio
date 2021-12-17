@@ -1,7 +1,4 @@
 import React, { Component } from 'react';
-import About from '../About/About';
-import Projects from '../Projects/Projects';
-import Contact from '../Contact/Contact';
 import Hero from '../../HeroBanner/Hero';
 
 export default class Home extends Component {
@@ -12,12 +9,9 @@ export default class Home extends Component {
 
   render() {
     return (
-      <>
+      <section className="home">
         <Hero />
-        <About />
-        <Projects />
-        <Contact />
-      </>
+      </section>
     );
   }
 }
