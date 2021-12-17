@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import './Navbar.scss';
 import { Link } from 'react-scroll';
+import NavHover from './SVG/NavHover';
 
 export default class Navbar extends Component {
   constructor(props) {
@@ -36,11 +37,7 @@ export default class Navbar extends Component {
             <div className="menu-icon" onClick={this._toggleMobMenu}>
               <i className={'burger fas fa-bars'} />
             </div>
-            <ul
-              className={
-                this.state.isMobMenuOpen ? 'nav-menu active' : 'nav-menu'
-              }
-            >
+            <ul className={this.state.isMobMenuOpen ? 'nav-menu active' : 'nav-menu'}>
               <li className="nav-item">
                 <Link
                   to="home"
@@ -54,6 +51,7 @@ export default class Navbar extends Component {
                 >
                   HOME
                 </Link>
+                <NavHover />
               </li>
               <li className="nav-item">
                 <Link
@@ -68,6 +66,7 @@ export default class Navbar extends Component {
                 >
                   ABOUT
                 </Link>
+                <NavHover />
               </li>
               <li className="nav-item">
                 <Link
@@ -82,6 +81,7 @@ export default class Navbar extends Component {
                 >
                   PROJECTS
                 </Link>
+                <NavHover />
               </li>
               <li className="nav-item">
                 <Link
@@ -96,6 +96,7 @@ export default class Navbar extends Component {
                 >
                   CONTACT
                 </Link>
+                <NavHover />
               </li>
             </ul>
             <Link
@@ -111,6 +112,7 @@ export default class Navbar extends Component {
               ALICE
               <i className="fas fa-ghost" />
             </Link>
+            <NavHover />
           </div>
         </nav>
       </>

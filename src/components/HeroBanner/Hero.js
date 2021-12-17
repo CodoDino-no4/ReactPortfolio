@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import './Hero.scss';
-// import placeholder_hero from './SVG/Placeholder_hero';
+import PlaceholderHero from './SVG/PlaceholderHero';
 
 export default class Hero extends Component {
   constructor(props) {
@@ -11,7 +11,14 @@ export default class Hero extends Component {
   render() {
     return (
       <div className="hero-container">
-        <h1>ALICE</h1>
+        <PlaceholderHero />
+        <div className="forground-text">
+          <h1>
+            ALICE
+            <br />
+            CHAMBERS
+          </h1>
+        </div>
       </div>
     );
   }

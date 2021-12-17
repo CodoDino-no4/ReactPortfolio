@@ -24,9 +24,7 @@ export default class App extends Component {
           <About />
           <Projects />
           <Contact />
-          <Switch>
-            {/* <Route path="/404" exact component={NotFound} /> */}
-          </Switch>
+          <Switch>{/* <Route path="/404" exact component={NotFound} /> */}</Switch>
           <Footer />
         </Router>
       </>

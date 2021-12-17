@@ -4,33 +4,31 @@
   "private": true,
   "scripts": {
     "start": "react-scripts start",
-    "build": "react-scripts build",
-    "test": "react-scripts test",
     "eject": "react-scripts eject",
-    "prettier:all": "node_modules/.bin/prettier --write",
-    "lint-staged": "lint-staged"
+    "lint": "node_modules/.bin/eslint \"src/**/*.{js, css, html, json}\" -c .eslint",
+    "lint:fix": "npm run lint -- --fix",
+    "lint-staged": "lint-staged",
+    "precommit": "npm run lint-staged",
+    "prettier:all": "node_modules/.bin/prettier --write \"src/**/*.{js, css, html, json}\"",
+    "prepush": "npm run run lint"
   },
   "husky": {
     "hooks": {
-      "pre-commit": "npm run lint-staged"
+      "pre-commit": "npm run precommit",
+      "pre-push": "npm run prepush"
     }
   },
   "lint-staged": {
-    "src/**/*.{js,jsx,ts,tsx,json,scss,css,html}": [
-      "prettier --write"
-    ],
-    "src/**/*.{js,jsx,ts,tsx,json}": [
-      "eslint --fix"
+    "src/**/*": [
+      "npm run prettier:all",
+      "npm run lint:fix",
+      "git add"
     ]
   },
-  "eslintConfig": {
-    "extends": [
-      "react-app"
-    ]
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/Alicee5cha/ReactPortfolio"
   },
-  "eslintIgnore": [
-    "node_modules/*"
-  ],
   "browserslist": {
     "production": [
       ">0.2%",
@@ -45,9 +43,7 @@
   },
   "dependencies": {
     "@babel/preset-react": "^7.14.5",
-    "@testing-library/jest-dom": "^5.14.1",
-    "@testing-library/react": "^11.2.7",
-    "@testing-library/user-event": "^12.8.3",
+    "@babel/core": "^7.15.0",
     "babel-preset-env": "^1.7.0",
     "babel-preset-react": "^6.24.1",
     "react": "^17.0.2",
@@ -58,18 +54,19 @@
     "react-scroll": "^1.8.4",
     "sass": "^1.43.2",
     "styled-components": "^5.3.3",
-    "web-vitals": "^1.1.2"
+    "web-vitals": "^1.1.2",
+    "typescript": "^4.3.5"
   },
   "devDependencies": {
-    "@babel/core": "^7.15.0",
     "@babel/eslint-parser": "^7.15.0",
     "eslint": "^7.32.0",
     "eslint-plugin-no-unsafe-innerhtml": "^1.0.16",
     "eslint-plugin-promise": "^5.1.0",
     "eslint-plugin-react": "^7.24.0",
+    "eslint-config-prettier": "8.3.0",
     "husky": "4.0.7",
     "lint-staged": "^11.2.3",
     "prettier": "^2.3.2",
-    "typescript": "^4.3.5"
+    "pre-commit": "1.2.2"
   }
 }
