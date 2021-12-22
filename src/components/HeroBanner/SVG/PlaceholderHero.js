@@ -3,9 +3,7 @@ import styled from 'styled-components';
 import { useInView } from 'react-intersection-observer';
 
 const PlaceholderHero = props => {
-  const [inViewRef, inView] = useInView({
-    triggerOnce: true
-  });
+  const [inViewRef, inView] = useInView({});
   const pathRef = createRef();
   const [pathLength, setPathLength] = useState();
 
@@ -24,6 +22,7 @@ const PlaceholderHero = props => {
         {...props}
       >
         <path
+          ref={pathRef}
           d="M-.436 146.646h66.748v40.105h56.348l-.025 16.711 32.613-.145-.052-16.566h57.263v-40.105h295.349v0"
           fill="none"
           stroke="#000"
@@ -37,19 +36,18 @@ const PlaceholderHero = props => {
 };
 
 const Wrapper = styled.div`
-.animated {
-          stroke-dasharray:620;
-    stroke-dashoffset: 620;
-}
-    .animated:hover {
-    stroke-dasharray: 620;
-    stroke-dashoffset: 620;
-    animation: draw 4s linear forwards;
+  height: inherit;
 
-@keyframes draw {
-  to {
-    stroke-dashoffset: 0;
+  .animated.visible {
+    stroke-dasharray: ${props => props.pathLength};
+    stroke-dashoffset: ${props => props.pathLength};
+    animation: draw 4s linear forwards;
   }
-}
+
+  @keyframes draw {
+    to {
+      stroke-dashoffset: 0;
+    }
+  }
 `;
 export default PlaceholderHero;
