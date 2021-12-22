@@ -26,15 +26,8 @@ export default class CardItem extends Component {
       <>
         <li className="cards-item">
           <Link className="cards-item-link" to={this.state.path}>
-            <figure
-              className="cards-item-pic-wrap"
-              data-category={this.state.language}
-            >
-              <img
-                src={this.state.src}
-                alt={this.state.alt}
-                className="cards-item-img"
-              />
+            <figure className="cards-item-pic-wrap" data-category={this.state.language}>
+              <img src={this.state.src} alt={this.state.alt} className="cards-item-img" />
             </figure>
             <div className="cards-item-info">
               <p className="cards-item-text">{this.state.text}</p>
