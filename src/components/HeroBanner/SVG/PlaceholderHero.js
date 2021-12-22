@@ -1,4 +1,4 @@
-import React, { useState, createRef, useEffect } from 'react';
+import React, { useState, createRef, useEffect, useCallback } from 'react';
 import styled from 'styled-components';
 import { useInView } from 'react-intersection-observer';
 
@@ -6,6 +6,9 @@ const PlaceholderHero = props => {
   const [inViewRef, inView] = useInView({});
   const pathRef = createRef();
   const [pathLength, setPathLength] = useState();
+  const heroClick = useCallback(() => {
+    document.getElementById('monitor').style.color = '#000';
+  }, []);
 
   useEffect(() => {
     if (pathRef.current) {
@@ -19,6 +22,7 @@ const PlaceholderHero = props => {
         className={inView ? 'animated visible' : 'animated'}
         viewBox="0 10 500 900"
         xmlns="http://www.w3.org/2000/svg"
+        useMap="#hero-map"
         {...props}
       >
         <path
@@ -31,6 +35,15 @@ const PlaceholderHero = props => {
           strokeWidth={2}
         />
       </svg>
+      <map name="hero-map">
+        <area
+          id="monitor"
+          shape="rect"
+          coords="10,10,20,20"
+          alt="Monitor"
+          onMouseOver={heroClick}
+        />
+      </map>
     </Wrapper>
   );
 };
@@ -49,5 +62,6 @@ const Wrapper = styled.div`
       stroke-dashoffset: 0;
     }
   }
+}
 `;
 export default PlaceholderHero;
