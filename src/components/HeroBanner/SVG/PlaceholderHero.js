@@ -37,21 +37,19 @@ const PlaceholderHero = props => {
 };
 
 const Wrapper = styled.div`
-  .animated {
-    stroke-dasharray: ${props => props.pathLength};
-    stroke-dashoffset: ${props => props.pathLength};
-  }
-  .animated.visible {
-    animation: draw 6s linear forwards;
-  }
+.animated {
+          stroke-dasharray:620;
+    stroke-dashoffset: 620;
+}
+    .animated:hover {
+    stroke-dasharray: 620;
+    stroke-dashoffset: 620;
+    animation: draw 4s linear forwards;
 
-  @keyframes draw {
-    from {
-      stroke-dashoffset: ${props => props.pathLength};
-    }
-    to {
-      stroke-dashoffset: 0;
-    }
+@keyframes draw {
+  to {
+    stroke-dashoffset: 0;
   }
+}
 `;
 export default PlaceholderHero;
