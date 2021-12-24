@@ -5,5 +5,11 @@ npm-debug.log*
 # VScode
 .VScode
 
-# DS files
+# Auto-generated stuff
+coverage
+build
+node_modules
+stats.json
+
 .DS_Store
+.idea
