@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
-import { BrowserRouter as Router, Switch } from 'react-router-dom';
+import { BrowserRouter as Router} from 'react-router-dom';
 import './App.scss';
+import { hot } from "react-hot-loader";
 import Navbar from './components/Navbar/Navbar';
 import Footer from './components/Footer/Footer';
 import Home from './components/Pages/Home/Home';
@@ -9,12 +10,7 @@ import Projects from './components/Pages/Projects/Projects';
 import Contact from './components/Pages/Contact/Contact';
 // import NotFound from './components/Pages/404/NotFound';
 
-export default class App extends Component {
-  constructor(props) {
-    super(props);
-    this.state = {};
-  }
-
+class App extends Component {
   render() {
     return (
       <>
@@ -24,10 +20,11 @@ export default class App extends Component {
           <About />
           <Projects />
           <Contact />
-          <Switch>{/* <Route path="/404" exact component={NotFound} /> */}</Switch>
           <Footer />
         </Router>
       </>
     );
   }
 }
+
+export default hot(module)(App);
