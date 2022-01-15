@@ -3,6 +3,7 @@ import './Navbar.scss';
 import { Link } from 'react-scroll';
 import NavHoverLeft from './SVG/NavHover-left';
 import NavHoverRight from './SVG/NavHover-right';
+import Toggle from '../Toggle/Toggle';
 
 export default class Navbar extends Component {
   constructor(props) {
@@ -123,6 +124,7 @@ export default class Navbar extends Component {
               ALICE
               <i className="fas fa-ghost" />
             </Link>
+            <Toggle Name='dark-toggle' />
           </div>
         </nav>
       </>
