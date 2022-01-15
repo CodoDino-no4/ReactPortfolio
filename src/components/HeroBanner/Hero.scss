@@ -13,11 +13,22 @@
   color: rgb(0 0 0 / 20%);
   font-size: 100px;
   text-align: left;
+  animation: h1 2s ease-out;
+}
+
+@keyframes h1 {
+  0% {
+    transform: translateY(-200%);
+  }
+
+  100% {
+    transform: translateY(0%);
+  }
 }
 
 @media screen and (max-width: 960px) {
   .forground-text > h1 {
-    font-size: 70px;
+    font-size: 50px;
   }
 }
 
