@@ -9,12 +9,10 @@ export default class Navbar extends Component {
   constructor(props) {
     super(props);
     this.state = {
+      isDark: false,
       isMobMenuOpen: false,
       navbarOffset: -80
     };
-
-    this._toggleMobMenu = this._toggleMobMenu.bind(this);
-    this._closeMobMenu = this._closeMobMenu.bind(this);
   }
 
   _toggleMobMenu = () => {
@@ -28,7 +26,16 @@ export default class Navbar extends Component {
       isMobMenuOpen: false
     });
   };
+  
+  _toggleDarkMode = () => {
+    console.log(this.state.isDark)
+    this.setState({
+      isDark: !this.state.isDark
+    });
+    if (this.props.isDark) {
 
+    }
+};
   render() {
     return (
       <>
@@ -124,7 +131,7 @@ export default class Navbar extends Component {
               ALICE
               <i className="fas fa-ghost" />
             </Link>
-            <Toggle Name='dark-toggle' />
+            <Toggle Name='dark-toggle' ClickAction={this._toggleDarkMode}/>
           </div>
         </nav>
       </>
