@@ -1,11 +1,19 @@
 $bg: #fff;
-$dark--bg: #0e0f12;
 $text: #000;
+$toggle--bg: #fff;
+$toggle--text: #5a5454;
+$dark--bg: #0e0f12;
 $dark-text: #fff;
+$dark--toggle--bg: #808080;
+$dark--toggle--text: #313131;
+$toggle--font:'Dongle',
+sans-serif;
 $title--font: 'Atkinson Hyperlegible',
 sans-serif;
+$h1--font--weight: 600;
 $body--font: 'IBM Plex Sans KR',
 sans-serif;
+$body--font--weight: 500;
 $title--size: 70px;
 
 $breakpoint--mob: 480px;
@@ -17,6 +25,7 @@ $breakpoint--screen: 1200px;
   padding: 0;
   box-sizing: border-box;
   font-family: $body--font;
+  font-weight: $body--font--weight
 }
 
 body {
@@ -28,6 +37,7 @@ h1 {
   letter-spacing: 1px;
   font-family: $title--font;
   font-size: $title--size;
+  font-weight: $h1--font--weight;
   text-align: center;
 }
 
