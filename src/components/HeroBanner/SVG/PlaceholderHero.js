@@ -2,7 +2,7 @@ import React, { useState, createRef, useEffect } from 'react';
 import styled from 'styled-components';
 import { useInView } from 'react-intersection-observer';
 
-const PlaceholderHero = props => {
+const PlaceholderHero = (props) => {
   const [inViewRef, inView] = useInView({});
   const pathRef = createRef();
   const [pathLength, setPathLength] = useState();
@@ -39,8 +39,8 @@ const Wrapper = styled.div`
   height: inherit;
 
   .animated.visible {
-    stroke-dasharray: ${props => props.pathLength};
-    stroke-dashoffset: ${props => props.pathLength};
+    stroke-dasharray: ${(props) => props.pathLength};
+    stroke-dashoffset: ${(props) => props.pathLength};
     animation: draw 4s linear forwards;
   }
 

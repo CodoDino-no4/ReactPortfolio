@@ -6,8 +6,8 @@ const prettierOptions = JSON.parse(
 );
 
 module.exports = {
-parser: "@babel/eslint-parser",
-  extends: ['prettier'],
+  parser: '@babel/eslint-parser',
+  extends: ['prettier', 'plugin:react/recommended'],
   plugins: ['prettier', 'react', 'react-hooks', 'jsx-a11y'],
   env: {
     browser: true,
