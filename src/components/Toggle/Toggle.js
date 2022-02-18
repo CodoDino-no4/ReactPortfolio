@@ -1,20 +1,24 @@
 import React, { Component } from 'react';
-import './Toggle.scss'
+import './Toggle.scss';
 
 class Toggle extends Component {
-  constructor() {
-    super()
+  constructor(props) {
+    super(props);
     this.state = {
-    toggle: false
-    }
+      toggle: false
+    };
   }
-  
-  toggleSwitch() { 
-    this.setState({
-    toggle: !this.state.toggle
-    })
-    
-  }
+
+  // toggleSwitch() {
+  //   this.setState(
+  //     {
+  //       toggle: !this.state.toggle
+  //     },
+  //     () => {
+  //       console.log(this.state.toggle);
+  //     }
+  //   );
+  // }
   render() {
     return (
       <div className="toggle-switch">
@@ -23,10 +27,13 @@ class Toggle extends Component {
           className="toggle-switch-checkbox"
           name={this.props.name}
           id={this.props.name}
-          onClick={() => {this.toggleSwitch()}}
         />
         <label className="toggle-switch-label" htmlFor={this.props.name}>
-          <span className="toggle-switch-inner" />
+          <span
+            className="toggle-switch-inner"
+            data-on={this.props.on}
+            data-off={this.props.off}
+          />
           <span className="toggle-switch-switch" />
         </label>
       </div>

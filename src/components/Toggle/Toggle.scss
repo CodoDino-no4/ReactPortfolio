@@ -6,7 +6,7 @@
     -webkit-user-select: none;
     -moz-user-select: none;
     -ms-user-select: none;
-    margin-left: 3em;
+    margin-left: 1em;
 
     &-checkbox {
         display: none;
@@ -42,7 +42,7 @@
         }
 
         &:before {
-            content: "Light";
+            content: attr(data-off);
             padding-left: 8px;
             background-color: $dark--toggle--bg;
             color: $dark--toggle--text;
@@ -60,7 +60,7 @@
     }
 
     &-inner:after {
-        content: "Dark";
+        content: attr(data-on);
         padding-right: 10px;
         background-color: $toggle--bg;
         color: $toggle--text;

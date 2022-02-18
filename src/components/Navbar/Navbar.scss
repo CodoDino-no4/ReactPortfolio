@@ -113,12 +113,10 @@
 }
 
 .navbar-tools {
-  display: flex;
-  flex-direction: row;
-  align-content: center;
-  justify-content: space-evenly;
-  align-items: center;
+  display: grid;
+  grid-template-columns: repeat(2, auto);
   list-style: none;
+  align-items: center;
 }
 
 @media screen and (max-width: 960px) {
@@ -160,14 +158,6 @@
     border-bottom: none;
   }
 
-  .navbar-logo {
-    position: absolute;
-    top: 0;
-    right: 0;
-    margin: 0;
-    transform: translate(-10%, 30%);
-  }
-
   .menu-icon {
     display: block;
     position: absolute;
@@ -202,5 +192,10 @@
     background: rgb(0, 0, 0);
     color: #242424;
     transition: 250ms;
+  }
+
+  .navbar-tools {
+    position: absolute;
+    right: 1em;
   }
 }

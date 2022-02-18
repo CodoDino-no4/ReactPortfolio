@@ -11,29 +11,33 @@ export default class Navbar extends Component {
     this.state = {
       isDark: false,
       isMobMenuOpen: false,
-      navbarOffset: -80,
+      navbarOffset: -80
     };
   }
 
   _toggleMobMenu = () => {
     this.setState({
-      isMobMenuOpen: !this.state.isMobMenuOpen,
+      isMobMenuOpen: !this.state.isMobMenuOpen
     });
   };
 
   _closeMobMenu = () => {
     this.setState({
-      isMobMenuOpen: false,
+      isMobMenuOpen: false
     });
   };
 
-  _toggleTheme = () => { 
-    this.setState({
-      isDark: !this.state.isDark
-    });
-    console.log(this.state.isDark)
-  }
-  
+  // _toggleTheme = () => {
+  //   this.setState(
+  //     {
+  //       isDark: !this.state.isDark
+  //     },
+  //     () => {
+  //       console.log(this.state.isDark);
+  //     }
+  //   );
+  // };
+
   render() {
     return (
       <>
@@ -136,26 +140,30 @@ export default class Navbar extends Component {
                 </Link>
               </li>
             </ul>
-            <ul className='navbar-tools'>
-              <li className='tools-item'>
-            <Link
-              to="home"
-              className="navbar-logo"
-              onClick={this._closeMobMenu}
-              spy={true}
-              smooth={true}
-              duration={1000}
-              isDynamic={true}
-              offset={this.state.navbarOffset}
-            >
-              ALICE
-              <i className="fas fa-ghost" />
-            </Link>
+            <ul className="navbar-tools">
+              <li className="tools-item">
+                <Link
+                  to="home"
+                  className="navbar-logo"
+                  onClick={this._closeMobMenu}
+                  spy={true}
+                  smooth={true}
+                  duration={1000}
+                  isDynamic={true}
+                  offset={this.state.navbarOffset}
+                >
+                  ALICE
+                  <i className="fas fa-ghost" />
+                </Link>
               </li>
-            <li className='tools-item'>
-                <Toggle name='dark-toggle' onClick={() => {this._toggleTheme}}/>
-            </li>
-
+              <li className="tools-item">
+                <Toggle
+                  name="dark-toggle"
+                  on="Light"
+                  off="Dark"
+                  // onClick={}
+                />
+              </li>
             </ul>
           </div>
         </nav>
