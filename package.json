@@ -6,9 +6,9 @@
   "scripts": {
     "start": "webpack-dev-server --mode development",
     "prettier:all": "node_modules/.bin/prettier --write \"src/**/*\"",
-    "lint": "node_modules/.bin/eslint \"src/**/*.js\" -c .eslintrc.js --ignore-path .gitignore",
+    "lint": "node_modules/.bin/eslint \"src/**/*.js\" -c .eslintrc.js",
     "lint:fix": "npm run lint -- --fix",
-    "lint:eslint:fix": "eslint --ignore-path .gitignore --fix",
+    "lint:eslint:fix": "eslint --fix",
     "precommit": "npm run lint-staged",
     "lint-staged": "lint-staged"
   },
