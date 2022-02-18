@@ -21,6 +21,7 @@
       "git add"
     ]
   },
+    "eslintIgnore" : ["**/*.scss"],
   "repository": {
     "type": "git",
     "url": "https://github.com/Alicee5cha/ReactPortfolio"
