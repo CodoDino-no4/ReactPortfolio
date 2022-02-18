@@ -11,19 +11,19 @@ export default class Navbar extends Component {
     this.state = {
       isDark: false,
       isMobMenuOpen: false,
-      navbarOffset: -80
+      navbarOffset: -80,
     };
   }
 
   _toggleMobMenu = () => {
     this.setState({
-      isMobMenuOpen: !this.state.isMobMenuOpen
+      isMobMenuOpen: !this.state.isMobMenuOpen,
     });
   };
 
   _closeMobMenu = () => {
     this.setState({
-      isMobMenuOpen: false
+      isMobMenuOpen: false,
     });
   };
 
@@ -42,11 +42,19 @@ export default class Navbar extends Component {
             <div className="menu-icon" onClick={this._toggleMobMenu}>
               <i className={'burger fas fa-bars'} />
             </div>
-            <ul className={this.state.isMobMenuOpen ? 'nav-menu active' : 'nav-menu'}>
+            <ul
+              className={
+                this.state.isMobMenuOpen ? 'nav-menu active' : 'nav-menu'
+              }
+            >
               <li className="nav-item">
                 <div className="animation">
-                  <NavHoverRight style={this.state.isMobMenuOpen ? { display: 'none' } : {}} />
-                  <NavHoverLeft style={this.state.isMobMenuOpen ? { display: 'none' } : {}} />
+                  <NavHoverRight
+                    style={this.state.isMobMenuOpen ? { display: 'none' } : {}}
+                  />
+                  <NavHoverLeft
+                    style={this.state.isMobMenuOpen ? { display: 'none' } : {}}
+                  />
                 </div>
                 <Link
                   to="home"
@@ -63,8 +71,12 @@ export default class Navbar extends Component {
               </li>
               <li className="nav-item">
                 <div className="animation">
-                  <NavHoverRight style={this.state.isMobMenuOpen ? { display: 'none' } : {}} />
-                  <NavHoverLeft style={this.state.isMobMenuOpen ? { display: 'none' } : {}} />
+                  <NavHoverRight
+                    style={this.state.isMobMenuOpen ? { display: 'none' } : {}}
+                  />
+                  <NavHoverLeft
+                    style={this.state.isMobMenuOpen ? { display: 'none' } : {}}
+                  />
                 </div>
                 <Link
                   to="about"
@@ -81,8 +93,12 @@ export default class Navbar extends Component {
               </li>
               <li className="nav-item">
                 <div className="animation">
-                  <NavHoverRight style={this.state.isMobMenuOpen ? { display: 'none' } : {}} />
-                  <NavHoverLeft style={this.state.isMobMenuOpen ? { display: 'none' } : {}} />
+                  <NavHoverRight
+                    style={this.state.isMobMenuOpen ? { display: 'none' } : {}}
+                  />
+                  <NavHoverLeft
+                    style={this.state.isMobMenuOpen ? { display: 'none' } : {}}
+                  />
                 </div>
                 <Link
                   to="projects"
@@ -99,8 +115,12 @@ export default class Navbar extends Component {
               </li>
               <li className="nav-item">
                 <div className="animation">
-                  <NavHoverRight style={this.state.isMobMenuOpen ? { display: 'none' } : {}} />
-                  <NavHoverLeft style={this.state.isMobMenuOpen ? { display: 'none' } : {}} />
+                  <NavHoverRight
+                    style={this.state.isMobMenuOpen ? { display: 'none' } : {}}
+                  />
+                  <NavHoverLeft
+                    style={this.state.isMobMenuOpen ? { display: 'none' } : {}}
+                  />
                 </div>
                 <Link
                   to="contact"

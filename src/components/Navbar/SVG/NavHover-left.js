@@ -1,7 +1,7 @@
 import React, { useState, createRef, useEffect } from 'react';
 import styled from 'styled-components';
 
-const NavHoverLeft = props => {
+const NavHoverLeft = (props) => {
   const pathRef = createRef();
   const [pathLength, setPathLength] = useState();
 
