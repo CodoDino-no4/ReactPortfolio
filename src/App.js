@@ -4,10 +4,10 @@ import './App.scss';
 import { hot } from "react-hot-loader";
 import Navbar from './components/Navbar/Navbar';
 import Footer from './components/Footer/Footer';
-import Home from './components/Pages/Home/Home';
-import About from './components/Pages/About/About';
-import Projects from './components/Pages/Projects/Projects';
-import Contact from './components/Pages/Contact/Contact';
+import Home from './components/Sections/Home/Home';
+import About from './components/Sections/About/About';
+import Projects from './components/Sections/Projects/Projects';
+import Contact from './components/Sections/Contact/Contact';
 // import NotFound from './components/Pages/404/NotFound';
 
 class App extends Component {

@@ -26,16 +26,14 @@ export default class Navbar extends Component {
       isMobMenuOpen: false
     });
   };
-  
-  _toggleDarkMode = () => {
-    console.log(this.state.isDark)
+
+  _toggleTheme = () => { 
     this.setState({
       isDark: !this.state.isDark
     });
-    if (this.props.isDark) {
-
-    }
-};
+    console.log(this.state.isDark)
+  }
+  
   render() {
     return (
       <>
@@ -118,6 +116,8 @@ export default class Navbar extends Component {
                 </Link>
               </li>
             </ul>
+            <ul className='navbar-tools'>
+              <li className='tools-item'>
             <Link
               to="home"
               className="navbar-logo"
@@ -131,7 +131,12 @@ export default class Navbar extends Component {
               ALICE
               <i className="fas fa-ghost" />
             </Link>
-            <Toggle Name='dark-toggle' ClickAction={this._toggleDarkMode}/>
+              </li>
+            <li className='tools-item'>
+                <Toggle name='dark-toggle' onClick={() => {this._toggleTheme}}/>
+            </li>
+
+            </ul>
           </div>
         </nav>
       </>
