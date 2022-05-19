@@ -2,7 +2,7 @@ const fs = require('fs');
 const path = require('path');
 
 const prettierOptions = JSON.parse(
-  fs.readFileSync(path.resolve(__dirname, '.prettierrc'), 'utf8'),
+  fs.readFileSync(path.resolve(__dirname, '.prettierrc'), 'utf8')
 );
 
 module.exports = {
@@ -12,14 +12,19 @@ module.exports = {
   env: {
     browser: true,
     node: true,
-    es6: true,
+    es6: true
+  },
+  settings: {
+    react: {
+      version: 'detect'
+    }
   },
   parserOptions: {
     ecmaVersion: 6,
     sourceType: 'module',
     ecmaFeatures: {
-      jsx: true,
-    },
+      jsx: true
+    }
   },
   rules: {
     'prettier/prettier': ['error', prettierOptions],
@@ -36,8 +41,8 @@ module.exports = {
       2,
       2,
       {
-        SwitchCase: 1,
-      },
+        SwitchCase: 1
+      }
     ],
     'jsx-a11y/aria-props': 2,
     'jsx-a11y/heading-has-content': 0,
@@ -47,8 +52,8 @@ module.exports = {
         // NOTE: If this error triggers, either disable it or add
         // your custom components, labels and attributes via these options
         // See https://github.com/evcohen/eslint-plugin-jsx-a11y/blob/master/docs/rules/label-has-associated-control.md
-        controlComponents: ['Input'],
-      },
+        controlComponents: ['Input']
+      }
     ],
     'jsx-a11y/label-has-for': 0,
     'jsx-a11y/mouse-events-have-key-events': 2,
@@ -65,6 +70,7 @@ module.exports = {
     'react-hooks/rules-of-hooks': 'error',
     'react/jsx-closing-tag-location': 0,
     'react/forbid-prop-types': 0,
+    'react/prop-types': 1,
     'react/jsx-first-prop-new-line': [2, 'multiline'],
     'react/jsx-filename-extension': 0,
     'react/jsx-no-target-blank': 0,
@@ -73,6 +79,6 @@ module.exports = {
     'react/require-extension': 0,
     'react/self-closing-comp': 0,
     'react/sort-comp': 0,
-    'require-yield': 0,
-  },
+    'require-yield': 0
+  }
 };

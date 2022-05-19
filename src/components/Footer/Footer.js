@@ -1,21 +1,14 @@
-import React, { Component } from 'react';
+import React from 'react';
 import './Footer.scss';
 
-export default class Footer extends Component {
-  constructor(props) {
-    super(props);
-    this.state = {};
-  }
+const Footer = () => (
+  <>
+    <div className="footer">
+      <div className="footer-text">
+        <p>Copyright Alice Chambers</p>
+      </div>
+    </div>
+  </>
+);
 
-  render() {
-    return (
-      <>
-        <div className="footer">
-          <div className="footer-text">
-            <p>Copyright Alice Chambers</p>
-          </div>
-        </div>
-      </>
-    );
-  }
-}
+export default Footer;

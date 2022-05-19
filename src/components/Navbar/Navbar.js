@@ -3,30 +3,40 @@ import './Navbar.scss';
 import { Link } from 'react-scroll';
 import NavHoverLeft from './SVG/NavHover-left';
 import NavHoverRight from './SVG/NavHover-right';
+import Toggle from '../Toggle/Toggle';
 
 export default class Navbar extends Component {
   constructor(props) {
     super(props);
     this.state = {
+      isDark: false,
       isMobMenuOpen: false,
-      navbarOffset: -80,
+      navbarOffset: -80
     };
-
-    this._toggleMobMenu = this._toggleMobMenu.bind(this);
-    this._closeMobMenu = this._closeMobMenu.bind(this);
   }
 
   _toggleMobMenu = () => {
     this.setState({
-      isMobMenuOpen: !this.state.isMobMenuOpen,
+      isMobMenuOpen: !this.state.isMobMenuOpen
     });
   };
 
   _closeMobMenu = () => {
     this.setState({
-      isMobMenuOpen: false,
+      isMobMenuOpen: false
     });
   };
+
+  // _toggleTheme = () => {
+  //   this.setState(
+  //     {
+  //       isDark: !this.state.isDark
+  //     },
+  //     () => {
+  //       console.log(this.state.isDark);
+  //     }
+  //   );
+  // };
 
   render() {
     return (
@@ -130,19 +140,31 @@ export default class Navbar extends Component {
                 </Link>
               </li>
             </ul>
-            <Link
-              to="home"
-              className="navbar-logo"
-              onClick={this._closeMobMenu}
-              spy={true}
-              smooth={true}
-              duration={1000}
-              isDynamic={true}
-              offset={this.state.navbarOffset}
-            >
-              ALICE
-              <i className="fas fa-ghost" />
-            </Link>
+            <ul className="navbar-tools">
+              <li className="tools-item">
+                <Link
+                  to="home"
+                  className="navbar-logo"
+                  onClick={this._closeMobMenu}
+                  spy={true}
+                  smooth={true}
+                  duration={1000}
+                  isDynamic={true}
+                  offset={this.state.navbarOffset}
+                >
+                  ALICE
+                  <i className="fas fa-ghost" />
+                </Link>
+              </li>
+              <li className="tools-item">
+                <Toggle
+                  name="dark-toggle"
+                  on="Light"
+                  off="Dark"
+                  // onClick={}
+                />
+              </li>
+            </ul>
           </div>
         </nav>
       </>
