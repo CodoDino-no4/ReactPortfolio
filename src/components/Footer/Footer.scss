@@ -1,35 +1,42 @@
 @import '../../App';
 
 .footer {
-    height: 100px;
     background-color: #0e0f12;
     position: unset;
     bottom: 0;
     display: flex;
     width: 100%;
     flex-direction: column;
-    justify-content: center;
+    justify-content: space-evenly;
+}
+
+.footer-items {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
     align-items: center;
+    align-content: center;
+}
+
+.footer-art {
+  width: 40%;
+}
+
+.links-grid {
+  grid-auto-rows: 90%;
+  display: grid;
+  width: 60%;
+  padding: 20px;
+  justify-items: start;
+  align-content: space-around;
+}
+
+.grid-item {
+  text-align: center;
+  color: $bg;
 }
 
 .footer-br>p {
   text-align: center;
   color: $bg;
-}
-
-.footer > .links-grid {
-    grid-template-columns: auto auto auto auto;
-    text-align: center;
-    display: grid;
-    align-content: center;
-    justify-content: space-between;
-    align-items: center;
-    justify-items: center;
-    width: 40%;
-}
-
-.grid-item {
-    text-align: center;
-    color: $bg;
-  font-size: 1.8rem;
 }
