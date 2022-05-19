@@ -17,7 +17,7 @@ const PlaceholderHero = (props) => {
     <Wrapper ref={inViewRef} pathLength={pathLength}>
       <svg
         className={inView ? 'animated visible' : 'animated'}
-        viewBox="0 10 500 900"
+        viewBox="0 10 500 600"
         xmlns="http://www.w3.org/2000/svg"
         {...props}
       >
