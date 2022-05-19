@@ -25,7 +25,8 @@ const Footer = () => (
         </div>
       </div>
       <div className="footer-br">
-        <p>&copy; Copyright Alice Chambers</p>
+        <p>Designed by Alice Chambers</p>
+        <p>&copy; Copyright Alice Chambers 2022</p>
       </div>
     </div>
   </>
