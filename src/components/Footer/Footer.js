@@ -5,28 +5,29 @@ import linkedin from '../../images/linkedin-logo.svg';
 import github from '../../images/github-logo.svg';
 import code from '../../images/code-logo.svg';
 import email from '../../images/envelope-logo.svg';
+import Link from 'react-scroll/modules/components/Link';
 
 const Footer = () => (
   <>
     <div className="footer">
       <div className="footer-items">
         <div className="links-grid">
-          <div className="grid-item">
+          <Link className="grid-item" to={'https://github.com/Alicee5cha'}>
             <img src={github} />
             <p>GitHub</p>
-          </div>
-          <div className="grid-item">
+          </Link>
+          <Link className="grid-item">
             <img src={linkedin} />
             <p>LinkedIn</p>
-          </div>
-          <div className="grid-item">
+          </Link>
+          <Link className="grid-item">
             <img src={code} />
             <p>FrontEnd Mentor</p>
-          </div>
-          <div className="grid-item">
+          </Link>
+          <Link className="grid-item">
             <img src={email} />
             <p>Email</p>
-          </div>
+          </Link>
         </div>
         <div className="footer-art">
           <FooterArt />
