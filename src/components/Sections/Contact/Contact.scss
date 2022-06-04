@@ -15,7 +15,7 @@ display: flex;
     width: 80%;
         border: 0px solid;
     border-radius: 10px;
-    margin-bottom: 30px;
+    margin-bottom: 50px;
       padding: 20px 40px;
 }
 
@@ -41,8 +41,6 @@ form .contactColumn {
   padding: 10px;
     display: flex;
     flex-direction: column;
-    justify-content: space-between;
-    align-items: stretch;
 }
 
 form .contactColumn.no1 {
@@ -56,10 +54,9 @@ form .contactColumn.no2 {
 form input,
 form .contactColumn.no2 .row textarea {
   padding: 5px 0;
-  font-size: 18px;
-  font-weight: 300;
   width: 100%;
-  color: #000;
+  color: $text;
+  font-weight: 500;
   border: none;
   outline: none;
 
@@ -71,7 +68,7 @@ form .contactColumn.no2 .textAreaRow {
 }
 
 .textAreaRow {
-      margin-bottom: 31px;
+      margin-bottom: 35px;
 }
 
 form .contactColumn.no2 .row textarea {
@@ -84,8 +81,6 @@ form span {
   left: 0;
   padding: 5px 0;
   pointer-events: none;
-  font-size: 18px;
-  font-weight: 300;
   transition: 0.3s;
 }
 
@@ -93,10 +88,7 @@ form input:focus ~ span,
 form input:valid ~ span,
 form .contactColumn.no2 .row textarea:focus ~ span,
 form .contactColumn.no2 .row textarea:valid ~ span {
-  transform: translateY(-20px);
-  font-size: 12px;
-  font-weight: 500;
-  letter-spacing: 1px;
+  transform: translateY(-25px);
   color: grey;
 }
 
@@ -129,7 +121,12 @@ form .contactColumn.no2 {
   width: 100%;
 }
 
-.container .contactForm {
+.container {
   padding: 20px 20px;
+      width: 90%;
+}
+
+.contactColumn {
+    padding: 0px 10px 0px 10px;
 }
 }
