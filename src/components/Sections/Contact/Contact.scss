@@ -1,0 +1,95 @@
+// .contact {
+// }
+
+.container {
+  position: relative;
+  min-width: 1100px;
+  min-height: 550px;
+  display: flex;
+  z-index: 1;
+  background: #fff;
+  box-shadow: 0 50px 50px rgba(0, 0, 0, 0.25);
+}
+
+.container .contactForm {
+  padding: 20px 40px;
+  width: 80%;
+}
+
+form {
+  position: relative;
+  padding-top: 20px;
+  display: flex;
+  flex-wrap: wrap;
+}
+
+form .row {
+  position: relative;
+  margin-bottom: 35px;
+}
+
+form .contactColumn.no1 {
+  width: 40%;
+  padding: 10px;
+}
+
+form .contactColumn.no2 {
+  width: 60%;
+  padding: 10px;
+}
+
+form input,
+form .contactColumn.no2 .row textarea {
+  padding: 5px 0;
+  font-size: 18px;
+  font-weight: 300;
+  width: 100%;
+  color: #000;
+  border: none;
+  outline: none;
+  border-bottom: 1px solid grey;
+}
+
+form .contactColumn.no2 .row textarea {
+  resize: none;
+  width: 100%;
+  height: 237px;
+}
+
+form span {
+  position: absolute;
+  left: 0;
+  padding: 5px 0;
+  pointer-events: none;
+  font-size: 18px;
+  font-weight: 300;
+  transition: 0.3s;
+}
+
+form input:focus ~ span,
+form input:valid ~ span,
+form .contactColumn.no2 .row textarea:focus ~ span,
+form .contactColumn.no2 .row textarea:valid ~ span {
+  transform: translateY(-20px);
+  font-size: 12px;
+  font-weight: 500;
+  letter-spacing: 1px;
+  color: grey;
+}
+
+form input[type="submit"] {
+  position: relative;
+  cursor: pointer;
+  color: #353189;
+  background: #f9d6fd;
+  border: none;
+  padding: 12px;
+}
+
+form input[type="submit"] {
+  -webkit-transition: box-shadow 500ms ease-in-out, color 500ms ease-in-out;
+  transition: box-shadow 500ms ease-in-out, color 500ms ease-in-out;
+}
+form input[type="submit"]:hover {
+  box-shadow: 0 0 40px 40px #f177ff inset;
+}
