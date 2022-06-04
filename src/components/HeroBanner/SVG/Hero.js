@@ -17,7 +17,7 @@ const Hero = (props) => {
     <Wrapper ref={inViewRef} pathLength={pathLength}>
       <svg
         className={inView ? 'animated visible' : 'animated'}
-        viewBox="0 -10 500 600"
+        viewBox="0 -15 500 400"
         xmlns="http://www.w3.org/2000/svg"
         {...props}
       >
