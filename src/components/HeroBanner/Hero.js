@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import './Hero.scss';
-import PlaceholderHero from './SVG/PlaceholderHero';
+import HeroImg from './SVG/Hero';
 
 export default class Hero extends Component {
   constructor(props) {
@@ -11,7 +11,7 @@ export default class Hero extends Component {
   render() {
     return (
       <div className="hero-container">
-        <PlaceholderHero />
+        <HeroImg />
         <div className="forground-text">
           <h1>
             ALICE

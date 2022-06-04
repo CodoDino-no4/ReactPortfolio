@@ -1,11 +1,12 @@
 .hero-container {
-  height: 850px;
+  height: 680px;
   width: 100%;
 }
 
 .forground-text {
   position: absolute;
-  top: 80px;
+  top: 50px;
+  right:60px;
   margin: 2% 0 0 7%;
 }
 
@@ -13,7 +14,7 @@
   color: rgb(0 0 0 / 20%);
   font-size: 100px;
   text-align: left;
-  animation: h1 2s ease-out;
+  animation: h1 3s ease-out;
 }
 
 @keyframes h1 {
