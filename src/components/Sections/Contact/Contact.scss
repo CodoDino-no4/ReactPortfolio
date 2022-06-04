@@ -1,19 +1,26 @@
-// .contact {
-// }
+@import '../../../App.scss';
+
+.contact {
+display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    height: 100%;
+    background: #f2695c;
+}
 
 .container {
-  position: relative;
-  min-width: 1100px;
-  min-height: 550px;
-  display: flex;
   z-index: 1;
   background: #fff;
   box-shadow: 0 50px 50px rgba(0, 0, 0, 0.25);
+    width: 80%;
+        border: 0px solid;
+    border-radius: 10px;
+    margin-bottom: 30px;
+      padding: 20px 40px;
 }
 
-.container .contactForm {
-  padding: 20px 40px;
-  width: 80%;
+.headings {
+  padding:10px;
 }
 
 form {
@@ -21,21 +28,29 @@ form {
   padding-top: 20px;
   display: flex;
   flex-wrap: wrap;
+  flex-direction: row;
 }
 
 form .row {
   position: relative;
-  margin-bottom: 35px;
+  height:inherit;
+}
+
+form .contactColumn {
+  height: 300px;
+  padding: 10px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: stretch;
 }
 
 form .contactColumn.no1 {
-  width: 40%;
-  padding: 10px;
+width: 40%;
 }
 
 form .contactColumn.no2 {
   width: 60%;
-  padding: 10px;
 }
 
 form input,
@@ -47,13 +62,21 @@ form .contactColumn.no2 .row textarea {
   color: #000;
   border: none;
   outline: none;
-  border-bottom: 1px solid grey;
+
+}
+
+form input,
+form .contactColumn.no2 .textAreaRow {
+    border-bottom: 1px solid grey;
+}
+
+.textAreaRow {
+      margin-bottom: 31px;
 }
 
 form .contactColumn.no2 .row textarea {
   resize: none;
-  width: 100%;
-  height: 237px;
+      height: 100%;
 }
 
 form span {
@@ -80,10 +103,10 @@ form .contactColumn.no2 .row textarea:valid ~ span {
 form input[type="submit"] {
   position: relative;
   cursor: pointer;
-  color: #353189;
-  background: #f9d6fd;
   border: none;
   padding: 12px;
+      border: 0px solid;
+    border-radius: 10px;
 }
 
 form input[type="submit"] {
@@ -91,5 +114,22 @@ form input[type="submit"] {
   transition: box-shadow 500ms ease-in-out, color 500ms ease-in-out;
 }
 form input[type="submit"]:hover {
-  box-shadow: 0 0 40px 40px #f177ff inset;
+  box-shadow: 0 0 40px 40px grey inset;
+}
+
+@media only screen and (max-width: $breakpoint--mob) {
+  form {
+    flex-direction: column;
+  }
+  form .contactColumn.no1 {
+width: 100%;
+}
+
+form .contactColumn.no2 {
+  width: 100%;
+}
+
+.container .contactForm {
+  padding: 20px 20px;
+}
 }

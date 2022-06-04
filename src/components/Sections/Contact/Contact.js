@@ -40,7 +40,7 @@ export default class Contact extends Component {
                   <textarea required></textarea>
                   <span>Write your message here...</span>
                 </div>
-                <div className="row"></div>
+                <div className="textAreaRow"></div>
               </div>
               <input type="submit" value="Send" />
             </form>
