@@ -1,5 +1,5 @@
 {
-  "name": "portfolio",
+  "name": "alicechambers",
   "version": "0.1.0",
   "private": true,
   "main": "index.js",
@@ -36,7 +36,8 @@
     "react-intersection-observer": "^8.33.1",
     "react-router-dom": "^6.2.1",
     "react-scroll": "^1.8.4",
-    "styled-components": "^5.3.3"
+    "styled-components": "^5.3.3",
+    "webpack": "5.0.0"
   },
   "devDependencies": {
     "@babel/cli": "^7.1.0",
@@ -44,6 +45,7 @@
     "@babel/eslint-parser": "^7.16.5",
     "@babel/preset-env": "^7.1.0",
     "@babel/preset-react": "^7.0.0",
+    "@webpack-cli/serve": "^1.7.0",
     "babel-loader": "8.0.2",
     "css-loader": "2.0.0",
     "eslint": "^8.5.0",
@@ -60,8 +62,7 @@
     "sass": "^1.45.1",
     "sass-loader": "10.1.1",
     "style-loader": "0.23.0",
-    "webpack": "4.41.2",
-    "webpack-cli": "^3.3.12",
-    "webpack-dev-server": "^3.9.0"
+    "webpack-cli": "4.10.0",
+    "webpack-dev-server": "4.9.2"
   }
 }
