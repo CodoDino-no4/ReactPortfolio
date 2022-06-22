@@ -2,7 +2,7 @@ import React, { useState, createRef, useEffect } from 'react';
 import styled from 'styled-components';
 import { useInView } from 'react-intersection-observer';
 
-const Hero = (props) => {
+const HeroSVG = (props) => {
   const [inViewRef, inView] = useInView({});
   const pathRef = createRef();
   const [pathLength, setPathLength] = useState();
@@ -17,7 +17,7 @@ const Hero = (props) => {
     <Wrapper ref={inViewRef} pathLength={pathLength}>
       <svg
         className={inView ? 'animated visible' : 'animated'}
-        viewBox="0 -15 500 400"
+        viewBox="0 15 500 270"
         xmlns="http://www.w3.org/2000/svg"
         {...props}
       >
@@ -41,11 +41,13 @@ const Hero = (props) => {
 
 const Wrapper = styled.div`
   height: inherit;
+  z-index: 0;
 
   .animated.visible {
     stroke-dasharray: ${(props) => props.pathLength};
     stroke-dashoffset: ${(props) => props.pathLength};
     animation: draw 15s linear forwards;
+    max-height: max-content;
   }
 
   @keyframes draw {
@@ -55,4 +57,4 @@ const Wrapper = styled.div`
   }
 }
 `;
-export default Hero;
+export default HeroSVG;

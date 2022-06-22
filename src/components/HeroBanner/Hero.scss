@@ -1,5 +1,4 @@
 .hero-container {
-  height: 680px;
   width: 100%;
 }
 
@@ -8,10 +7,11 @@
   top: 50px;
   right:60px;
   margin: 2% 0 0 7%;
+  z-index: 1;
 }
 
 .forground-text > h1 {
-  color: rgb(0 0 0 / 20%);
+  color: rgb(148 148 148 / 50%);
   font-size: 100px;
   text-align: left;
   animation: h1 3s ease-out;

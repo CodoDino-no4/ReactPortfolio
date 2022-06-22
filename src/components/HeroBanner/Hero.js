@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import './Hero.scss';
-import HeroImg from './SVG/Hero';
+import HeroImg from './SVG/HeroSVG';
 
 export default class Hero extends Component {
   constructor(props) {
