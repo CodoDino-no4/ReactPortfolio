@@ -5327,10 +5327,10 @@ raw-body@2.5.1:
     iconv-lite "0.4.24"
     unpipe "1.0.0"
 
-react-dom@17.0.2:
+"react-dom@npm:@hot-loader/react-dom":
   version "17.0.2"
-  resolved "https://registry.yarnpkg.com/react-dom/-/react-dom-17.0.2.tgz#ecffb6845e3ad8dbfcdc498f0d0a939736502c23"
-  integrity sha512-s4h96KtLDUQlsENhMn1ar8t2bEa+q/YAtj8pPPdIjPDGBDIVNsrD9aXNWqspUe6AzKCIG0C1HZZLqLV7qpOBGA==
+  resolved "https://registry.yarnpkg.com/@hot-loader/react-dom/-/react-dom-17.0.2.tgz#0b24e484093e8f97eb5c72bebdda44fc20bc8400"
+  integrity sha512-G2RZrFhsQClS+bdDh/Ojpk3SgocLPUGnvnJDTQYnmKSSwXtU+Yh+8QMs+Ia3zaAvBiOSpIIDSUxuN69cvKqrWg==
   dependencies:
     loose-envify "^1.1.0"
     object-assign "^4.1.1"
