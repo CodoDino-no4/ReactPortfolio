@@ -34,5 +34,5 @@ module.exports = {
     publicPath: 'http://localhost:3000/dist/',
     hotOnly: true
   },
-  plugins: ['react-hot-loader/babel']
+  plugins: [new webpack.HotModuleReplacementPlugin()]
 };
