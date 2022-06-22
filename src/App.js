@@ -1,7 +1,7 @@
+import { hot } from 'react-hot-loader/root';
 import React, { Component } from 'react';
 import { BrowserRouter as Router } from 'react-router-dom';
 import './App.scss';
-import { hot } from 'react-hot-loader/root';
 import Navbar from './components/Navbar/Navbar';
 import Footer from './components/Footer/Footer';
 import Home from './components/Sections/Home/Home';
