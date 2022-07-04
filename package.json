@@ -6,18 +6,18 @@
   "scripts": {
     "start": "webpack-dev-server --mode development",
     "lint": "eslint \"src/**/*.js\" -c .eslintrc.js",
-    "lint:fix": "npm run lint -- --fix",
-    "precommit": "npm run lint-staged",
+    "lint:fix": "yarn run lint -- --fix",
+    "precommit": "yarn run lint-staged",
     "lint-staged": "lint-staged"
   },
   "husky": {
     "hooks": {
-      "pre-commit": "npm run precommit"
+      "pre-commit": "yarn run precommit"
     }
   },
   "lint-staged": {
     "src/**": [
-      "npm run lint:fix"
+      "yarn run lint:fix"
     ]
   },
   "eslintIgnore": [
@@ -32,7 +32,7 @@
   },
   "dependencies": {
     "react": "17.0.2",
-    "react-dom": "npm:@hot-loader/react-dom",
+    "react-dom": "yarn:@hot-loader/react-dom",
     "react-intersection-observer": "^8.33.1",
     "react-router-dom": "^6.2.1",
     "react-scroll": "^1.8.4",
