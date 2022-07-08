@@ -54,10 +54,10 @@ export default class Navbar extends Component {
               <li className="nav-item">
                 <div className="animation">
                   <NavHoverRight
-                    style={this.state.isMobMenuOpen && { display: 'none' }}
+                    style={this.state.isMobMenuOpen ? { display: 'none' } : {}}
                   />
                   <NavHoverLeft
-                    style={this.state.isMobMenuOpen && { display: 'none' }}
+                    style={this.state.isMobMenuOpen ? { display: 'none' } : {}}
                   />
                 </div>
                 <Link
@@ -76,10 +76,10 @@ export default class Navbar extends Component {
               <li className="nav-item">
                 <div className="animation">
                   <NavHoverRight
-                    style={this.state.isMobMenuOpen && { display: 'none' }}
+                    style={this.state.isMobMenuOpen ? { display: 'none' } : {}}
                   />
                   <NavHoverLeft
-                    style={this.state.isMobMenuOpen && { display: 'none' }}
+                    style={this.state.isMobMenuOpen ? { display: 'none' } : {}}
                   />
                 </div>
                 <Link
@@ -98,10 +98,10 @@ export default class Navbar extends Component {
               <li className="nav-item">
                 <div className="animation">
                   <NavHoverRight
-                    style={this.state.isMobMenuOpen && { display: 'none' }}
+                    style={this.state.isMobMenuOpen ? { display: 'none' } : {}}
                   />
                   <NavHoverLeft
-                    style={this.state.isMobMenuOpen && { display: 'none' }}
+                    style={this.state.isMobMenuOpen ? { display: 'none' } : {}}
                   />
                 </div>
                 <Link
@@ -120,10 +120,10 @@ export default class Navbar extends Component {
               <li className="nav-item">
                 <div className="animation">
                   <NavHoverRight
-                    style={this.state.isMobMenuOpen && { display: 'none' }}
+                    style={this.state.isMobMenuOpen ? { display: 'none' } : {}}
                   />
                   <NavHoverLeft
-                    style={this.state.isMobMenuOpen && { display: 'none' }}
+                    style={this.state.isMobMenuOpen ? { display: 'none' } : {}}
                   />
                 </div>
                 <Link
