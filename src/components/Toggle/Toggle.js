@@ -5,36 +5,26 @@ class Toggle extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      toggle: false
+      isActive: false
     };
   }
 
-  // toggleSwitch() {
-  //   this.setState(
-  //     {
-  //       toggle: !this.state.toggle
-  //     },
-  //     () => {
-  //       console.log(this.state.toggle);
-  //     }
-  //   );
-  // }
+  setActive = () => {
+    this.setState({
+      isActive: !this.state.isActive
+    });
+  };
+
   render() {
     return (
-      <div className="toggle-switch">
-        <input
-          type="checkbox"
-          className="toggle-switch-checkbox"
-          name={this.props.name}
-          id={this.props.name}
-        />
-        <label className="toggle-switch-label" htmlFor={this.props.name}>
-          <span
-            className="toggle-switch-inner"
-            data-on={this.props.on}
-            data-off={this.props.off}
+      <div className="icon">
+        <label>
+          <input
+            className="check"
+            checked={this.state.isActive}
+            type="checkbox"
           />
-          <span className="toggle-switch-switch" />
+          <div className={`icon-${this.props.name}`} onClick={this.setActive} />
         </label>
       </div>
     );
@@ -42,3 +32,34 @@ class Toggle extends Component {
 }
 
 export default Toggle;
+
+// const App = () => {
+//   const [checked, setChecked] = React.useState(false);
+
+//   const handleChange = () => {
+//     setChecked(!checked);
+//   };
+
+//   return (
+//     <div>
+//       <Checkbox
+//         label="My Value"
+//         value={checked}
+//         onChange={handleChange}
+//       />
+
+//       <p>Is "My Value" checked? {checked.toString()}</p>
+//     </div>
+//   );
+// };
+
+// const Checkbox = ({ label, value, onChange }) => {
+//   return (
+//     <label>
+//       <input type="checkbox" checked={value} onChange={onChange} />
+//       {label}
+//     </label>
+//   );
+// };
+
+// export default App;

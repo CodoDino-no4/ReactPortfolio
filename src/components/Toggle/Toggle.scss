@@ -1,92 +1,52 @@
 @import '../../App';
+:root {
+  --primary-light: #8abdff;
+  --primary: #6d5dfc;
+  --primary-dark: #5b0eeb;
+  
+  --white: #FFFFFF;
+  --greyLight-1: #E4EBF5;
+  --greyLight-2: #c8d0e7;
+  --greyLight-3: #bec8e4;
+  --greyDark: #9baacf;
+}
 
-.toggle-switch {
-    position: relative;
-    width: 75px;
-    -webkit-user-select: none;
-    -moz-user-select: none;
-    -ms-user-select: none;
-    margin-left: 1em;
+$shadow: .3rem .3rem .6rem var(--greyLight-2), 
+-.2rem -.2rem .5rem var(--white);
+$inner-shadow: inset .2rem .2rem .5rem var(--greyLight-2), 
+inset -.2rem -.2rem .5rem var(--white);
 
-    &-checkbox {
-        display: none;
-    }
+.icon {
+  grid-column: 3 / 4;
+  grid-row: 4 / 5;
+  display: flex;
+  justify-content: space-between;
 
-    &-label {
-        display: block;
-        overflow: hidden;
-        cursor: pointer;
-        border-radius: 20px;
-        box-shadow: 3px 4px 10px 2px #c7c7c7;
+  &-theme, &-other, &-other {
+    width: 2rem;
+    height: 2rem;
+    border-radius: 50%;
+    box-shadow: $shadow;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 2rem;
+    cursor: pointer;
+    color: var(--greyDark);
+    transition: all .5s ease;
+  }
+  
+}
 
-    }
+.check:checked +.icon-theme{
+        box-shadow: $inner-shadow;
+        color: var(--primary);
+}
 
-    &-inner {
-        display: block;
-        width: 200%;
-        margin-left: -100%;
-        transition: margin 0.3s ease-in 0s;
+.check:checked + .icon:hover {
+        color: var(--primary);
+}
 
-        &:before,
-        &:after {
-            display: block;
-            float: left;
-            width: 50%;
-            height: 34px;
-            padding: 0;
-            line-height: 36px;
-            font-size: 23px;
-            font-weight: bold;
-            box-sizing: border-box;
-            font-family: $toggle--font;
-        }
-
-        &:before {
-            content: attr(data-off);
-            padding-left: 8px;
-            background-color: $dark--toggle--bg;
-            color: $dark--toggle--text;
-        }
-    }
-
-    &-disabled {
-        background-color: #ddd;
-        cursor: not-allowed;
-
-        &:before {
-            background-color: #ddd;
-            cursor: not-allowed;
-        }
-    }
-
-    &-inner:after {
-        content: attr(data-on);
-        padding-right: 10px;
-        background-color: $toggle--bg;
-        color: $toggle--text;
-        text-align: right;
-    }
-
-    &-switch {
-        display: block;
-        width: 24px;
-        margin: 5px;
-        box-shadow: inset 0 0 20px 0 #262626;
-        position: absolute;
-        top: 0;
-        bottom: 0;
-        right: 40px;
-        border-radius: 20px;
-        transition: all 0.3s ease-in 0s;
-    }
-
-    &-checkbox:checked+&-label {
-        .toggle-switch-inner {
-            margin-left: 0;
-        }
-
-        .toggle-switch-switch {
-            right: 0px;
-        }
-    }
+.check {
+    display: none;
 }

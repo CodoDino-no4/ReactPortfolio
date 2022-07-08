@@ -158,9 +158,7 @@ export default class Navbar extends Component {
               </li>
               <li className="tools-item">
                 <Toggle
-                  name="dark-toggle"
-                  on="Light"
-                  off="Dark"
+                  name="theme"
                   // onClick={}
                 />
               </li>
