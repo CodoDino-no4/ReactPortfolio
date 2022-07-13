@@ -1,49 +1,39 @@
 import React, { Component } from 'react';
-import './Navbar.scss';
 import { Link } from 'react-scroll';
+import './Navbar.scss';
 import NavHoverLeft from './SVG/NavHover-left';
 import NavHoverRight from './SVG/NavHover-right';
 import Toggle from '../Toggle/Toggle';
+import DarkModeContent from '../../images/dark-mode.svg';
+import LightModeContent from '../../images/light-mode.svg';
 
 export default class Navbar extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      isDark: false,
       isMobMenuOpen: false,
       navbarOffset: -80
     };
   }
 
-  _toggleMobMenu = () => {
+  toggleMobMenu = () => {
     this.setState({
       isMobMenuOpen: !this.state.isMobMenuOpen
     });
   };
 
-  _closeMobMenu = () => {
+  closeMobMenu = () => {
     this.setState({
       isMobMenuOpen: false
     });
   };
-
-  // _toggleTheme = () => {
-  //   this.setState(
-  //     {
-  //       isDark: !this.state.isDark
-  //     },
-  //     () => {
-  //       console.log(this.state.isDark);
-  //     }
-  //   );
-  // };
 
   render() {
     return (
       <>
         <nav className="navbar">
           <div className="navbar-container">
-            <div className="menu-icon" onClick={this._toggleMobMenu}>
+            <div className="menu-icon" onClick={this.toggleMobMenu}>
               <i className={'burger fas fa-bars'} />
             </div>
             <ul
@@ -63,7 +53,7 @@ export default class Navbar extends Component {
                 <Link
                   to="home"
                   className="nav-links"
-                  onClick={this._closeMobMenu}
+                  onClick={this.closeMobMenu}
                   spy={true}
                   smooth={true}
                   duration={1000}
@@ -85,7 +75,7 @@ export default class Navbar extends Component {
                 <Link
                   to="about"
                   className="nav-links"
-                  onClick={this._closeMobMenu}
+                  onClick={this.closeMobMenu}
                   spy={true}
                   smooth={true}
                   duration={1000}
@@ -107,7 +97,7 @@ export default class Navbar extends Component {
                 <Link
                   to="projects"
                   className="nav-links"
-                  onClick={this._closeMobMenu}
+                  onClick={this.closeMobMenu}
                   spy={true}
                   smooth={true}
                   duration={1000}
@@ -129,7 +119,7 @@ export default class Navbar extends Component {
                 <Link
                   to="contact"
                   className="nav-links"
-                  onClick={this._closeMobMenu}
+                  onClick={this.closeMobMenu}
                   spy={true}
                   smooth={true}
                   duration={1000}
@@ -145,7 +135,7 @@ export default class Navbar extends Component {
                 <Link
                   to="home"
                   className="navbar-logo"
-                  onClick={this._closeMobMenu}
+                  onClick={this.closeMobMenu}
                   spy={true}
                   smooth={true}
                   duration={1000}
@@ -158,10 +148,10 @@ export default class Navbar extends Component {
               </li>
               <li className="tools-item">
                 <Toggle
-                  name="dark-toggle"
-                  on="Light"
-                  off="Dark"
-                  // onClick={}
+                  name="theme"
+                  dataOn={DarkModeContent}
+                  dataOff={LightModeContent}
+                  clickHandler={this.props.themeHandler}
                 />
               </li>
             </ul>

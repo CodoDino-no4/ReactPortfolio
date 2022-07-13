@@ -42,7 +42,7 @@
   max-width: calc((100%) - 60px);
   font-size: 18px;
   font-weight: 700;
-  color: #fff;
+  color: $white;
   background-color: #1f98f4;
 }
 
@@ -67,7 +67,7 @@
 
 .cards-item-info {
   padding: 20px 30px 30px;
-  background-color: $bg;
+  background-color: var(--bg);
 }
 
 .cards-item-text {

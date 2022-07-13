@@ -1,6 +1,7 @@
 import { hot } from 'react-hot-loader/root';
-import React, { Component } from 'react';
+import React from 'react';
 import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
+import useLocalStorage from 'use-local-storage';
 import './App.scss';
 import Navbar from './components/Navbar/Navbar';
 import Footer from './components/Footer/Footer';
@@ -11,22 +12,33 @@ import Contact from './components/Sections/Contact/Contact';
 import RedirectPage from './components/Redirect/Redirect';
 // import NotFound from './components/Pages/404/NotFound';
 
-class App extends Component {
-  render() {
-    return (
+function App() {
+  const defaultDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
+  const [theme, setTheme] = useLocalStorage(
+    'theme',
+    defaultDark ? 'dark' : 'light'
+  );
+
+  const switchTheme = () => {
+    const newTheme = theme === 'light' ? 'dark' : 'light';
+    setTheme(newTheme);
+  };
+
+  return (
+    <div data-theme={theme}>
       <Router>
-        <Navbar />
+        <Navbar themeHandler={switchTheme} />
         <Home />
         <About />
         <Projects />
         <Contact />
         <Footer />
         <Routes>
-          <Route path="/external-link" element={<RedirectPage />} />
+          <Route path="/redirect" element={<RedirectPage />} />
         </Routes>
       </Router>
-    );
-  }
+    </div>
+  );
 }
 
 export default hot(App);

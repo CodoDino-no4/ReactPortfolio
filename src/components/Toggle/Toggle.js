@@ -5,36 +5,36 @@ class Toggle extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      toggle: false
+      isActive: false
     };
   }
+  // Tells input if it is meant to be checked or not
+  setActive = () => {
+    this.setState({
+      isActive: !this.state.isActive
+    });
+  };
 
-  // toggleSwitch() {
-  //   this.setState(
-  //     {
-  //       toggle: !this.state.toggle
-  //     },
-  //     () => {
-  //       console.log(this.state.toggle);
-  //     }
-  //   );
-  // }
   render() {
     return (
-      <div className="toggle-switch">
-        <input
-          type="checkbox"
-          className="toggle-switch-checkbox"
-          name={this.props.name}
-          id={this.props.name}
-        />
-        <label className="toggle-switch-label" htmlFor={this.props.name}>
-          <span
-            className="toggle-switch-inner"
-            data-on={this.props.on}
-            data-off={this.props.off}
+      <div className="icon">
+        <label>
+          <input
+            className="check"
+            checked={this.state.isActive}
+            type="checkbox"
+            onChange={this.setActive}
           />
-          <span className="toggle-switch-switch" />
+          <div
+            className={`icon-${this.props.name}`}
+            onClick={this.props.clickHandler}
+          >
+            {this.state.isActive ? (
+              <img src={this.props.dataOff} />
+            ) : (
+              <img src={this.props.dataOn} />
+            )}
+          </div>
         </label>
       </div>
     );
