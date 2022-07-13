@@ -1,13 +1,15 @@
-$bg: #fff;
-$text: #000;
-$toggle--bg: #fff;
-$toggle--text: #5a5454;
-$dark--bg: #0e0f12;
-$dark-text: #fff;
-$dark--toggle--bg: #808080;
-$dark--toggle--text: #313131;
-$toggle--font:'Dongle',
-sans-serif;
+// Light Mode App.scss
+[data-theme='light'] {
+  --bg: #fff;
+  --text: #000;
+}
+
+[data-theme='dark'] {
+  --bg: #0e0f12;
+  --text: #fff;
+}
+
+// Font settings
 $title--font: 'Atkinson Hyperlegible',
 sans-serif;
 $h1--font--weight: 600;
@@ -18,9 +20,17 @@ $h1--size: 70px;
 $h2--size: 30px;
 $body--size: 16px;
 
+// Breakpoints
 $breakpoint--mob: 480px;
 $breakpoint--tablet: 960px;
 $breakpoint--screen: 1200px;
+
+// Toggle colours
+$white: #FFFFFF;
+$greyLight-1: #E4EBF5;
+$greyLight-2: #c8d0e7;
+$greyLight-3: #bec8e4;
+$greyDark: #a8a8a8;
 
 * {
   margin: 0;
@@ -32,11 +42,11 @@ $breakpoint--screen: 1200px;
 }
 
 body {
-  background-color: $bg;
+  background-color: var(--bg);
 }
 
 h1 {
-  color: $text;
+  color: var(--text);
   letter-spacing: 1px;
   font-family: $title--font;
   font-size: $h1--size;
@@ -45,11 +55,11 @@ h1 {
 }
 
 h2 {
-  color: $text;
+  color: var(--text);
   font-family: $title--font;
   font-size: $h2--size;
 }
 
 p {
-  color: $text;
+  color: var(--text);
 }

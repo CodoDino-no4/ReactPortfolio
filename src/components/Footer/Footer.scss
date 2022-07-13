@@ -33,7 +33,7 @@ grid-auto-rows: 60px;
 
 .grid-item {
   text-align: center;
-  color: $bg;
+  color: var(--text);
     display: flex;
     align-items: center;
 }
@@ -44,12 +44,12 @@ grid-auto-rows: 60px;
 
 .grid-item > p {
     text-align: center;
-  color: $bg;
+  color: var(--text);
       padding-left: 20px;
 }
 
 .footer-br>p {
   text-align: center;
-  color: $bg;
+  color: var(--text);
   padding-bottom: 10px;
 }

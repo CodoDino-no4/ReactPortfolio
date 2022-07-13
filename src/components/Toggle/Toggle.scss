@@ -1,20 +1,9 @@
 @import '../../App';
-:root {
-  --primary-light: #8abdff;
-  --primary: #6d5dfc;
-  --primary-dark: #5b0eeb;
-  
-  --white: #FFFFFF;
-  --greyLight-1: #E4EBF5;
-  --greyLight-2: #c8d0e7;
-  --greyLight-3: #bec8e4;
-  --greyDark: #9baacf;
-}
 
-$shadow: .3rem .3rem .6rem var(--greyLight-2), 
--.2rem -.2rem .5rem var(--white);
-$inner-shadow: inset .2rem .2rem .5rem var(--greyLight-2), 
-inset -.2rem -.2rem .5rem var(--white);
+$shadow: .3rem .3rem .6rem $greyLight-2, 
+-.2rem -.2rem .5rem $white;
+$inner-shadow: inset .2rem .2rem .5rem $greyLight-2, 
+inset -.2rem -.2rem .5rem $white;
 
 .icon {
   grid-column: 3 / 4;
@@ -23,8 +12,8 @@ inset -.2rem -.2rem .5rem var(--white);
   justify-content: space-between;
 
   &-theme, &-other, &-other {
-    width: 2rem;
-    height: 2rem;
+    width: 2.5rem;
+    height: 2.5rem;
     border-radius: 50%;
     box-shadow: $shadow;
     display: flex;
@@ -32,19 +21,21 @@ inset -.2rem -.2rem .5rem var(--white);
     align-items: center;
     font-size: 2rem;
     cursor: pointer;
-    color: var(--greyDark);
+    background-color: $greyDark;
     transition: all .5s ease;
   }
   
 }
 
-.check:checked +.icon-theme{
-        box-shadow: $inner-shadow;
-        color: var(--primary);
+.icon-theme > img {
+  width:100%;
+  height:100%;
+  margin: 5px;
 }
 
-.check:checked + .icon:hover {
-        color: var(--primary);
+.check:checked +.icon-theme {
+        box-shadow: $inner-shadow;
+        background-color: $white;
 }
 
 .check {

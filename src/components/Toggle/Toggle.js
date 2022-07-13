@@ -8,7 +8,7 @@ class Toggle extends Component {
       isActive: false
     };
   }
-
+  // Tells input if it is meant to be checked or not
   setActive = () => {
     this.setState({
       isActive: !this.state.isActive
@@ -23,8 +23,18 @@ class Toggle extends Component {
             className="check"
             checked={this.state.isActive}
             type="checkbox"
+            onChange={this.setActive}
           />
-          <div className={`icon-${this.props.name}`} onClick={this.setActive} />
+          <div
+            className={`icon-${this.props.name}`}
+            onClick={this.props.clickHandler}
+          >
+            {this.state.isActive ? (
+              <img src={this.props.dataOff} />
+            ) : (
+              <img src={this.props.dataOn} />
+            )}
+          </div>
         </label>
       </div>
     );
@@ -32,34 +42,3 @@ class Toggle extends Component {
 }
 
 export default Toggle;
-
-// const App = () => {
-//   const [checked, setChecked] = React.useState(false);
-
-//   const handleChange = () => {
-//     setChecked(!checked);
-//   };
-
-//   return (
-//     <div>
-//       <Checkbox
-//         label="My Value"
-//         value={checked}
-//         onChange={handleChange}
-//       />
-
-//       <p>Is "My Value" checked? {checked.toString()}</p>
-//     </div>
-//   );
-// };
-
-// const Checkbox = ({ label, value, onChange }) => {
-//   return (
-//     <label>
-//       <input type="checkbox" checked={value} onChange={onChange} />
-//       {label}
-//     </label>
-//   );
-// };
-
-// export default App;
