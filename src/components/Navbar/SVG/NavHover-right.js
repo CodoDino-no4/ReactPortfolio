@@ -2,7 +2,7 @@ import React, { useState, createRef, useEffect } from 'react';
 import styled from 'styled-components';
 import { useInView } from 'react-intersection-observer';
 
-const NavHoverRight = props => {
+const NavHoverRight = (props) => {
   const [inViewRef, inView] = useInView({
     triggerOnce: true
   });

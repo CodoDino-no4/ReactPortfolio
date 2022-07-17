@@ -1,37 +1,65 @@
-$text: #000;
-$bg: #fff;
-$footer--bg: #0e0f12;
-$title--font: 'Atkinson Hyperlegible', sans-serif;
-$body--font: 'IBM Plex Sans KR', sans-serif;
-$title--size: 70px;
+// Light Mode App.scss
+[data-theme='light'] {
+  --bg: #fff;
+  --text: #000;
+}
 
+[data-theme='dark'] {
+  --bg: #0e0f12;
+  --text: #fff;
+}
+
+// Font settings
+$title--font: 'Kanit',
+sans-serif;
+$h1--font--weight: 700;
+$body--font: 'IBM Plex Sans KR',
+sans-serif;
+$body--font--weight: 300;
+$h1--size: 70px;
+$h2--size: 30px;
+$body--size: 16px;
+
+// Breakpoints
 $breakpoint--mob: 480px;
 $breakpoint--tablet: 960px;
 $breakpoint--screen: 1200px;
+
+// Toggle colours
+$white: #FFFFFF;
+$greyLight-1: #E4EBF5;
+$greyLight-2: #c8d0e7;
+$greyLight-3: #bec8e4;
+$greyDark: #a8a8a8;
 
 * {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
   font-family: $body--font;
+  font-weight: $body--font--weight;
+  font-size: $body--size;
 }
 
 body {
-  background-color: $bg;
+  background-color: var(--bg);
 }
 
 h1 {
-  color: $text;
+  color: var(--text);
   letter-spacing: 1px;
   font-family: $title--font;
-  font-size: $title--size;
+  font-size: $h1--size;
+  font-weight: $h1--font--weight;
   text-align: center;
 }
 
 h2 {
-  color: $text;
+  color: var(--text);
+  font-family: $title--font;
+  font-size: $h2--size;
 }
 
 p {
-  color: $text;
+  color: var(--text);
 }

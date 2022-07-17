@@ -1,28 +1,29 @@
 import React, { Component } from 'react';
-import './Navbar.scss';
 import { Link } from 'react-scroll';
+import propTypes from 'prop-types';
+import './Navbar.scss';
 import NavHoverLeft from './SVG/NavHover-left';
 import NavHoverRight from './SVG/NavHover-right';
+import Toggle from '../Toggle/Toggle';
+import DarkModeContent from '../../images/dark-mode.svg';
+import LightModeContent from '../../images/light-mode.svg';
 
-export default class Navbar extends Component {
+class Navbar extends Component {
   constructor(props) {
     super(props);
     this.state = {
       isMobMenuOpen: false,
       navbarOffset: -80
     };
-
-    this._toggleMobMenu = this._toggleMobMenu.bind(this);
-    this._closeMobMenu = this._closeMobMenu.bind(this);
   }
 
-  _toggleMobMenu = () => {
+  toggleMobMenu = () => {
     this.setState({
       isMobMenuOpen: !this.state.isMobMenuOpen
     });
   };
 
-  _closeMobMenu = () => {
+  closeMobMenu = () => {
     this.setState({
       isMobMenuOpen: false
     });
@@ -33,19 +34,27 @@ export default class Navbar extends Component {
       <>
         <nav className="navbar">
           <div className="navbar-container">
-            <div className="menu-icon" onClick={this._toggleMobMenu}>
+            <div className="menu-icon" onClick={this.toggleMobMenu}>
               <i className={'burger fas fa-bars'} />
             </div>
-            <ul className={this.state.isMobMenuOpen ? 'nav-menu active' : 'nav-menu'}>
+            <ul
+              className={
+                this.state.isMobMenuOpen ? 'nav-menu active' : 'nav-menu'
+              }
+            >
               <li className="nav-item">
                 <div className="animation">
-                  <NavHoverRight style={this.state.isMobMenuOpen ? { display: 'none' } : {}} />
-                  <NavHoverLeft style={this.state.isMobMenuOpen ? { display: 'none' } : {}} />
+                  <NavHoverRight
+                    style={this.state.isMobMenuOpen ? { display: 'none' } : {}}
+                  />
+                  <NavHoverLeft
+                    style={this.state.isMobMenuOpen ? { display: 'none' } : {}}
+                  />
                 </div>
                 <Link
                   to="home"
                   className="nav-links"
-                  onClick={this._closeMobMenu}
+                  onClick={this.closeMobMenu}
                   spy={true}
                   smooth={true}
                   duration={1000}
@@ -57,13 +66,17 @@ export default class Navbar extends Component {
               </li>
               <li className="nav-item">
                 <div className="animation">
-                  <NavHoverRight style={this.state.isMobMenuOpen ? { display: 'none' } : {}} />
-                  <NavHoverLeft style={this.state.isMobMenuOpen ? { display: 'none' } : {}} />
+                  <NavHoverRight
+                    style={this.state.isMobMenuOpen ? { display: 'none' } : {}}
+                  />
+                  <NavHoverLeft
+                    style={this.state.isMobMenuOpen ? { display: 'none' } : {}}
+                  />
                 </div>
                 <Link
                   to="about"
                   className="nav-links"
-                  onClick={this._closeMobMenu}
+                  onClick={this.closeMobMenu}
                   spy={true}
                   smooth={true}
                   duration={1000}
@@ -75,13 +88,17 @@ export default class Navbar extends Component {
               </li>
               <li className="nav-item">
                 <div className="animation">
-                  <NavHoverRight style={this.state.isMobMenuOpen ? { display: 'none' } : {}} />
-                  <NavHoverLeft style={this.state.isMobMenuOpen ? { display: 'none' } : {}} />
+                  <NavHoverRight
+                    style={this.state.isMobMenuOpen ? { display: 'none' } : {}}
+                  />
+                  <NavHoverLeft
+                    style={this.state.isMobMenuOpen ? { display: 'none' } : {}}
+                  />
                 </div>
                 <Link
                   to="projects"
                   className="nav-links"
-                  onClick={this._closeMobMenu}
+                  onClick={this.closeMobMenu}
                   spy={true}
                   smooth={true}
                   duration={1000}
@@ -93,13 +110,17 @@ export default class Navbar extends Component {
               </li>
               <li className="nav-item">
                 <div className="animation">
-                  <NavHoverRight style={this.state.isMobMenuOpen ? { display: 'none' } : {}} />
-                  <NavHoverLeft style={this.state.isMobMenuOpen ? { display: 'none' } : {}} />
+                  <NavHoverRight
+                    style={this.state.isMobMenuOpen ? { display: 'none' } : {}}
+                  />
+                  <NavHoverLeft
+                    style={this.state.isMobMenuOpen ? { display: 'none' } : {}}
+                  />
                 </div>
                 <Link
                   to="contact"
                   className="nav-links"
-                  onClick={this._closeMobMenu}
+                  onClick={this.closeMobMenu}
                   spy={true}
                   smooth={true}
                   duration={1000}
@@ -110,22 +131,36 @@ export default class Navbar extends Component {
                 </Link>
               </li>
             </ul>
-            <Link
-              to="home"
-              className="navbar-logo"
-              onClick={this._closeMobMenu}
-              spy={true}
-              smooth={true}
-              duration={1000}
-              isDynamic={true}
-              offset={this.state.navbarOffset}
-            >
-              ALICE
-              <i className="fas fa-ghost" />
-            </Link>
+            <ul className="navbar-tools">
+              <li className="tools-item">
+                <Link
+                  to="home"
+                  className="navbar-logo"
+                  onClick={this.closeMobMenu}
+                  spy={true}
+                  smooth={true}
+                  duration={1000}
+                  isDynamic={true}
+                  offset={this.state.navbarOffset}
+                ></Link>
+              </li>
+              <li className="tools-item">
+                <Toggle
+                  name="theme"
+                  dataOn={DarkModeContent}
+                  dataOff={LightModeContent}
+                  clickHandler={this.props.themeHandler}
+                />
+              </li>
+            </ul>
           </div>
         </nav>
       </>
     );
   }
 }
+Navbar.propTypes = {
+  themeHandler: propTypes.func.isRequired
+};
+
+export default Navbar;
