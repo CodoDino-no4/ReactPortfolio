@@ -2,4 +2,44 @@
 
 .about {
   background-color: var(--bg);
+  padding: $outerPadding;
 }
+
+.about-container {
+  display: flex;
+  flex-direction: row;
+
+}
+
+.picture-intro {
+  display: flex;
+  flex-direction: column;
+  flex: fit-content;
+
+}
+
+.profile-pic > img {
+  max-width: 300px;
+  border-radius: 50%;
+}
+
+.key-info {
+  display:grid;
+  padding:20px;
+  grid-template-columns: repeat(2, 1fr);
+  grid-template-rows: repeat(2, 1fr);
+  grid-column-gap: 20px;
+  grid-row-gap: 20px;
+}
+
+.key-info > ul {
+  display: contents;
+
+}
+
+@media screen and (max-width: $breakpoint--tablet) {
+.about-container {
+  flex-direction: column;
+}
+}
+
