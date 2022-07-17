@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import { Link } from 'react-scroll';
+import propTypes from 'prop-types';
 import './Navbar.scss';
 import NavHoverLeft from './SVG/NavHover-left';
 import NavHoverRight from './SVG/NavHover-right';
@@ -7,7 +8,7 @@ import Toggle from '../Toggle/Toggle';
 import DarkModeContent from '../../images/dark-mode.svg';
 import LightModeContent from '../../images/light-mode.svg';
 
-export default class Navbar extends Component {
+class Navbar extends Component {
   constructor(props) {
     super(props);
     this.state = {
@@ -141,10 +142,7 @@ export default class Navbar extends Component {
                   duration={1000}
                   isDynamic={true}
                   offset={this.state.navbarOffset}
-                >
-                  ALICE
-                  <i className="fas fa-ghost" />
-                </Link>
+                ></Link>
               </li>
               <li className="tools-item">
                 <Toggle
@@ -161,3 +159,8 @@ export default class Navbar extends Component {
     );
   }
 }
+Navbar.propTypes = {
+  themeHandler: propTypes.func.isRequired
+};
+
+export default Navbar;

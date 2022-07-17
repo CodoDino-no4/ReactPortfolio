@@ -1,3 +1,5 @@
+@import '../../App.scss';
+
 .navbar {
   /* Permalink - use to edit and share this gradient: https://colorzilla.com/gradient-editor/#ffffff+9,ffffff+17,ffffff+100&1+0,0.95+66,0.9+84,0.5+91,0.2+96,0+100 */
   background: -moz-linear-gradient(top,
@@ -59,11 +61,6 @@
   align-items: center;
   padding: 0.5rem 1rem;
   cursor: pointer;
-}
-
-.fa-ghost {
-  margin-left: 0.5rem;
-  font-size: 1.8rem;
 }
 
 .nav-menu {

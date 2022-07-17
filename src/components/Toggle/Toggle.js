@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import propTypes from 'prop-types';
 import './Toggle.scss';
 
 class Toggle extends Component {
@@ -40,5 +41,12 @@ class Toggle extends Component {
     );
   }
 }
+
+Toggle.propTypes = {
+  clickHandler: propTypes.func.isRequired,
+  dataOff: propTypes.string.isRequired,
+  dataOn: propTypes.string.isRequired,
+  name: propTypes.string.isRequired
+};
 
 export default Toggle;
