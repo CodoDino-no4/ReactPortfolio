@@ -3,12 +3,14 @@
 .footer {
     background-color: #0e0f12;
     position: unset;
-    bottom: 0;
+    bottom: 0; 
+    padding: $outerPadding;
+}
+
+.footer-container {
     display: flex;
-    width: 100%;
     flex-direction: column;
     justify-content: space-evenly;
-    padding: $outerPadding;
 }
 
 .footer-items {
@@ -16,7 +18,6 @@
     flex-direction: row;
     justify-content: space-between;
     align-content: center;
-    padding-left: 50px;
 }
 
 .footer-art {
@@ -27,7 +28,6 @@
 grid-auto-rows: 60px;
     display: grid;
     width: 60%;
-    padding: 20px;
     justify-items: start;
     align-content: space-evenly;
 }
