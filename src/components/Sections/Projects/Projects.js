@@ -1,6 +1,5 @@
 import React, { Component } from 'react';
-import '../../../App.scss';
-import Cards from './Cards/Cards';
+import CardItem from './CardItem';
 import './Projects.scss';
 
 export default class Navbar extends Component {
@@ -9,12 +8,29 @@ export default class Navbar extends Component {
     this.state = {};
   }
 
+  getAllCards = () => {
+    //loop thorugh list pof cards
+    //add all cards to list
+  };
+
   render() {
     return (
       <>
         <section className="projects">
           <h1>PROJECTS</h1>
-          <Cards />
+          <div className="projects-container">
+            <div className="cards">
+              <div className="cards-items">
+                <CardItem />
+                <CardItem />
+              </div>
+              <div className="cards-items">
+                <CardItem />
+                <CardItem />
+                <CardItem />
+              </div>
+            </div>
+          </div>
         </section>
       </>
     );

@@ -47,9 +47,6 @@ class Navbar extends Component {
                   <NavHoverRight
                     style={this.state.isMobMenuOpen ? { display: 'none' } : {}}
                   />
-                  <NavHoverLeft
-                    style={this.state.isMobMenuOpen ? { display: 'none' } : {}}
-                  />
                 </div>
                 <Link
                   to="home"
@@ -67,9 +64,6 @@ class Navbar extends Component {
               <li className="nav-item">
                 <div className="animation">
                   <NavHoverRight
-                    style={this.state.isMobMenuOpen ? { display: 'none' } : {}}
-                  />
-                  <NavHoverLeft
                     style={this.state.isMobMenuOpen ? { display: 'none' } : {}}
                   />
                 </div>
@@ -91,9 +85,6 @@ class Navbar extends Component {
                   <NavHoverRight
                     style={this.state.isMobMenuOpen ? { display: 'none' } : {}}
                   />
-                  <NavHoverLeft
-                    style={this.state.isMobMenuOpen ? { display: 'none' } : {}}
-                  />
                 </div>
                 <Link
                   to="projects"
@@ -111,9 +102,6 @@ class Navbar extends Component {
               <li className="nav-item">
                 <div className="animation">
                   <NavHoverRight
-                    style={this.state.isMobMenuOpen ? { display: 'none' } : {}}
-                  />
-                  <NavHoverLeft
                     style={this.state.isMobMenuOpen ? { display: 'none' } : {}}
                   />
                 </div>

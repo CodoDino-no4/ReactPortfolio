@@ -1,6 +1,4 @@
-import { hot } from 'react-hot-loader/root';
 import React from 'react';
-import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
 import useLocalStorage from 'use-local-storage';
 import './App.scss';
 import Navbar from './components/Navbar/Navbar';
@@ -9,8 +7,6 @@ import Home from './components/Sections/Home/Home';
 import About from './components/Sections/About/About';
 import Projects from './components/Sections/Projects/Projects';
 import Contact from './components/Sections/Contact/Contact';
-import RedirectPage from './components/Pages/Redirect/Redirect';
-// import NotFound from './components/Pages/404/NotFound';
 
 function App() {
   const defaultDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
@@ -26,19 +22,14 @@ function App() {
 
   return (
     <div data-theme={theme}>
-      <Router>
-        <Navbar themeHandler={switchTheme} />
-        <Home />
-        <About />
-        <Projects />
-        <Contact />
-        <Footer />
-        <Routes>
-          <Route path="/redirect" element={<RedirectPage />} />
-        </Routes>
-      </Router>
+      <Navbar themeHandler={switchTheme} />
+      <Home />
+      <About />
+      <Projects />
+      <Contact />
+      <Footer />
     </div>
   );
 }
 
-export default hot(App);
+export default App;
