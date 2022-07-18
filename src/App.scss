@@ -1,9 +1,10 @@
-// Light Mode App.scss
+// Light Mode
 [data-theme='light'] {
   --bg: #fff;
   --text: #000;
 }
 
+// Dark Mode
 [data-theme='dark'] {
   --bg: #0e0f12;
   --text: #fff;
@@ -12,11 +13,12 @@
 // Font settings
 $title--font: 'Kanit',
 sans-serif;
-$h1--font--weight: 700;
 $body--font: 'IBM Plex Sans KR',
 sans-serif;
 $body--font--weight: 300;
 $h1--size: 70px;
+$h1--font--weight: 700;
+$h1--mob--size: 50px;
 $h2--size: 30px;
 $body--size: 16px;
 
@@ -33,7 +35,8 @@ $greyLight-3: #bec8e4;
 $greyDark: #a8a8a8;
 
 // Page margin
-$outerPadding: 0px 30px 30px 30px;
+$outerPadding: 0px 10% 30px 10%;
+$mobOuterPadding: 0px 10% 30px 10%;
 
 * {
   margin: 0;
@@ -65,4 +68,10 @@ h2 {
 
 p {
   color: var(--text);
+}
+
+@media screen and (max-width: $breakpoint--tablet) {
+  h1 {
+    font-size: $h1--mob--size;
+  }
 }

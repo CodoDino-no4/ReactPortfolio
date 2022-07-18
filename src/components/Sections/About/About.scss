@@ -7,17 +7,19 @@
 
 .about-container {
   display: flex;
-  flex-direction: row;
+    flex-direction: column;
 
 }
 
 .picture-intro {
   display: flex;
-  flex-direction: column;
+  flex-direction: row;
   justify-content: center;
 align-items: center;
 
 }
+
+
 
 .profile-pic > img {
   border-radius: 50%;
@@ -27,7 +29,7 @@ align-items: center;
 
 .key-info {
   display:grid;
-  padding:0px 20px;
+  padding: 0px;
   grid-template-columns: repeat(2, 1fr);
   grid-template-rows: repeat(2, max-content);
   grid-column-gap: 20px;
@@ -39,27 +41,28 @@ align-items: center;
 
 }
 
-@media screen and (max-width: $breakpoint--tablet) {
-.about-container {
+.intro {
+  width: 70%;
+  margin-left: 30px;
+}
+
+@media screen and (max-width: $breakpoint--mob) {
+  .picture-intro {
   flex-direction: column;
 }
 
-.profile-pic {
-  width:30%;
+.profile-pic > img {
+  max-width: max-content;
 
 }
+
 .intro {
-  width:70%;
-  padding:20px;
-}
-
-.picture-intro {
-  flex-direction: row;
-  align-items: center;
+  width: 100%;
+  padding-left: 0px;
 }
 
 .key-info {
-  padding: 0px;
+  display: block;
 }
 }
 

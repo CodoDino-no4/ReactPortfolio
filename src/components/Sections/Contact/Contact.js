@@ -11,7 +11,7 @@ export default class Contact extends Component {
     return (
       <section className="contact">
         <h1>CONTACT</h1>
-        <div className="container">
+        <div className="contact-container">
           <div className="headings">
             <h2>Lets connect...</h2>
           </div>
