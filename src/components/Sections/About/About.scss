@@ -2,4 +2,64 @@
 
 .about {
   background-color: var(--bg);
+  padding: $outerPadding;
 }
+
+.about-container {
+  display: flex;
+  flex-direction: row;
+
+}
+
+.picture-intro {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+align-items: center;
+
+}
+
+.profile-pic > img {
+  border-radius: 50%;
+  width:100%;
+  max-width: 250px;
+}
+
+.key-info {
+  display:grid;
+  padding:0px 20px;
+  grid-template-columns: repeat(2, 1fr);
+  grid-template-rows: repeat(2, max-content);
+  grid-column-gap: 20px;
+  grid-row-gap: 20px;
+}
+
+.key-info > ul {
+  display: contents;
+
+}
+
+@media screen and (max-width: $breakpoint--tablet) {
+.about-container {
+  flex-direction: column;
+}
+
+.profile-pic {
+  width:30%;
+
+}
+.intro {
+  width:70%;
+  padding:20px;
+}
+
+.picture-intro {
+  flex-direction: row;
+  align-items: center;
+}
+
+.key-info {
+  padding: 0px;
+}
+}
+
