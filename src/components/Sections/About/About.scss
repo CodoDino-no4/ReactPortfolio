@@ -14,12 +14,15 @@
 .picture-intro {
   display: flex;
   flex-direction: column;
+  justify-content: center;
+align-items: center;
 
 }
 
 .profile-pic > img {
   border-radius: 50%;
   width:100%;
+  max-width: 250px;
 }
 
 .key-info {
