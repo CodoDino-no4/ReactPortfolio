@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import { Link } from 'react-scroll';
 import propTypes from 'prop-types';
 import './Navbar.scss';
-import NavHoverRight from './SVG/NavHover-right';
+import Underline from './SVG/Underline';
 import Toggle from '../Toggle/Toggle';
 import Button from '../Button/Button';
 import DarkModeContent from '../../images/dark-mode.svg';
@@ -44,7 +44,7 @@ class Navbar extends Component {
             >
               <li className="nav-item">
                 <div className="animation">
-                  <NavHoverRight
+                  <Underline
                     style={this.state.isMobMenuOpen ? { display: 'none' } : {}}
                   />
                 </div>
@@ -63,7 +63,7 @@ class Navbar extends Component {
               </li>
               <li className="nav-item">
                 <div className="animation">
-                  <NavHoverRight
+                  <Underline
                     style={this.state.isMobMenuOpen ? { display: 'none' } : {}}
                   />
                 </div>
@@ -82,7 +82,7 @@ class Navbar extends Component {
               </li>
               <li className="nav-item">
                 <div className="animation">
-                  <NavHoverRight
+                  <Underline
                     style={this.state.isMobMenuOpen ? { display: 'none' } : {}}
                   />
                 </div>
@@ -101,7 +101,7 @@ class Navbar extends Component {
               </li>
               <li className="nav-item">
                 <div className="animation">
-                  <NavHoverRight
+                  <Underline
                     style={this.state.isMobMenuOpen ? { display: 'none' } : {}}
                   />
                 </div>
