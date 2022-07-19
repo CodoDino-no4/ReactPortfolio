@@ -2,9 +2,9 @@ import React, { Component } from 'react';
 import { Link } from 'react-scroll';
 import propTypes from 'prop-types';
 import './Navbar.scss';
-import NavHoverLeft from './SVG/NavHover-left';
 import NavHoverRight from './SVG/NavHover-right';
 import Toggle from '../Toggle/Toggle';
+import Button from '../Button/Button';
 import DarkModeContent from '../../images/dark-mode.svg';
 import LightModeContent from '../../images/light-mode.svg';
 
@@ -121,16 +121,7 @@ class Navbar extends Component {
             </ul>
             <ul className="navbar-tools">
               <li className="tools-item">
-                <Link
-                  to="home"
-                  className="navbar-logo"
-                  onClick={this.closeMobMenu}
-                  spy={true}
-                  smooth={true}
-                  duration={1000}
-                  isDynamic={true}
-                  offset={this.state.navbarOffset}
-                ></Link>
+                <Button name="blog" />
               </li>
               <li className="tools-item">
                 <Toggle

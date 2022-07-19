@@ -11,7 +11,7 @@ inset -.2rem -.2rem .5rem $white;
   display: flex;
   justify-content: space-between;
 
-  &-theme, &-other, &-other {
+  &-blog, &-other {
     width: 2.5rem;
     height: 2.5rem;
     border-radius: 50%;
@@ -22,22 +22,18 @@ inset -.2rem -.2rem .5rem $white;
     font-size: 2rem;
     cursor: pointer;
     background-color: $greyDark;
-    transition: all .5s ease;
+    transition: all .9s ease;
   }
   
 }
 
-.icon-theme > img {
+.icon-blog > img {
   width:100%;
   height:100%;
   margin: 5px;
 }
 
-.check:checked +.icon-theme, .icon-theme:hover {
-        box-shadow: $inner-shadow;
-        background-color: $white;
-}
-
-.check {
-    display: none;
+.icon-blog:hover {
+  box-shadow: $inner-shadow;
+  background-color: $white;
 }
