@@ -44,10 +44,6 @@ class Navbar extends Component {
             >
               <li className="nav-item">
                 <div className="animation">
-                  <Underline
-                    style={this.state.isMobMenuOpen ? { display: 'none' } : {}}
-                  />
-                </div>
                 <Link
                   to="home"
                   className="nav-links"
@@ -60,13 +56,14 @@ class Navbar extends Component {
                 >
                   HOME
                 </Link>
-              </li>
-              <li className="nav-item">
-                <div className="animation">
                   <Underline
+                    linkWidth={200}
                     style={this.state.isMobMenuOpen ? { display: 'none' } : {}}
                   />
                 </div>
+              </li>
+              <li className="nav-item">
+                <div className="animation">
                 <Link
                   to="about"
                   className="nav-links"
@@ -79,13 +76,14 @@ class Navbar extends Component {
                 >
                   ABOUT
                 </Link>
-              </li>
-              <li className="nav-item">
-                <div className="animation">
                   <Underline
+                    linkWidth={100}
                     style={this.state.isMobMenuOpen ? { display: 'none' } : {}}
                   />
                 </div>
+              </li>
+              <li className="nav-item">
+                <div className="animation">
                 <Link
                   to="projects"
                   className="nav-links"
@@ -98,13 +96,14 @@ class Navbar extends Component {
                 >
                   PROJECTS
                 </Link>
-              </li>
-              <li className="nav-item">
-                <div className="animation">
                   <Underline
+                    linkWidth={100}
                     style={this.state.isMobMenuOpen ? { display: 'none' } : {}}
                   />
                 </div>
+              </li>
+              <li className="nav-item">
+                <div className="animation">
                 <Link
                   to="contact"
                   className="nav-links"
@@ -117,6 +116,11 @@ class Navbar extends Component {
                 >
                   CONTACT
                 </Link>
+                  <Underline
+                    linkWidth={150}
+                    style={this.state.isMobMenuOpen ? { display: 'none' } : {}}
+                  />
+                </div>
               </li>
             </ul>
             <ul className="navbar-tools">

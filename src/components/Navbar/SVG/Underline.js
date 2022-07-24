@@ -16,7 +16,9 @@ const Underline = (props) => {
       <svg
         className={'animated'}
         xmlns="http://www.w3.org/2000/svg"
-        viewBox="5 0 220 10"
+        viewBox="0 0 30.956244 2.116668"
+        width={props.linkWidth }
+        height="25"
         {...props}
       >
         <path
@@ -34,9 +36,9 @@ const Underline = (props) => {
 };
 
 const Wrapper = styled.div`
-  .nav-links:hover {
-    stroke-dasharray: ${(props) => props.pathLength};
-    stroke-dashoffset: ${(props) => props.pathLength};
+  a:hover {
+    stroke-dasharray: ${(props) => props.linkWidth};
+    stroke-dashoffset: ${(props) => props.linkWidth};
     animation: draw 0.4s linear forwards;
   }
 

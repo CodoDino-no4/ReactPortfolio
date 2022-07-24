@@ -66,12 +66,15 @@
 }
 
 .animation {
-  position: fixed;
+  position: sticky;
 }
+
 
 .nav-links {
   padding: 0.5rem 1.5rem;
   cursor: pointer;
+    margin-left: auto;
+  margin-right: auto;
 }
 
 .nav-links:hover {
