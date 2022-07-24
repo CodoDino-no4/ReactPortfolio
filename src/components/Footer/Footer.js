@@ -22,7 +22,7 @@ const Footer = () => (
           </a>
           <a
             className="grid-item"
-            to="/https://www.linkedin.com/in/alicee5cha/"
+            href="https://linkedin.com/in/alicee5cha"
             target="_blank"
             rel="noopener"
           >
@@ -31,7 +31,7 @@ const Footer = () => (
           </a>
           <a
             className="grid-item"
-            to="https://codepen.io/alicee5"
+            href="https://codepen.io/alicee5"
             target="_blank"
             rel="noopener"
           >
@@ -40,7 +40,7 @@ const Footer = () => (
           </a>
           <a
             className="grid-item"
-            to="mailto:alicee5cha@gmail.com"
+            href="mailto:alicee5cha@gmail.com"
             target="_blank"
             rel="noopener"
           >
