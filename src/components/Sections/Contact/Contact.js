@@ -19,25 +19,35 @@ export default class Contact extends Component {
             <div className="contactColumn no1">
               <div className="row">
                 <input type="text" required />
-                <span>Name</span>
+                <span>
+                  <p>Name</p>
+                </span>
               </div>
               <div className="row">
                 <input type="text" required />
-                <span>Email</span>
+                <span>
+                  <p>Email</p>
+                </span>
               </div>
               <div className="row">
                 <input type="text" required />
-                <span>Company</span>
+                <span>
+                  <p>Company</p>
+                </span>
               </div>
               <div className="row">
                 <input type="text" required />
-                <span>Location</span>
+                <span>
+                  <p>Location</p>
+                </span>
               </div>
             </div>
             <div className="contactColumn no2">
               <div className="row">
                 <textarea required></textarea>
-                <span>Write your message here...</span>
+                <span>
+                  <p>Write your message here...</p>
+                </span>
               </div>
               <div className="textAreaRow"></div>
             </div>

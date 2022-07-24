@@ -2,12 +2,16 @@
 [data-theme='light'] {
   --bg: #fff;
   --text: #000;
+  --footer--bg: #211f30;
+  --footer--text: #fff;
 }
 
 // Dark Mode
 [data-theme='dark'] {
-  --bg: #0e0f12;
-  --text: #fff;
+  --bg: #211f30;
+  --text: #b8b8b8;
+  --footer--bg: #000;
+  --footer--text: #fff;
 }
 
 // Font settings
@@ -37,9 +41,6 @@ $greyDark: #a8a8a8;
 // Page margin
 $outerPadding: 0px 10% 30px 10%;
 $mobOuterPadding: 0px 10% 30px 10%;
-
-$footer--bg: #211f30;
-$footer--text: #fff;
 
 * {
   margin: 0;

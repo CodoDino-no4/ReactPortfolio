@@ -3,10 +3,10 @@
 .footer {
 
   h1, h2, p {
-  color: $footer--text !important;
+  color: var(--footer--text) !important;
   }
 
-  background-color: $footer--bg;
+  background-color: var(--footer--bg);
   position: unset;
   bottom: 0; 
   padding: $outerPadding;
@@ -42,6 +42,7 @@
   color: var(--text);
     display: flex;
     align-items: center;
+    text-decoration: none;
 }
 
 .grid-item > img {

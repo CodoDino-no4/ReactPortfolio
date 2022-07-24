@@ -10,10 +10,6 @@ root.render(
     <Routes>
       <Route path="/" element={<App />} />
       <Route path="/blog" element={<Blog />} />
-      <Route
-        path="/github"
-        render={() => (window.location = 'https://github.com/Alicee5cha')}
-      />
     </Routes>
   </BrowserRouter>
 );
