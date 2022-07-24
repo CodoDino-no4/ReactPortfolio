@@ -1,10 +1,16 @@
 @import '../../App';
 
 .footer {
-    background-color: #0e0f12;
-    position: unset;
-    bottom: 0; 
-    padding: $outerPadding;
+
+  h1, h2, p {
+  color: $footer--text !important;
+  }
+
+  background-color: $footer--bg;
+  position: unset;
+  bottom: 0; 
+  padding: $outerPadding;
+  padding-top: 30px;
 }
 
 .footer-container {
@@ -25,11 +31,10 @@
 }
 
 .links-grid {
-grid-auto-rows: 60px;
     display: grid;
     width: 60%;
     justify-items: start;
-    align-content: space-evenly;
+    align-content: space-between;
 }
 
 .grid-item {

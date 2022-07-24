@@ -28,7 +28,7 @@ $breakpoint--tablet: 960px;
 $breakpoint--screen: 1200px;
 
 // Toggle colours
-$white: #FFFFFF;
+$white: #fff;
 $greyLight-1: #E4EBF5;
 $greyLight-2: #c8d0e7;
 $greyLight-3: #bec8e4;
@@ -37,6 +37,9 @@ $greyDark: #a8a8a8;
 // Page margin
 $outerPadding: 0px 10% 30px 10%;
 $mobOuterPadding: 0px 10% 30px 10%;
+
+$footer--bg: #211f30;
+$footer--text: #fff;
 
 * {
   margin: 0;

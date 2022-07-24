@@ -1,5 +1,4 @@
 import React from 'react';
-import { Link } from 'react-router-dom';
 import './Footer.scss';
 import FooterArt from './SVG/FooterArt';
 import linkedin from '../../images/linkedin-logo.svg';
@@ -12,42 +11,42 @@ const Footer = () => (
     <div className="footer-container">
       <div className="footer-items">
         <div className="links-grid">
-          <Link
+          <a
             className="grid-item"
-            to="/external-link"
+            href="https://github.com/Alicee5cha"
             target="_blank"
-            rel="noreferrer"
+            rel="noopener"
           >
             <img src={github} />
             <p>GitHub</p>
-          </Link>
-          <Link
+          </a>
+          <a
             className="grid-item"
-            to="/external-link"
+            to="/https://www.linkedin.com/in/alicee5cha/"
             target="_blank"
-            rel="noreferrer"
+            rel="noopener"
           >
             <img src={linkedin} />
             <p>LinkedIn</p>
-          </Link>
-          <Link
+          </a>
+          <a
             className="grid-item"
-            to="/external-link"
+            to="https://codepen.io/alicee5"
             target="_blank"
-            rel="noreferrer"
+            rel="noopener"
           >
             <img src={code} />
-            <p>FrontEnd Mentor</p>
-          </Link>
-          <Link
+            <p>Code Pen</p>
+          </a>
+          <a
             className="grid-item"
-            to="/external-link"
+            to="mailto:alicee5cha@gmail.com"
             target="_blank"
-            rel="noreferrer"
+            rel="noopener"
           >
             <img src={email} />
             <p>Email</p>
-          </Link>
+          </a>
         </div>
         <div className="footer-art">
           <FooterArt />
