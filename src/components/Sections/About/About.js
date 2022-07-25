@@ -21,12 +21,15 @@ export default class About extends Component {
               <img src={ProfilePic}></img>
             </div>
             <div className="intro">
-              Hi, my name is Alice Chambers. I am a creative professional with a
-              passion for Software Development, UX, scripting and Game Design.
-              Through my expereince in digital marketing, i have a great eye for
-              design, combined with my love of technology means im fucking
-              great. I am currently completing my final year of University,
-              studying Software Engineering. Something better than this haha.
+              <p>
+                Hi, my name is Alice Chambers. I am a creative professional with
+                a passion for Software Development, UX, scripting and Game
+                Design. Through my expereince in digital marketing, i have a
+                great eye for design, combined with my love of technology means
+                im fucking great. I am currently completing my final year of
+                University, studying Software Engineering. Something better than
+                this haha.
+              </p>
             </div>
           </div>
           <div className="key-info">
@@ -34,42 +37,50 @@ export default class About extends Component {
               <li className="key 1">
                 <img className="key img"></img>
                 <h2>Thing1</h2>
-                Lorem Ipsum is simply dummy text of the printing and typesetting
-                industry. Lorem Ipsum has been the industrys standard dummy text
-                ever since the 1500s, when an unknown printer took a galley of
-                type and scrambled it to make a type specimen book. It has
-                survived not only five centuries, but also the leap into
-                electronic typesetting
+                <p>
+                  Lorem Ipsum is simply dummy text of the printing and
+                  typesetting industry. Lorem Ipsum has been the industrys
+                  standard dummy text ever since the 1500s, when an unknown
+                  printer took a galley of type and scrambled it to make a type
+                  specimen book. It has survived not only five centuries, but
+                  also the leap into electronic typesetting
+                </p>
               </li>
               <li className="key 2">
                 <img className="key img"></img>
                 <h2>Thing2</h2>
-                Lorem Ipsum is simply dummy text of the printing and typesetting
-                industry. Lorem Ipsum has been the industrys standard dummy text
-                ever since the 1500s, when an unknown printer took a galley of
-                type and scrambled it to make a type specimen book. It has
-                survived not only five centuries, but also the leap into
-                electronic typesetting
+                <p>
+                  Lorem Ipsum is simply dummy text of the printing and
+                  typesetting industry. Lorem Ipsum has been the industrys
+                  standard dummy text ever since the 1500s, when an unknown
+                  printer took a galley of type and scrambled it to make a type
+                  specimen book. It has survived not only five centuries, but
+                  also the leap into electronic typesetting
+                </p>
               </li>
               <li className="key 3">
                 <img className="key img"></img>
                 <h2>Thing3</h2>
-                Lorem Ipsum is simply dummy text of the printing and typesetting
-                industry. Lorem Ipsum has been the industrys standard dummy text
-                ever since the 1500s, when an unknown printer took a galley of
-                type and scrambled it to make a type specimen book. It has
-                survived not only five centuries, but also the leap into
-                electronic typesetting
+                <p>
+                  Lorem Ipsum is simply dummy text of the printing and
+                  typesetting industry. Lorem Ipsum has been the industrys
+                  standard dummy text ever since the 1500s, when an unknown
+                  printer took a galley of type and scrambled it to make a type
+                  specimen book. It has survived not only five centuries, but
+                  also the leap into electronic typesetting
+                </p>
               </li>
               <li className="key 4">
                 <img className="key img"></img>
                 <h2>Thing4</h2>
-                Lorem Ipsum is simply dummy text of the printing and typesetting
-                industry. Lorem Ipsum has been the industrys standard dummy text
-                ever since the 1500s, when an unknown printer took a galley of
-                type and scrambled it to make a type specimen book. It has
-                survived not only five centuries, but also the leap into
-                electronic typesetting
+                <p>
+                  Lorem Ipsum is simply dummy text of the printing and
+                  typesetting industry. Lorem Ipsum has been the industrys
+                  standard dummy text ever since the 1500s, when an unknown
+                  printer took a galley of type and scrambled it to make a type
+                  specimen book. It has survived not only five centuries, but
+                  also the leap into electronic typesetting
+                </p>
               </li>
             </ul>
           </div>

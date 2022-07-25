@@ -12,9 +12,9 @@ inset -.2rem -.2rem .5rem $white;
   justify-content: space-between;
 
   &-blog, &-other {
-    width: 2.5rem;
+    width: 100px;
     height: 2.5rem;
-    border-radius: 50%;
+    border-radius: 20px;
     box-shadow: $shadow;
     display: flex;
     justify-content: center;

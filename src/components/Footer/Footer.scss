@@ -1,16 +1,19 @@
 @import '../../App';
 
 .footer {
-    background-color: #0e0f12;
-    position: unset;
-    bottom: 0; 
-    padding: $outerPadding;
+
+  h1, h2, p {
+  color: var(--footer--text) !important;
+  }
+
+  background-color: var(--footer--bg);
+  position: unset;
+  bottom: 0; 
+  padding: $outerPadding;
+  padding-top: 30px;
 }
 
 .footer-container {
-    display: flex;
-    flex-direction: column;
-    justify-content: space-evenly;
 }
 
 .footer-items {
@@ -21,15 +24,12 @@
 }
 
 .footer-art {
-  width: 40%;
 }
 
 .links-grid {
-grid-auto-rows: 60px;
     display: grid;
-    width: 60%;
     justify-items: start;
-    align-content: space-evenly;
+    align-content: space-between;
 }
 
 .grid-item {
@@ -37,6 +37,7 @@ grid-auto-rows: 60px;
   color: var(--text);
     display: flex;
     align-items: center;
+    text-decoration: none;
 }
 
 .grid-item > img {
@@ -53,4 +54,15 @@ grid-auto-rows: 60px;
   text-align: center;
   color: var(--text);
   padding-bottom: 10px;
+}
+
+@media screen and (max-width: $breakpoint--mob) {
+  .footer-items {
+    flex-direction: column;
+}
+
+.links-grid {
+    grid-row-gap: 20px;
+}
+
 }

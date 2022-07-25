@@ -2,12 +2,16 @@
 [data-theme='light'] {
   --bg: #fff;
   --text: #000;
+  --footer--bg: #211f30;
+  --footer--text: #fff;
 }
 
 // Dark Mode
 [data-theme='dark'] {
-  --bg: #0e0f12;
-  --text: #fff;
+  --bg: #211f30;
+  --text: #b8b8b8;
+  --footer--bg: #000;
+  --footer--text: #fff;
 }
 
 // Font settings
@@ -28,7 +32,7 @@ $breakpoint--tablet: 960px;
 $breakpoint--screen: 1200px;
 
 // Toggle colours
-$white: #FFFFFF;
+$white: #fff;
 $greyLight-1: #E4EBF5;
 $greyLight-2: #c8d0e7;
 $greyLight-3: #bec8e4;
