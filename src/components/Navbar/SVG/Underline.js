@@ -64,7 +64,7 @@ const Underline = (props) => {
             stroke="#000"
             strokeLinecap="round"
             strokeLinejoin="round"
-            strokeWidth={1}
+            strokeWidth={1.2}
           />
         </svg>
       </Link>
@@ -73,12 +73,7 @@ const Underline = (props) => {
 };
 
 const Wrapper = styled.div`
-  <<<<<<< Updated upstream a:hover {
-    stroke-dasharray: ${(props) => props.linkWidth};
-    stroke-dashoffset: ${(props) => props.linkWidth};
-    animation: draw 0.4s linear forwards;
-  }
-  ======= .nav-links {
+  .nav-links {
     padding: 0.5rem 1.5rem;
     display: inline-block;
     cursor: pointer;
@@ -88,31 +83,24 @@ const Wrapper = styled.div`
     transition: all 0.2s ease-out;
     transform: scale(1.1);
     color: #f2695c;
-  }
 
-  path {
-    opacity: 0;
-  }
-
-  path:hover {
-    opacity: 1;
+    .underline {
+      opacity: 1;
+      stroke-dasharray: ${(props) => props.linkWidth};
+      stroke-dashoffset: ${(props) => props.linkWidth};
+      animation: draw 0.5s linear forwards;
+    }
   }
 
   .underline {
     height: 30px;
     position: absolute;
     display: block;
-    pointer-events: none;
     margin-left: -10px;
+    opacity: 0;
   }
 
-  .underline:hover {
-    opacity: 1;
-    stroke-dasharray: ${(props) => props.linkWidth};
-    stroke-dashoffset: ${(props) => props.linkWidth};
-    animation: draw 5s linear forwards;
-  }
-  >>>>>>>Stashed changes @keyframes draw {
+  @keyframes draw {
     to {
       stroke-dashoffset: 60;
     }
