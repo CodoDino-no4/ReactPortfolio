@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import { Link } from 'react-scroll';
 import propTypes from 'prop-types';
 import './Navbar.scss';
 import Underline from './SVG/Underline';
@@ -28,6 +29,33 @@ class Navbar extends Component {
     });
   };
 
+  renderNav = (name, width) => {
+    if (this.state.isMobMenuOpen) {
+      return (
+        <Link
+          to={name}
+          className="nav-links"
+          onClick={this.closeMobMenu}
+          spy={true}
+          smooth={true}
+          duration={1000}
+          isDynamic={true}
+          offset={this.state.navbarOffset}
+        >
+          {name.toUpperCase()}
+        </Link>
+      );
+    } else {
+      return (
+        <Underline
+          offsetHandler={this.state.navbarOffset}
+          linkWidth={width}
+          name={name}
+        />
+      );
+    }
+  };
+
   render() {
     return (
       <>
@@ -41,48 +69,12 @@ class Navbar extends Component {
                 this.state.isMobMenuOpen ? 'nav-menu active' : 'nav-menu'
               }
             >
-              <li className="nav-item">
-                <Underline
-                  clickHandler={this.closeMobMenu}
-                  offsetHandler={this.state.navbarOffset}
-                  style={this.state.isMobMenuOpen ? { display: 'none' } : {}}
-                  linkWidth={'60'}
-                  name="HOME"
-                  link="home"
-                />
-              </li>
-              <li className="nav-item">
-                <Underline
-                  clickHandler={this.closeMobMenu}
-                  offsetHandler={this.state.navbarOffset}
-                  style={this.state.isMobMenuOpen ? { display: 'none' } : {}}
-                  linkWidth={'60'}
-                  name="ABOUT"
-                  link="about"
-                />
-              </li>
-              <li className="nav-item">
-                <Underline
-                  clickHandler={this.closeMobMenu}
-                  offsetHandler={this.state.navbarOffset}
-                  style={this.state.isMobMenuOpen ? { display: 'none' } : {}}
-                  linkWidth={'90'}
-                  name="PROJECTS"
-                  link="projects"
-                />
-              </li>
-              <li className="nav-item">
-                <Underline
-                  clickHandler={this.closeMobMenu}
-                  offsetHandler={this.state.navbarOffset}
-                  style={this.state.isMobMenuOpen ? { display: 'none' } : {}}
-                  linkWidth={'80'}
-                  name="CONTACT"
-                  link="contact"
-                />
-              </li>
+              <li className="nav-item">{this.renderNav('home', 70)}</li>
+              <li className="nav-item">{this.renderNav('about', 75)}</li>
+              <li className="nav-item">{this.renderNav('projects', 100)}</li>
+              <li className="nav-item">{this.renderNav('contact', 90)}</li>
             </ul>
-            <ul className="navbar-tools">
+            <div className="navbar-tools">
               <li className="tools-item">
                 <Button name="blog" />
               </li>
@@ -94,7 +86,7 @@ class Navbar extends Component {
                   clickHandler={this.props.themeHandler}
                 />
               </li>
-            </ul>
+            </div>
           </div>
         </nav>
       </>

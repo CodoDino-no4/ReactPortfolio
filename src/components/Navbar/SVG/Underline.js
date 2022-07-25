@@ -13,53 +13,48 @@ const Underline = (props) => {
     }
   }, [pathRef]);
 
-  // var moveYMin = 5;
-  // var moveYMax = 12;
+  function pathValue(linkWidth) {
+    var moveYMin = 5;
+    var moveYMax = 12;
 
-  // var curveXMin = 20;
-  // var curveXMax = 100; /* Will be replaced with the width of the link */
-  // var curveYMin = 5;
-  // var curveYMax = 20;
+    var curveXMin = 20;
+    var curveXMax = linkWidth;
+    var curveYMin = 5;
+    var curveYMax = 20;
 
-  // var endYMin = 5;
-  // var endYMax = 10;
+    var endYMin = 5;
+    var endYMax = 10;
 
-  // randomize.addEventListener('click', function () {
-  //   var moveY = Math.floor(Math.random() * (moveYMax - moveYMin)) + moveYMin;
-  //   var curveX =
-  //     Math.floor(Math.random() * (curveXMax - curveXMin)) + curveXMin;
-  //   var curveY =
-  //     Math.floor(Math.random() * (curveYMax - curveYMin)) + curveYMin;
-  //   var endY = Math.floor(Math.random() * (endYMax - endYMin)) + endYMin;
+    var moveY = Math.floor(Math.random() * (moveYMax - moveYMin)) + moveYMin;
+    var curveX =
+      Math.floor(Math.random() * (curveXMax - curveXMin)) + curveXMin;
+    var curveY =
+      Math.floor(Math.random() * (curveYMax - curveYMin)) + curveYMin;
+    var endY = Math.floor(Math.random() * (endYMax - endYMin)) + endYMin;
 
-  //   var newPath = `M5 ${moveY} Q ${curveX} ${curveY} 170 ${endY}`;
-
-  //   randomPath.setAttribute('d', newPath);
-  // });
+    return `M5 ${moveY} Q ${curveX} ${curveY} ${linkWidth - 7} ${endY}`;
+  }
 
   return (
-    <Wrapper pathLength={pathLength} linkWidth={props.linkWidth}>
+    <Styled pathLength={pathLength} linkWidth={props.linkWidth}>
       <Link
-        to={props.link}
+        to={props.name}
         className="nav-links"
-        onClick={props.clickHandler}
         spy={true}
         smooth={true}
         duration={1000}
         isDynamic={true}
         offset={props.offsetHandler}
       >
-        {props.name}
+        {props.name.toUpperCase()}
         <svg
           className="underline"
           xmlns="http://www.w3.org/2000/svg"
           width={props.linkWidth}
           height="15"
-          {...props}
         >
           <path
-            ref={pathRef}
-            d="M5 5 Q 30 15 170 5"
+            d={pathValue(props.linkWidth)}
             fill="none"
             stroke="#000"
             strokeLinecap="round"
@@ -68,11 +63,11 @@ const Underline = (props) => {
           />
         </svg>
       </Link>
-    </Wrapper>
+    </Styled>
   );
 };
 
-const Wrapper = styled.div`
+const Styled = styled.div`
   .nav-links {
     padding: 0.5rem 1.5rem;
     display: inline-block;
@@ -108,8 +103,9 @@ const Wrapper = styled.div`
 `;
 
 Underline.propTypes = {
-  style: propTypes.func.isRequired,
-  linkWidth: propTypes.string.isRequired
+  linkWidth: propTypes.number.isRequired,
+  name: propTypes.string.isRequired,
+  offsetHandler: propTypes.number.isRequired
 };
 
 export default Underline;
