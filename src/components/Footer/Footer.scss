@@ -14,9 +14,6 @@
 }
 
 .footer-container {
-    display: flex;
-    flex-direction: column;
-    justify-content: space-evenly;
 }
 
 .footer-items {
@@ -27,12 +24,10 @@
 }
 
 .footer-art {
-  width: 40%;
 }
 
 .links-grid {
     display: grid;
-    width: 60%;
     justify-items: start;
     align-content: space-between;
 }
@@ -59,4 +54,15 @@
   text-align: center;
   color: var(--text);
   padding-bottom: 10px;
+}
+
+@media screen and (max-width: $breakpoint--mob) {
+  .footer-items {
+    flex-direction: column;
+}
+
+.links-grid {
+    grid-row-gap: 20px;
+}
+
 }

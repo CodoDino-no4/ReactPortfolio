@@ -23,7 +23,8 @@ const FooterArt = (props) => {
     <Wrapper ref={inViewRef} pathLength={pathLength}>
       <svg
         className={inView ? 'animated visible' : 'animated'}
-        viewBox="0 -20 100 90"
+        viewBox="0 0 75 55"
+        width="300"
         xmlns="http://www.w3.org/2000/svg"
         {...props}
       >
