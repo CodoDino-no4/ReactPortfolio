@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import { Link } from 'react-scroll';
 import propTypes from 'prop-types';
 import './Navbar.scss';
-import NavHoverRight from './SVG/NavHover-right';
+import Underline from './SVG/Underline';
 import Toggle from '../Toggle/Toggle';
 import Button from '../Button/Button';
 import DarkModeContent from '../../images/dark-mode.svg';
@@ -29,6 +29,33 @@ class Navbar extends Component {
     });
   };
 
+  renderNav = (name, width) => {
+    if (this.state.isMobMenuOpen) {
+      return (
+        <Link
+          to={name}
+          className="nav-links"
+          onClick={this.closeMobMenu}
+          spy={true}
+          smooth={true}
+          duration={1000}
+          isDynamic={true}
+          offset={this.state.navbarOffset}
+        >
+          {name.toUpperCase()}
+        </Link>
+      );
+    } else {
+      return (
+        <Underline
+          offsetHandler={this.state.navbarOffset}
+          linkWidth={width}
+          name={name}
+        />
+      );
+    }
+  };
+
   render() {
     return (
       <>
@@ -42,84 +69,12 @@ class Navbar extends Component {
                 this.state.isMobMenuOpen ? 'nav-menu active' : 'nav-menu'
               }
             >
-              <li className="nav-item">
-                <div className="animation">
-                  <NavHoverRight
-                    style={this.state.isMobMenuOpen ? { display: 'none' } : {}}
-                  />
-                </div>
-                <Link
-                  to="home"
-                  className="nav-links"
-                  onClick={this.closeMobMenu}
-                  spy={true}
-                  smooth={true}
-                  duration={1000}
-                  isDynamic={true}
-                  offset={this.state.navbarOffset}
-                >
-                  HOME
-                </Link>
-              </li>
-              <li className="nav-item">
-                <div className="animation">
-                  <NavHoverRight
-                    style={this.state.isMobMenuOpen ? { display: 'none' } : {}}
-                  />
-                </div>
-                <Link
-                  to="about"
-                  className="nav-links"
-                  onClick={this.closeMobMenu}
-                  spy={true}
-                  smooth={true}
-                  duration={1000}
-                  isDynamic={true}
-                  offset={this.state.navbarOffset}
-                >
-                  ABOUT
-                </Link>
-              </li>
-              <li className="nav-item">
-                <div className="animation">
-                  <NavHoverRight
-                    style={this.state.isMobMenuOpen ? { display: 'none' } : {}}
-                  />
-                </div>
-                <Link
-                  to="projects"
-                  className="nav-links"
-                  onClick={this.closeMobMenu}
-                  spy={true}
-                  smooth={true}
-                  duration={1000}
-                  isDynamic={true}
-                  offset={this.state.navbarOffset}
-                >
-                  PROJECTS
-                </Link>
-              </li>
-              <li className="nav-item">
-                <div className="animation">
-                  <NavHoverRight
-                    style={this.state.isMobMenuOpen ? { display: 'none' } : {}}
-                  />
-                </div>
-                <Link
-                  to="contact"
-                  className="nav-links"
-                  onClick={this.closeMobMenu}
-                  spy={true}
-                  smooth={true}
-                  duration={1000}
-                  isDynamic={true}
-                  offset={this.state.navbarOffset}
-                >
-                  CONTACT
-                </Link>
-              </li>
+              <li className="nav-item">{this.renderNav('home', 70)}</li>
+              <li className="nav-item">{this.renderNav('about', 75)}</li>
+              <li className="nav-item">{this.renderNav('projects', 100)}</li>
+              <li className="nav-item">{this.renderNav('contact', 90)}</li>
             </ul>
-            <ul className="navbar-tools">
+            <div className="navbar-tools">
               <li className="tools-item">
                 <Button name="blog" />
               </li>
@@ -131,7 +86,7 @@ class Navbar extends Component {
                   clickHandler={this.props.themeHandler}
                 />
               </li>
-            </ul>
+            </div>
           </div>
         </nav>
       </>
