@@ -18,6 +18,8 @@ const HeroSVG = (props) => {
       <svg
         className={inView ? 'animated visible' : 'animated'}
         viewBox="0 15 500 270"
+        width="100%"
+        height="95vh"
         xmlns="http://www.w3.org/2000/svg"
         {...props}
       >

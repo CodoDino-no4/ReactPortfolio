@@ -1,5 +1,4 @@
 import React, { Component } from 'react';
-import { Link } from 'react-scroll';
 import propTypes from 'prop-types';
 import './Navbar.scss';
 import Underline from './SVG/Underline';
@@ -43,84 +42,44 @@ class Navbar extends Component {
               }
             >
               <li className="nav-item">
-                <div className="animation">
-                <Link
-                  to="home"
-                  className="nav-links"
-                  onClick={this.closeMobMenu}
-                  spy={true}
-                  smooth={true}
-                  duration={1000}
-                  isDynamic={true}
-                  offset={this.state.navbarOffset}
-                >
-                  HOME
-                </Link>
-                  <Underline
-                    linkWidth={200}
-                    style={this.state.isMobMenuOpen ? { display: 'none' } : {}}
-                  />
-                </div>
+                <Underline
+                  clickHandler={this.closeMobMenu}
+                  offsetHandler={this.state.navbarOffset}
+                  style={this.state.isMobMenuOpen ? { display: 'none' } : {}}
+                  linkWidth={'60'}
+                  name="HOME"
+                  link="home"
+                />
               </li>
               <li className="nav-item">
-                <div className="animation">
-                <Link
-                  to="about"
-                  className="nav-links"
-                  onClick={this.closeMobMenu}
-                  spy={true}
-                  smooth={true}
-                  duration={1000}
-                  isDynamic={true}
-                  offset={this.state.navbarOffset}
-                >
-                  ABOUT
-                </Link>
-                  <Underline
-                    linkWidth={100}
-                    style={this.state.isMobMenuOpen ? { display: 'none' } : {}}
-                  />
-                </div>
+                <Underline
+                  clickHandler={this.closeMobMenu}
+                  offsetHandler={this.state.navbarOffset}
+                  style={this.state.isMobMenuOpen ? { display: 'none' } : {}}
+                  linkWidth={'60'}
+                  name="ABOUT"
+                  link="about"
+                />
               </li>
               <li className="nav-item">
-                <div className="animation">
-                <Link
-                  to="projects"
-                  className="nav-links"
-                  onClick={this.closeMobMenu}
-                  spy={true}
-                  smooth={true}
-                  duration={1000}
-                  isDynamic={true}
-                  offset={this.state.navbarOffset}
-                >
-                  PROJECTS
-                </Link>
-                  <Underline
-                    linkWidth={100}
-                    style={this.state.isMobMenuOpen ? { display: 'none' } : {}}
-                  />
-                </div>
+                <Underline
+                  clickHandler={this.closeMobMenu}
+                  offsetHandler={this.state.navbarOffset}
+                  style={this.state.isMobMenuOpen ? { display: 'none' } : {}}
+                  linkWidth={'90'}
+                  name="PROJECTS"
+                  link="projects"
+                />
               </li>
               <li className="nav-item">
-                <div className="animation">
-                <Link
-                  to="contact"
-                  className="nav-links"
-                  onClick={this.closeMobMenu}
-                  spy={true}
-                  smooth={true}
-                  duration={1000}
-                  isDynamic={true}
-                  offset={this.state.navbarOffset}
-                >
-                  CONTACT
-                </Link>
-                  <Underline
-                    linkWidth={150}
-                    style={this.state.isMobMenuOpen ? { display: 'none' } : {}}
-                  />
-                </div>
+                <Underline
+                  clickHandler={this.closeMobMenu}
+                  offsetHandler={this.state.navbarOffset}
+                  style={this.state.isMobMenuOpen ? { display: 'none' } : {}}
+                  linkWidth={'80'}
+                  name="CONTACT"
+                  link="contact"
+                />
               </li>
             </ul>
             <ul className="navbar-tools">
