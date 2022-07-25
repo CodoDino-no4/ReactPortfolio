@@ -19,7 +19,6 @@ const HeroSVG = (props) => {
         className={inView ? 'animated visible' : 'animated'}
         viewBox="0 15 500 270"
         width="100%"
-        height="95vh"
         xmlns="http://www.w3.org/2000/svg"
         {...props}
       >
@@ -38,8 +37,11 @@ const HeroSVG = (props) => {
 };
 
 const Wrapper = styled.div`
-  height: inherit;
+
   z-index: 0;
+  svg {
+      height: 95vh;
+  }
 
   .animated.visible {
     stroke-dasharray: ${(props) => props.pathLength};

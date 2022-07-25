@@ -1,18 +1,9 @@
-import React, { useState, createRef, useEffect } from 'react';
+import React from 'react';
 import styled from 'styled-components';
 import propTypes from 'prop-types';
 import { Link } from 'react-scroll';
 
 const Underline = (props) => {
-  const pathRef = createRef();
-  const [pathLength, setPathLength] = useState();
-
-  useEffect(() => {
-    if (pathRef.current) {
-      setPathLength(pathRef.current.getTotalLength());
-    }
-  }, [pathRef]);
-
   function pathValue(linkWidth) {
     var moveYMin = 5;
     var moveYMax = 12;
@@ -36,7 +27,7 @@ const Underline = (props) => {
   }
 
   return (
-    <Styled pathLength={pathLength} linkWidth={props.linkWidth}>
+    <Styled linkWidth={props.linkWidth}>
       <Link
         to={props.name}
         className="nav-links"
