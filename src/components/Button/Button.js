@@ -13,7 +13,7 @@ class Button extends Component {
     return (
       <div className="icon">
         <Link to="/blog">
-          <div className={`icon-${this.props.name}`}></div>
+          <div className={`icon-${this.props.name}`}>BLOG</div>
         </Link>
       </div>
     );

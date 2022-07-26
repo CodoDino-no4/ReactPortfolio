@@ -78,9 +78,12 @@
 }
 
 .navbar-tools {
-  display: grid;
-  grid-template-columns: repeat(2, 50px);
+  display: flex;
   list-style: none;
+}
+
+.tools-item {
+  padding: 0px 5px;
 }
 
 @media screen and (max-width: $breakpoint--tablet) {

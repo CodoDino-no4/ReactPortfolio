@@ -1,17 +1,14 @@
 @import '../../App';
 
-$shadow: .3rem .3rem .6rem $greyLight-2, 
--.2rem -.2rem .5rem $white;
-$inner-shadow: inset .2rem .2rem .5rem $greyLight-2, 
-inset -.2rem -.2rem .5rem $white;
+$shadow: .3rem .3rem .6rem $greyLight-2,
+  -.2rem -.2rem .5rem $white;
+$inner-shadow: inset .2rem .2rem .5rem $greyLight-2,
+  inset -.2rem -.2rem .5rem $white;
 
 .icon {
-  grid-column: 3 / 4;
-  grid-row: 4 / 5;
-  display: flex;
-  justify-content: space-between;
 
-  &-blog, &-other {
+  &-blog,
+  &-other {
     width: 100px;
     height: 2.5rem;
     border-radius: 20px;
@@ -24,12 +21,12 @@ inset -.2rem -.2rem .5rem $white;
     background-color: $greyDark;
     transition: all .9s ease;
   }
-  
+
 }
 
-.icon-blog > img {
-  width:100%;
-  height:100%;
+.icon-blog>img {
+  width: 100%;
+  height: 100%;
   margin: 5px;
 }
 
