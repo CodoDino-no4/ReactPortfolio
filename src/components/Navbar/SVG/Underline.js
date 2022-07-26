@@ -50,7 +50,7 @@ const Underline = (props) => {
             stroke="#000"
             strokeLinecap="round"
             strokeLinejoin="round"
-            strokeWidth={1.2}
+            strokeWidth={2}
           />
         </svg>
       </Link>
@@ -63,12 +63,13 @@ const Styled = styled.div`
     padding: 0.5rem 1.5rem;
     display: inline-block;
     cursor: pointer;
+    transition: all 0.2s ease-out;
   }
 
   .nav-links:hover {
-    transition: all 0.2s ease-out;
     transform: scale(1.1);
     color: #f2695c;
+    position: sticky;
 
     .underline {
       opacity: 1;
