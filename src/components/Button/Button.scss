@@ -7,19 +7,24 @@ $inner-shadow: inset .2rem .2rem .5rem $greyLight-2,
 
 .icon {
 
+  a {
+    text-decoration: none;
+    color: $black;
+  }
+
   &-blog,
   &-other {
-    width: 100px;
+    width: 80px;
     height: 2.5rem;
     border-radius: 20px;
     box-shadow: $shadow;
     display: flex;
     justify-content: center;
     align-items: center;
-    font-size: 2rem;
     cursor: pointer;
     background-color: $greyDark;
     transition: all .9s ease;
+    font-weight: 400;
   }
 
 }

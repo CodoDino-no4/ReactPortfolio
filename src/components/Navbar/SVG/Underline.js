@@ -29,7 +29,7 @@ const Underline = (props) => {
   return (
     <Styled linkWidth={props.linkWidth}>
       <Link
-        to={props.name}
+        to={`/${props.name}`}
         className="nav-links"
         spy={true}
         smooth={true}
