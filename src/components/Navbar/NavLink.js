@@ -3,7 +3,7 @@ import styled from 'styled-components';
 import propTypes from 'prop-types';
 import { Link } from 'react-scroll';
 
-const Underline = (props) => {
+const NavLink = (props) => {
   function pathValue(linkWidth) {
     var moveYMin = 5;
     var moveYMax = 12;
@@ -29,7 +29,7 @@ const Underline = (props) => {
   return (
     <Styled linkWidth={props.linkWidth}>
       <Link
-        to={`/${props.name}`}
+        to={`${props.name}`}
         className="nav-links"
         spy={true}
         smooth={true}
@@ -94,10 +94,10 @@ const Styled = styled.div`
   }
 `;
 
-Underline.propTypes = {
+NavLink.propTypes = {
   linkWidth: propTypes.number.isRequired,
   name: propTypes.string.isRequired,
   offsetHandler: propTypes.number.isRequired
 };
 
-export default Underline;
+export default NavLink;

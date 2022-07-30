@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import { Link } from 'react-scroll';
 import propTypes from 'prop-types';
 import './Navbar.scss';
-import Underline from './SVG/Underline';
+import NavLink from './NavLink';
 import Toggle from '../Toggle/Toggle';
 import Button from '../Button/Button';
 import DarkModeContent from '../../images/dark-mode.svg';
@@ -13,7 +13,7 @@ class Navbar extends Component {
     super(props);
     this.state = {
       isMobMenuOpen: false,
-      navbarOffset: -80
+      navbarOffset: -80 
     };
   }
 
@@ -28,6 +28,14 @@ class Navbar extends Component {
       isMobMenuOpen: false
     });
   };
+
+  isDark() { 
+    if (this.props.theme === 'Dark') {
+      return true;
+    } else { 
+      return false;
+    }
+  }
 
   renderNav = (name, width) => {
     if (this.state.isMobMenuOpen) {
@@ -47,7 +55,7 @@ class Navbar extends Component {
       );
     } else {
       return (
-        <Underline
+        <NavLink
           offsetHandler={this.state.navbarOffset}
           linkWidth={width}
           name={name}
@@ -84,6 +92,7 @@ class Navbar extends Component {
                   dataOn={DarkModeContent}
                   dataOff={LightModeContent}
                   clickHandler={this.props.themeHandler}
+                  theme={this.isDark}
                 />
               </li>
             </div>

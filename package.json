@@ -22,6 +22,7 @@
     "url": "https://github.com/Alicee5cha/ReactPortfolio/issues"
   },
   "dependencies": {
+    "prettier": "^2.7.1",
     "react": "18.2.0",
     "react-dom": "^18.2.0",
     "react-intersection-observer": "^9.3.5",
@@ -41,7 +42,7 @@
     "@webpack-cli/serve": "^1.7.0",
     "babel-loader": "8.0.2",
     "css-loader": "3.0.0",
-    "eslint": "8.20.0",
+    "eslint": "^8.20.0",
     "eslint-config-prettier": "^8.3.0",
     "eslint-plugin-jsx-a11y": "^6.5.1",
     "eslint-plugin-prettier": "^4.0.0",

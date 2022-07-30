@@ -5,8 +5,9 @@ import './Toggle.scss';
 class Toggle extends Component {
   constructor(props) {
     super(props);
+    console.log(this.props)
     this.state = {
-      isActive: false
+      isActive: this.props.theme
     };
   }
   // Tells input if it is meant to be checked or not
@@ -30,7 +31,7 @@ class Toggle extends Component {
             className={`icon-${this.props.name}`}
             onClick={this.props.clickHandler}
           >
-            {this.state.isActive ? (
+              {this.state.isActive ? (
               <img src={this.props.dataOff} />
             ) : (
               <img src={this.props.dataOn} />
