@@ -30,6 +30,10 @@
 }
 
 @media screen and (max-width: $breakpoint--tablet) {
+  .forground-text {
+    right: auto;
+  }
+
   .forground-text>h1 {
     font-size: 60px;
   }

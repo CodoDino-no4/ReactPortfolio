@@ -69,10 +69,6 @@
   color: rgb(0, 0, 0);
 }
 
-.nav-links-mobile {
-  display: none;
-}
-
 .menu-icon {
   display: none;
 }
@@ -128,11 +124,6 @@
     transform: translate(60%, 40%);
     font-size: 1.8rem;
     cursor: pointer;
-  }
-
-  .fa-times {
-    color: rgb(0, 0, 0);
-    font-size: 2rem;
   }
 
   .navbar-tools {

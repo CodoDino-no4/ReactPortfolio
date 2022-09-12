@@ -1,11 +1,10 @@
-import React, { Component } from 'react';
 import propTypes from 'prop-types';
+import React, { Component } from 'react';
 import './Toggle.scss';
 
 class Toggle extends Component {
   constructor(props) {
     super(props);
-    console.log(this.props)
     this.state = {
       isActive: this.props.theme
     };
@@ -31,7 +30,7 @@ class Toggle extends Component {
             className={`icon-${this.props.name}`}
             onClick={this.props.clickHandler}
           >
-              {this.state.isActive ? (
+            {this.state.isActive ? (
               <img src={this.props.dataOff} />
             ) : (
               <img src={this.props.dataOn} />

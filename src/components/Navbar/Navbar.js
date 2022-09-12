@@ -1,19 +1,21 @@
+import propTypes from 'prop-types';
 import React, { Component } from 'react';
 import { Link } from 'react-scroll';
-import propTypes from 'prop-types';
-import './Navbar.scss';
-import NavLink from './NavLink';
-import Toggle from '../Toggle/Toggle';
-import Button from '../Button/Button';
 import DarkModeContent from '../../images/dark-mode.svg';
 import LightModeContent from '../../images/light-mode.svg';
+import Button from '../Button/Button';
+import Toggle from '../Toggle/Toggle';
+import BurgerMenuIcon from './BurgerMenuIcon';
+import './Navbar.scss';
+import NavLink from './NavLink';
 
 class Navbar extends Component {
   constructor(props) {
     super(props);
     this.state = {
       isMobMenuOpen: false,
-      navbarOffset: -80 
+      navbarOffset: -80,
+      windowWidth: window.innerWidth
     };
   }
 
@@ -29,16 +31,17 @@ class Navbar extends Component {
     });
   };
 
-  isDark() { 
-    if (this.props.theme === 'Dark') {
+  isDark() {
+    if (this.props.theme === 'dark') {
       return true;
-    } else { 
+    } else {
       return false;
     }
   }
 
   renderNav = (name, width) => {
-    if (this.state.isMobMenuOpen) {
+    { console.log(this.state.windowWidth) }
+    if (this.state.windowWidth <= 960) {
       return (
         <Link
           to={name}
@@ -70,17 +73,17 @@ class Navbar extends Component {
         <nav className="navbar">
           <div className="navbar-container">
             <div className="menu-icon" onClick={this.toggleMobMenu}>
-              <i className={'burger fas fa-bars'} />
+              <BurgerMenuIcon linkWidth={40} open={this.state.isMobMenuOpen} />
             </div>
             <ul
               className={
                 this.state.isMobMenuOpen ? 'nav-menu active' : 'nav-menu'
               }
             >
-              <li className="nav-item">{this.renderNav('home', 70)}</li>
-              <li className="nav-item">{this.renderNav('about', 75)}</li>
-              <li className="nav-item">{this.renderNav('projects', 100)}</li>
-              <li className="nav-item">{this.renderNav('contact', 90)}</li>
+              <li className="nav-item">{this.renderNav('home', 65)}</li>
+              <li className="nav-item">{this.renderNav('about', 70)}</li>
+              <li className="nav-item">{this.renderNav('projects', 95)}</li>
+              <li className="nav-item">{this.renderNav('contact', 85)}</li>
             </ul>
             <div className="navbar-tools">
               <li className="tools-item">
@@ -92,7 +95,7 @@ class Navbar extends Component {
                   dataOn={DarkModeContent}
                   dataOff={LightModeContent}
                   clickHandler={this.props.themeHandler}
-                  theme={this.isDark}
+                  theme={this.isDark()}
                 />
               </li>
             </div>

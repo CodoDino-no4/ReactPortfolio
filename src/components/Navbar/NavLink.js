@@ -1,7 +1,7 @@
-import React from 'react';
-import styled from 'styled-components';
 import propTypes from 'prop-types';
+import React from 'react';
 import { Link } from 'react-scroll';
+import styled from 'styled-components';
 
 const NavLink = (props) => {
   function pathValue(linkWidth) {
@@ -23,7 +23,7 @@ const NavLink = (props) => {
       Math.floor(Math.random() * (curveYMax - curveYMin)) + curveYMin;
     var endY = Math.floor(Math.random() * (endYMax - endYMin)) + endYMin;
 
-    return `M5 ${moveY} Q ${curveX} ${curveY} ${linkWidth - 7} ${endY}`;
+    return `M5 ${moveY} Q ${curveX} ${curveY} ${linkWidth} ${endY}`;
   }
 
   return (
@@ -41,7 +41,7 @@ const NavLink = (props) => {
         <svg
           className="underline"
           xmlns="http://www.w3.org/2000/svg"
-          width={props.linkWidth}
+          width={props.linkWidth + 5}
           height="15"
         >
           <path
