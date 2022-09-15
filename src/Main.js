@@ -1,11 +1,11 @@
 import React from 'react';
+import { BrowserRouter, Route, Routes } from 'react-router-dom';
 import useLocalStorage from 'use-local-storage';
-import './App.scss';
-import Navbar from './components/Navbar/Navbar';
-import Footer from './components/Footer/Footer';
 import App from './App';
+import './App.scss';
+import Footer from './components/Footer/Footer';
+import Navbar from './components/Navbar/Navbar';
 import Blog from './Pages/Blog/Home';
-import { BrowserRouter, Routes, Route } from 'react-router-dom';
 
 function Main() {
   const defaultDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
@@ -19,14 +19,18 @@ function Main() {
     setTheme(newTheme);
   };
 
+  const windowSize = () => {
+    return window.innerWidth;
+  }
+
   return (
     <div data-theme={theme}>
       <BrowserRouter>
         <Routes>
-          <Route path="/" element={<App />}>
+          <Route path="/" element={<App windowSize={windowSize()} />}>
             <Route
               index
-              element={<Navbar themeHandler={switchTheme} theme={theme} />}
+              element={<Navbar themeHandler={switchTheme} theme={theme} windowSize={windowSize()} />}
             />
           </Route>
           <Route path="/blog" element={<Blog />}>

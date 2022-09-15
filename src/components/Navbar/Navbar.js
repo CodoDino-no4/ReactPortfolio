@@ -14,8 +14,7 @@ class Navbar extends Component {
     super(props);
     this.state = {
       isMobMenuOpen: false,
-      navbarOffset: -80,
-      windowWidth: window.innerWidth
+      navbarOffset: -80
     };
   }
 
@@ -40,8 +39,8 @@ class Navbar extends Component {
   }
 
   renderNav = (name, width) => {
-    { console.log(this.state.windowWidth) }
-    if (this.state.windowWidth <= 960) {
+    { console.log(this.props.windowSize) }
+    if (this.props.windowSize <= 960) {
       return (
         <Link
           to={name}
@@ -80,10 +79,10 @@ class Navbar extends Component {
                 this.state.isMobMenuOpen ? 'nav-menu active' : 'nav-menu'
               }
             >
-              <li className="nav-item">{this.renderNav('home', 65)}</li>
-              <li className="nav-item">{this.renderNav('about', 70)}</li>
-              <li className="nav-item">{this.renderNav('projects', 95)}</li>
-              <li className="nav-item">{this.renderNav('contact', 85)}</li>
+              <li className="nav-item">{this.renderNav('home', 115)}</li>
+              <li className="nav-item">{this.renderNav('about', 125)}</li>
+              <li className="nav-item">{this.renderNav('projects', 150)}</li>
+              <li className="nav-item">{this.renderNav('contact', 140)}</li>
             </ul>
             <div className="navbar-tools">
               <li className="tools-item">
