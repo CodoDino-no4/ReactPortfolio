@@ -77,7 +77,7 @@ const Styled = styled.div`
 .line { 
       stroke-dasharray: ${(props) => props.linkWidth};
       stroke-dashoffset: ${(props) => props.linkWidth};
-      animation: drawIn 1s linear forwards;
+      animation: drawBurger 1s linear forwards;
       position: absolute;
       margin:5px;
       width:45px;
@@ -92,22 +92,21 @@ const Styled = styled.div`
 .times {
       stroke-dasharray: ${(props) => props.linkWidth};
       stroke-dashoffset: ${(props) => props.linkWidth};
-      animation: draw 1s linear forwards;
+      animation: drawTimes 1s linear forwards;
       position: absolute;
-      display: block;
       margin:5px;
       width:45px;
     }
 
-  @keyframes drawIn {
+  @keyframes drawBurger {
     to {
       stroke-dashoffset: 5;
     }
   }
 
-    @keyframes drawOut {
+    @keyframes drawTimes {
     to {
-      stroke-dashoffset: 30;
+      stroke-dashoffset: 5;
     }
   }
 `;
