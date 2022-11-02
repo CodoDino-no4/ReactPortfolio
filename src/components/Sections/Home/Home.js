@@ -6,7 +6,7 @@ function Home(props) {
     <section className="home">
       <Hero windowSize={props.windowSize} />
     </section>
-  )
+  );
 }
 
-export default Home
+export default Home;

@@ -16,19 +16,19 @@ function Main() {
 
   const [width, setWidth] = React.useState({
     width: window.innerWidth
-  })
+  });
 
   React.useEffect(() => {
     function handleResize() {
       setWidth({
         width: window.innerWidth
-      })
-      console.log(width)
+      });
+      console.log(width);
     }
-    window.addEventListener('resize', handleResize)
+    window.addEventListener('resize', handleResize);
 
     return () => {
-      window.removeEventListener('resize', handleResize)
+      window.removeEventListener('resize', handleResize);
     };
   });
 
@@ -39,7 +39,7 @@ function Main() {
 
   const windowSize = () => {
     return window.innerWidth;
-  }
+  };
 
   return (
     <div data-theme={theme}>
@@ -48,7 +48,13 @@ function Main() {
           <Route exact path="/" element={<App windowSize={windowSize()} />}>
             <Route
               index
-              element={<Navbar themeHandler={switchTheme} theme={theme} windowSize={windowSize()} />}
+              element={
+                <Navbar
+                  themeHandler={switchTheme}
+                  theme={theme}
+                  windowSize={windowSize()}
+                />
+              }
             />
           </Route>
           <Route exact path="/blog" element={<Blog />}>
@@ -60,7 +66,7 @@ function Main() {
         </Routes>
       </BrowserRouter>
       <Footer />
-    </div >
+    </div>
   );
 }
 

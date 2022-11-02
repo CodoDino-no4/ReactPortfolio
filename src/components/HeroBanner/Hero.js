@@ -14,7 +14,7 @@ function Hero(props) {
         </h1>
       </div>
     </div>
-  )
+  );
 }
 
-export default Hero
+export default Hero;

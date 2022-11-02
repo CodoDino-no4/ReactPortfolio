@@ -1,14 +1,15 @@
 @import '../../App';
 
 .footer {
-
-  h1, h2, p {
-  color: var(--footer--text) !important;
+  h1,
+  h2,
+  p {
+    color: var(--footer--text) !important;
   }
 
   background-color: var(--footer--bg);
   position: unset;
-  bottom: 0; 
+  bottom: 0;
   padding: $outerPadding;
   padding-top: 30px;
 }
@@ -17,40 +18,40 @@
 }
 
 .footer-items {
-    display: flex;
-    flex-direction: row;
-    justify-content: space-between;
-    align-content: center;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-content: center;
 }
 
 .footer-art {
 }
 
 .links-grid {
-    display: grid;
-    justify-items: start;
-    align-content: space-between;
+  display: grid;
+  justify-items: start;
+  align-content: space-between;
 }
 
 .grid-item {
   text-align: center;
   color: var(--text);
-    display: flex;
-    align-items: center;
-    text-decoration: none;
+  display: flex;
+  align-items: center;
+  text-decoration: none;
 }
 
 .grid-item > img {
-  max-width:50px;
+  max-width: 50px;
 }
 
 .grid-item > p {
-    text-align: center;
+  text-align: center;
   color: var(--text);
-      padding-left: 20px;
+  padding-left: 20px;
 }
 
-.footer-br>p {
+.footer-br > p {
   text-align: center;
   color: var(--text);
   padding-bottom: 10px;
@@ -59,10 +60,9 @@
 @media screen and (max-width: $breakpoint--mob) {
   .footer-items {
     flex-direction: column;
-}
+  }
 
-.links-grid {
+  .links-grid {
     grid-row-gap: 20px;
-}
-
+  }
 }

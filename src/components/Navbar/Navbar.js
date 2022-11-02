@@ -39,7 +39,9 @@ class Navbar extends Component {
   }
 
   renderNav = (name, width) => {
-    { console.log(this.props.windowSize) }
+    {
+      console.log(this.props.windowSize);
+    }
     if (this.props.windowSize <= 960) {
       return (
         <Link

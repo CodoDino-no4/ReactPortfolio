@@ -16,7 +16,7 @@ const HeroSVG = (props) => {
     <Wrapper ref={inViewRef} pathLength={pathLength}>
       <svg
         className={inView ? 'animated visible' : 'animated'}
-        viewBox={props.windowSize <= 480 ? "0 -20 140 240" : "0 15 450 250"}
+        viewBox={props.windowSize <= 480 ? '0 -20 140 240' : '0 15 450 250'}
         xmlns="http://www.w3.org/2000/svg"
       >
         <path
@@ -29,7 +29,7 @@ const HeroSVG = (props) => {
           strokeWidth={0.5}
         />
       </svg>
-    </Wrapper >
+    </Wrapper>
   );
 };
 

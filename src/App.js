@@ -7,7 +7,6 @@ import Home from './components/Sections/Home/Home';
 import Projects from './components/Sections/Projects/Projects';
 
 function App(props) {
-
   return (
     <>
       <Outlet />

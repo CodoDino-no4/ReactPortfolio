@@ -1,7 +1,7 @@
 @import '../../../App.scss';
 
 .contact {
-    background-color: var(--bg);
+  background-color: var(--bg);
   padding: $outerPadding;
 }
 
@@ -22,18 +22,18 @@ form {
 
 form .row {
   position: relative;
-  height:inherit;
+  height: inherit;
 }
 
 form .contactColumn {
   height: 300px;
   padding: 1rem;
-    display: flex;
-    flex-direction: column;
+  display: flex;
+  flex-direction: column;
 }
 
 form .contactColumn.no1 {
-width: 40%;
+  width: 40%;
 }
 
 form .contactColumn.no2 {
@@ -49,21 +49,20 @@ form .contactColumn.no2 .row textarea {
   border: none;
   outline: none;
   background-color: var(--bg);
-
 }
 
 form input,
 form .contactColumn.no2 .textAreaRow {
-    border-bottom: 1px solid grey;
+  border-bottom: 1px solid grey;
 }
 
 .textAreaRow {
-      margin-bottom: 35px;
+  margin-bottom: 35px;
 }
 
 form .contactColumn.no2 .row textarea {
   resize: none;
-      height: 100%;
+  height: 100%;
 }
 
 form span {
@@ -82,20 +81,20 @@ form .contactColumn.no2 .row textarea:valid ~ span {
   color: grey;
 }
 
-form input[type="submit"] {
+form input[type='submit'] {
   position: relative;
   cursor: pointer;
   border: none;
   padding: 12px;
-      border: 0px solid;
-    border-radius: 10px;
+  border: 0px solid;
+  border-radius: 10px;
 }
 
-form input[type="submit"] {
+form input[type='submit'] {
   -webkit-transition: box-shadow 500ms ease-in-out, color 500ms ease-in-out;
   transition: box-shadow 500ms ease-in-out, color 500ms ease-in-out;
 }
-form input[type="submit"]:hover {
+form input[type='submit']:hover {
   box-shadow: 0 0 40px 40px grey inset;
 }
 
@@ -104,14 +103,14 @@ form input[type="submit"]:hover {
     flex-direction: column;
   }
   form .contactColumn.no1 {
-width: 100%;
-}
+    width: 100%;
+  }
 
-form .contactColumn.no2 {
-  width: 100%;
-}
+  form .contactColumn.no2 {
+    width: 100%;
+  }
 
-.contactColumn {
+  .contactColumn {
     padding: 0px 10px 0px 10px;
-}
+  }
 }

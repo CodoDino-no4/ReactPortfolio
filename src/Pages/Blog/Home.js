@@ -7,8 +7,8 @@ export class Home extends Component {
   render() {
     return (
       <>
-      <Outlet />
-      <section className="blog">
+        <Outlet />
+        <section className="blog">
           <h1>BLOG</h1>
           <div className="cards-items">
             <CardItem />
