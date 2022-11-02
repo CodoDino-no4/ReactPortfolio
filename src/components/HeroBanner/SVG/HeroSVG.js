@@ -9,9 +9,7 @@ const HeroSVG = (props) => {
   const [pathLength, setPathLength] = useState();
 
   useEffect(() => {
-    if (pathRef.current) {
-      setPathLength(pathRef.current.getTotalLength());
-    }
+    setPathLength(pathRef.current.getTotalLength());
   }, [pathRef]);
 
   return (
@@ -20,7 +18,6 @@ const HeroSVG = (props) => {
         className={inView ? 'animated visible' : 'animated'}
         viewBox={props.windowSize <= 480 ? "0 -20 140 240" : "0 15 450 250"}
         xmlns="http://www.w3.org/2000/svg"
-        {...props}
       >
         <path
           ref={pathRef}
@@ -32,7 +29,7 @@ const HeroSVG = (props) => {
           strokeWidth={0.5}
         />
       </svg>
-    </Wrapper>
+    </Wrapper >
   );
 };
 

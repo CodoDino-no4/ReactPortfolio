@@ -14,6 +14,24 @@ function Main() {
     defaultDark ? 'dark' : 'light'
   );
 
+  const [width, setWidth] = React.useState({
+    width: window.innerWidth
+  })
+
+  React.useEffect(() => {
+    function handleResize() {
+      setWidth({
+        width: window.innerWidth
+      })
+      console.log(width)
+    }
+    window.addEventListener('resize', handleResize)
+
+    return () => {
+      window.removeEventListener('resize', handleResize)
+    };
+  });
+
   const switchTheme = () => {
     const newTheme = theme === 'light' ? 'dark' : 'light';
     setTheme(newTheme);
@@ -27,13 +45,13 @@ function Main() {
     <div data-theme={theme}>
       <BrowserRouter>
         <Routes>
-          <Route path="/" element={<App windowSize={windowSize()} />}>
+          <Route exact path="/" element={<App windowSize={windowSize()} />}>
             <Route
               index
               element={<Navbar themeHandler={switchTheme} theme={theme} windowSize={windowSize()} />}
             />
           </Route>
-          <Route path="/blog" element={<Blog />}>
+          <Route exact path="/blog" element={<Blog />}>
             <Route
               index
               element={<Navbar themeHandler={switchTheme} theme={theme} />}
@@ -42,7 +60,7 @@ function Main() {
         </Routes>
       </BrowserRouter>
       <Footer />
-    </div>
+    </div >
   );
 }
 
