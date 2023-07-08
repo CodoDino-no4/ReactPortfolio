@@ -1,0 +1,1 @@
+export { FooterArt } from "./FooterArt"

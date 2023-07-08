@@ -1,0 +1,18 @@
+import React from 'react';
+import './Hero.scss';
+import HeroImg from './SVG/HeroSVG';
+
+export const Hero = ({windowSize}): JSX.Element => {
+  return (
+    <div className="hero-container">
+      <HeroImg windowSize={windowSize} />
+      <div className="forground-text">
+        <h1>
+          ALICE
+          <br />
+          CHAMBERS
+        </h1>
+      </div>
+    </div>
+  );
+}
