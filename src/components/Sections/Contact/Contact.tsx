@@ -1,19 +1,19 @@
-import React, { useState } from 'react';
+import { useState } from 'react';
 import './Contact.scss';
 
-export const Contact = ():JSX.Element => {
+export const Contact = (): JSX.Element => {
   const [contactInput, setContactInput] = useState({
     name: '',
     email: '',
     company: '',
     location: '',
-    message: ''
+    message: '',
   });
 
   const handleChange = (event) => {
     setContactInput({
       ...contactInput,
-      [event.target.name]: event.target.value
+      [event.target.name]: event.target.value,
     });
   };
 
@@ -94,4 +94,4 @@ export const Contact = ():JSX.Element => {
       </div>
     </section>
   );
-}
+};

@@ -1,4 +1,4 @@
-const path = require('path');
+import path from 'path';
 
 module.exports = {
   entry: ['./src/index.tsx'],
@@ -6,7 +6,7 @@ module.exports = {
   module: {
     rules: [
       {
-        test: /\.(js|jsx)$/,
+        test: /\.(js|jsx|ts|tsx)$/,
         exclude: /(node_modules|bower_components)/,
         loader: 'babel-loader',
         options: { presets: ['@babel/env'] },
@@ -16,12 +16,12 @@ module.exports = {
         use: ['style-loader', 'css-loader', 'sass-loader'],
       },
       {
-        test: /\.(png|svg|jpg|jpeg|gif)$/i,
-        use: 'file-loader',
+        test: /\\.(png|jp(e*)g|svg|gif)$/,
+        use: ['file-loader'],
       },
     ],
   },
-  resolve: { extensions: ['*', '.js', '.jsx'] },
+  resolve: { extensions: ['*', '.js', '.jsx', '.ts', '.tsx'] },
   output: {
     publicPath: '/dist/',
     path: path.resolve(__dirname, 'dist'),

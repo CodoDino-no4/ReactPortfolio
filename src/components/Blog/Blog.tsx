@@ -1,4 +1,3 @@
-import React from 'react';
 import { CardItem } from '../../components/CardItem/CardItem';
 import './Blog.scss';
 
@@ -18,5 +17,4 @@ export const Blog = (): JSX.Element => {
       </section>
     </>
   );
-}
-
+};

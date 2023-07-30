@@ -1,30 +1,32 @@
-import React, { createRef, useEffect, useState } from 'react';
+import { createRef, useEffect, useState } from 'react';
 import { useInView } from 'react-intersection-observer';
 import styled from 'styled-components';
-import HeroPath from "./HeroPaths.json"
+import HeroPath from './HeroPaths.json';
+import React from 'react';
 
 interface props {
   windowSize: number;
 }
 
-export const HeroSVG = ({windowSize}: props): JSX.Element => {
+export const HeroSVG = (): JSX.Element => {
   const [inViewRef, inView] = useInView({});
   const pathRef = createRef();
   const [pathLength, setPathLength] = useState();
+  const [windowSize, setWindowSize] = useState(1920);
 
   useEffect(() => {
-    setPathLength(pathRef.current.getTotalLength());
+    console.log('path ref');
   }, [pathRef]);
 
   return (
-    <Wrapper ref={inViewRef} pathLength={pathLength}>
+    <HeroWrapper ref={inViewRef} pathLength={pathLength}>
       <svg
         className={inView ? 'animated visible' : 'animated'}
         viewBox={windowSize <= 480 ? '0 -20 140 240' : '0 15 450 250'}
         xmlns="http://www.w3.org/2000/svg"
       >
         <path
-          ref={pathRef}
+          //ref={pathRef}
           d={windowSize <= 480 ? HeroPath.Mobile : HeroPath.Desktop}
           fill="none"
           stroke="#000"
@@ -33,11 +35,11 @@ export const HeroSVG = ({windowSize}: props): JSX.Element => {
           strokeWidth={0.5}
         />
       </svg>
-    </Wrapper>
+    </HeroWrapper>
   );
 };
 
-const Wrapper = styled.div`
+const HeroWrapper = styled.div`
   height:inherit;
   
   z-index: 0;

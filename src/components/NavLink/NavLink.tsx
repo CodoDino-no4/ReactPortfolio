@@ -1,33 +1,35 @@
-import React from 'react';
 import { Link } from 'react-scroll';
 import styled from 'styled-components';
 
-
 interface props {
-linkWidth: number;
-name: string;
-offsetHandler: number;
+  linkWidth: number;
+  name: string;
+  offsetHandler: number;
 }
 
-export const NavLink = ({linkWidth, name, offsetHandler}: props): JSX.Element => {
+export const NavLink = ({
+  linkWidth,
+  name,
+  offsetHandler,
+}: props): JSX.Element => {
   function pathValue(linkWidth) {
-    var moveYMin = 5;
-    var moveYMax = 12;
+    const moveYMin = 5;
+    const moveYMax = 12;
 
-    var curveXMin = 20;
-    var curveXMax = linkWidth;
-    var curveYMin = 5;
-    var curveYMax = 20;
+    const curveXMin = 20;
+    const curveXMax = linkWidth;
+    const curveYMin = 5;
+    const curveYMax = 20;
 
-    var endYMin = 5;
-    var endYMax = 10;
+    const endYMin = 5;
+    const endYMax = 10;
 
-    var moveY = Math.floor(Math.random() * (moveYMax - moveYMin)) + moveYMin;
-    var curveX =
+    const moveY = Math.floor(Math.random() * (moveYMax - moveYMin)) + moveYMin;
+    const curveX =
       Math.floor(Math.random() * (curveXMax - curveXMin)) + curveXMin;
-    var curveY =
+    const curveY =
       Math.floor(Math.random() * (curveYMax - curveYMin)) + curveYMin;
-    var endY = Math.floor(Math.random() * (endYMax - endYMin)) + endYMin;
+    const endY = Math.floor(Math.random() * (endYMax - endYMin)) + endYMin;
 
     return `M5 ${moveY} Q ${curveX} ${curveY} ${linkWidth} ${endY}`;
   }

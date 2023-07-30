@@ -1,1 +1,1 @@
-export { HeroSVG } from "./HeroSVG";
+export { HeroSVG } from './HeroSVG';

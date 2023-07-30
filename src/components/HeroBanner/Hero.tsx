@@ -2,10 +2,14 @@ import React from 'react';
 import './Hero.scss';
 import HeroImg from './SVG/HeroSVG';
 
-export const Hero = ({windowSize}): JSX.Element => {
+interface props {
+  windowSize: number;
+}
+
+export const Hero = (): JSX.Element => {
   return (
     <div className="hero-container">
-      <HeroImg windowSize={windowSize} />
+      <HeroImg />
       <div className="forground-text">
         <h1>
           ALICE
@@ -15,4 +19,4 @@ export const Hero = ({windowSize}): JSX.Element => {
       </div>
     </div>
   );
-}
+};

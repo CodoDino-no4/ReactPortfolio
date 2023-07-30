@@ -1,22 +1,23 @@
 import { useState } from 'react';
 import { Link } from 'react-scroll';
-import DarkModeContent from '../../images/dark-mode.svg';
-import LightModeContent from '../../images/light-mode.svg';
+import DarkModeContent from '../../utils/resources/dark-mode.svg';
+import LightModeContent from '../../utils/resources/light-mode.svg';
 import { Button } from '../Button';
 import { Toggle } from '../Toggle/Toggle';
 import { BurgerMenuIcon } from '../BurgerMenu';
 import './Navbar.scss';
 import { NavLink } from '../NavLink/NavLink';
+import React from 'react';
 
 interface props {
   theme: string;
-  windowSize: number;
-themeHandler: Function;
+  themeHandler: void;
 }
 
-export const Navbar = ({theme, windowSize, themeHandler }: props): JSX.Element => {
+export const Navbar = ({ theme }: props): JSX.Element => {
   const [mobMenu, setMobMenu] = useState(false);
-  const [navbarOffset, setNavbarOffset] = useState(-80);
+  const [navbarOffset] = useState(-80);
+  const [windowSize, setWindowSize] = useState(1920);
 
   const toggleMobMenu = () => {
     setMobMenu(!mobMenu);
@@ -32,6 +33,10 @@ export const Navbar = ({theme, windowSize, themeHandler }: props): JSX.Element =
     } else {
       return false;
     }
+  };
+
+  const handleResize = () => {
+    setWindowSize(1920);
   };
 
   const renderNav = (name, width) => {
@@ -55,11 +60,7 @@ export const Navbar = ({theme, windowSize, themeHandler }: props): JSX.Element =
       );
     } else {
       return (
-        <NavLink
-          offsetHandler={navbarOffset}
-          linkWidth={width}
-          name={name}
-        />
+        <NavLink offsetHandler={navbarOffset} linkWidth={width} name={name} />
       );
     }
   };
@@ -71,11 +72,7 @@ export const Navbar = ({theme, windowSize, themeHandler }: props): JSX.Element =
           <div className="menu-icon" onClick={toggleMobMenu}>
             <BurgerMenuIcon linkWidth={40} isOpen={mobMenu} />
           </div>
-          <ul
-            className={
-              mobMenu ? 'nav-menu active' : 'nav-menu'
-            }
-          >
+          <ul className={mobMenu ? 'nav-menu active' : 'nav-menu'}>
             <li className="nav-item">{renderNav('home', 115)}</li>
             <li className="nav-item">{renderNav('about', 125)}</li>
             <li className="nav-item">{renderNav('projects', 150)}</li>
@@ -90,7 +87,6 @@ export const Navbar = ({theme, windowSize, themeHandler }: props): JSX.Element =
                 name="theme"
                 dataOn={DarkModeContent}
                 dataOff={LightModeContent}
-                clickHandler={themeHandler}
                 theme={isDark()}
               />
             </li>

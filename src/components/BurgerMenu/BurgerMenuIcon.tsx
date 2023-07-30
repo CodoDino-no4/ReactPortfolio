@@ -7,26 +7,25 @@ interface props {
   isOpen: boolean;
 }
 
-export const BurgerMenuIcon = ({linkWidth, isOpen}: props):JSX.Element => {
-
+export const BurgerMenuIcon = ({ linkWidth, isOpen }: props): JSX.Element => {
   function pathValue(linkWidth) {
-    var moveYMin = 5;
-    var moveYMax = 12;
+    const moveYMin = 5;
+    const moveYMax = 12;
 
-    var curveXMin = 10;
-    var curveXMax = linkWidth;
-    var curveYMin = 5;
-    var curveYMax = 10;
+    const curveXMin = 10;
+    const curveXMax = linkWidth;
+    const curveYMin = 5;
+    const curveYMax = 10;
 
-    var endYMin = 5;
-    var endYMax = 10;
+    const endYMin = 5;
+    const endYMax = 10;
 
-    var moveY = Math.floor(Math.random() * (moveYMax - moveYMin)) + moveYMin;
-    var curveX =
+    const moveY = Math.floor(Math.random() * (moveYMax - moveYMin)) + moveYMin;
+    const curveX =
       Math.floor(Math.random() * (curveXMax - curveXMin)) + curveXMin;
-    var curveY =
+    const curveY =
       Math.floor(Math.random() * (curveYMax - curveYMin)) + curveYMin;
-    var endY = Math.floor(Math.random() * (endYMax - endYMin)) + endYMin;
+    const endY = Math.floor(Math.random() * (endYMax - endYMin)) + endYMin;
 
     return `M5 ${moveY} Q ${curveX} ${curveY} ${linkWidth} ${endY}`;
   }
@@ -49,7 +48,7 @@ export const BurgerMenuIcon = ({linkWidth, isOpen}: props):JSX.Element => {
 
   if (isOpen) {
     return (
-      <Styled linkWidth={linkWidth}>
+      <Burger linkWidth={linkWidth}>
         {console.log(isOpen)}
         <svg
           className="times"
@@ -60,11 +59,11 @@ export const BurgerMenuIcon = ({linkWidth, isOpen}: props):JSX.Element => {
           {lineNode(0)}
           {lineNode(10)}
         </svg>
-      </Styled>
+      </Burger>
     );
   } else {
     return (
-      <Styled linkWidth={linkWidth}>
+      <Burger linkWidth={linkWidth}>
         {console.log(isOpen)}
         <svg
           className="line"
@@ -76,13 +75,12 @@ export const BurgerMenuIcon = ({linkWidth, isOpen}: props):JSX.Element => {
           {lineNode(10)}
           {lineNode(20)}
         </svg>
-      </Styled>
+      </Burger>
     );
   }
 };
 
-const Styled = styled.div
-`
+export const Burger = styled.div`
   .line {
     stroke-dasharray: ${(props) => props.linkWidth};
     stroke-dashoffset: ${(props) => props.linkWidth};
@@ -122,5 +120,5 @@ const Styled = styled.div
 
 BurgerMenuIcon.propTypes = {
   linkWidth: propTypes.number.isRequired,
-  isOpen: propTypes.bool.isRequired
+  isOpen: propTypes.bool.isRequired,
 };

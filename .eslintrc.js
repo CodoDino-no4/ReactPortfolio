@@ -35,6 +35,8 @@ module.exports = {
     semi: ['error', 'always'],
     '@typescript-eslint/no-non-null-assertion': 'warn',
     'no-case-declarations': 'warn',
+    'react/jsx-uses-react': 'error',
+    'react/jsx-uses-vars': 'error',
   },
   settings: {
     react: {
