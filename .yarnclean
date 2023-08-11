@@ -6,9 +6,8 @@ powered-test
 
 # asset directories
 docs
-doc
 website
-images
+utils/resources
 assets
 
 # examples
