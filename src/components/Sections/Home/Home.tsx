@@ -8,11 +8,11 @@ interface props {
   windowSize: number;
 }
 
-export const Home = (): JSX.Element => {
+export const Home = ({windowSize}: props): JSX.Element => {
   return (
     <Fragment>
       <section className="home">
-        <Hero />
+        <Hero windowSize={windowSize}/> 
       </section>
       <About />
       <Projects />

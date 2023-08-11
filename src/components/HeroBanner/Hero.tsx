@@ -6,10 +6,10 @@ interface props {
   windowSize: number;
 }
 
-export const Hero = (): JSX.Element => {
+export const Hero = ({windowSize}: props): JSX.Element => {
   return (
     <div className="hero-container">
-      <HeroImg />
+      <HeroImg windowSize={windowSize}/>
       <div className="forground-text">
         <h1>
           ALICE

@@ -1,16 +1,17 @@
-import { useState, createRef, useEffect } from 'react';
+import { useState, useEffect, useRef } from 'react';
 import styled from 'styled-components';
 import { useInView } from 'react-intersection-observer';
+import React from 'react';
 
 export const FooterArt = (): JSX.Element => {
   const [inViewRef, inView] = useInView({});
-  const pathRef = createRef();
-  const pathRef1 = createRef();
-  const pathRef2 = createRef();
-  const [pathLength, setPathLength] = useState();
+  const pathRef = useRef<SVGPathElement>(null);
+  const pathRef1 = useRef<SVGPathElement>(null);
+  const pathRef2 = useRef<SVGPathElement>(null);
+  const [pathLength, setPathLength] = useState<number>(0);
 
   useEffect(() => {
-    if (pathRef.current) {
+    if (pathRef.current !== null && pathRef1.current !== null && pathRef2.current !== null ) {
       setPathLength(
         pathRef.current.getTotalLength() +
           pathRef1.current.getTotalLength() +

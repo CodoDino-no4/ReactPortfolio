@@ -16,9 +16,19 @@ module.exports = {
         use: ['style-loader', 'css-loader', 'sass-loader'],
       },
       {
-        test: /\\.(png|jp(e*)g|svg|gif)$/,
+        test: /\.(png|jpe?g|gif)$/i,
         type: 'asset/resource',
         use: ['file-loader'],
+      },
+      {
+        test: /\.svg/,
+        use: {
+          loader: 'svg-url-loader',
+          options: {
+            // make all svg images to work in IE
+            iesafe: true,
+          },
+        },
       },
     ],
   },
