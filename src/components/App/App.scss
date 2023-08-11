@@ -1,0 +1,88 @@
+// Light Mode
+[data-theme='light'] {
+  --bg: #fff;
+  --text: #000;
+  --footer--bg: #211f30;
+  --footer--text: #fff;
+}
+
+// Dark Mode
+[data-theme='dark'] {
+  --bg: #211f30;
+  --text: #b8b8b8;
+  --footer--bg: #000;
+  --footer--text: #fff;
+}
+
+// Font settings
+$title--font: 'Kanit', sans-serif;
+$body--font: 'IBM Plex Sans KR', sans-serif;
+$body--font--weight: 300;
+$h1--size: 70px;
+$h1--font--weight: 700;
+$badge--font--weight: 700;
+$h1--mob--size: 50px;
+$h2--size: 30px;
+$h3--size: 20px;
+$body--size: 16px;
+
+// Breakpoints
+$breakpoint--mob: 480px;
+$breakpoint--tablet: 960px;
+$breakpoint--screen: 1200px;
+
+// Toggle colours
+$greyLight-1: #e4ebf5;
+$greyLight-2: #c8d0e7;
+$greyLight-3: #bec8e4;
+$greyDark: #a8a8a8;
+
+// Colours
+$white: #fff;
+$black: #000;
+
+// Page margin
+$outerPadding: 0px 10% 30px 10%;
+$mobOuterPadding: 0px 10% 30px 10%;
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: $body--font;
+  font-weight: $body--font--weight;
+  font-size: $body--size;
+}
+
+body {
+  background-color: var(--bg);
+}
+
+h1 {
+  color: var(--text);
+  letter-spacing: 1px;
+  font-family: $title--font;
+  font-size: $h1--size;
+  font-weight: $h1--font--weight;
+  text-align: center;
+}
+
+h2 {
+  color: var(--text);
+  font-family: $title--font;
+  font-size: $h2--size;
+}
+
+h3 {
+  font-size: $h3--size;
+}
+
+p {
+  color: var(--text);
+}
+
+@media screen and (max-width: $breakpoint--tablet) {
+  h1 {
+    font-size: $h1--mob--size;
+  }
+}

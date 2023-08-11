@@ -1,0 +1,1 @@
+export { HeroSVG } from './HeroSVG';
