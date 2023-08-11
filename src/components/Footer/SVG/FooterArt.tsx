@@ -11,7 +11,11 @@ export const FooterArt = (): JSX.Element => {
   const [pathLength, setPathLength] = useState<number>(0);
 
   useEffect(() => {
-    if (pathRef.current !== null && pathRef1.current !== null && pathRef2.current !== null ) {
+    if (
+      pathRef.current !== null &&
+      pathRef1.current !== null &&
+      pathRef2.current !== null
+    ) {
       setPathLength(
         pathRef.current.getTotalLength() +
           pathRef1.current.getTotalLength() +

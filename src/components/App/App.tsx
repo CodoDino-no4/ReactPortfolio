@@ -8,7 +8,6 @@ import { Blog } from '../Blog';
 import { NotFound } from '../NotFound';
 
 export const App = (): JSX.Element => {
-
   const defaultDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
   const [theme, setTheme] = useLocalStorage(
     'theme',
@@ -16,12 +15,12 @@ export const App = (): JSX.Element => {
   );
 
   const [windowSize, setWindowSize] = useState<number>(window.innerWidth);
-  
+
   const switchTheme = () => {
     const newTheme = theme === 'light' ? 'dark' : 'light';
     setTheme(newTheme);
   };
-  
+
   const handleResize = () => {
     setWindowSize(window.innerWidth);
   };
@@ -34,7 +33,7 @@ export const App = (): JSX.Element => {
         <BrowserRouter>
           {/* <Navbar themeHandler={switchTheme()} theme={theme} /> */}
           <Routes>
-            <Route path="/" element={<Home windowSize={windowSize}/>} />
+            <Route path="/" element={<Home windowSize={windowSize} />} />
             <Route path="/blog" element={<Blog />} />
             <Route path="*" element={<NotFound />} />
           </Routes>

@@ -8,17 +8,14 @@ interface props {
   windowSize: number;
 }
 
-export const HeroSVG = ({windowSize}: props): JSX.Element => {
-
+export const HeroSVG = ({ windowSize }: props): JSX.Element => {
   const [inViewRef, inView] = useInView({});
   const pathRef = useRef<SVGPathElement>(null);
   const [pathLength, setPathLength] = useState<number>(0);
 
   useEffect(() => {
     if (pathRef.current !== null) {
-      setPathLength(
-        pathRef.current.getTotalLength()
-      );
+      setPathLength(pathRef.current.getTotalLength());
     }
   }, [pathRef]);
 
