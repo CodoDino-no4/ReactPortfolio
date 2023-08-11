@@ -11,13 +11,12 @@ import React from 'react';
 
 interface props {
   theme: string;
-  themeHandler: void;
+  windowSize: number;
 }
 
-export const Navbar = ({ theme }: props): JSX.Element => {
+export const Navbar = ({ theme, windowSize }: props): JSX.Element => {
   const [mobMenu, setMobMenu] = useState(false);
   const [navbarOffset] = useState(-80);
-  const [windowSize, setWindowSize] = useState(1920);
 
   const toggleMobMenu = () => {
     setMobMenu(!mobMenu);
@@ -35,14 +34,7 @@ export const Navbar = ({ theme }: props): JSX.Element => {
     }
   };
 
-  const handleResize = () => {
-    setWindowSize(1920);
-  };
-
   const renderNav = (name, width) => {
-    {
-      console.log(windowSize);
-    }
     if (windowSize <= 960) {
       return (
         <Link

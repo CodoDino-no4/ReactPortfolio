@@ -1,4 +1,3 @@
-import propTypes from 'prop-types';
 import React from 'react';
 import styled from 'styled-components';
 
@@ -49,7 +48,6 @@ export const BurgerMenuIcon = ({ linkWidth, isOpen }: props): JSX.Element => {
   if (isOpen) {
     return (
       <Burger linkWidth={linkWidth}>
-        {console.log(isOpen)}
         <svg
           className="times"
           xmlns="http://www.w3.org/2000/svg"
@@ -64,7 +62,6 @@ export const BurgerMenuIcon = ({ linkWidth, isOpen }: props): JSX.Element => {
   } else {
     return (
       <Burger linkWidth={linkWidth}>
-        {console.log(isOpen)}
         <svg
           className="line"
           xmlns="http://www.w3.org/2000/svg"
@@ -90,12 +87,6 @@ export const Burger = styled.div`
     width: 45px;
   }
 
-  // .line:hover {
-  //     stroke-dasharray: 0;
-  //     stroke-dashoffset: ${(props) => props.linkWidth};
-  //     animation: drawOut 1s linear forwards;
-  // }
-
   .times {
     stroke-dasharray: ${(props) => props.linkWidth};
     stroke-dashoffset: ${(props) => props.linkWidth};
@@ -117,8 +108,3 @@ export const Burger = styled.div`
     }
   }
 `;
-
-BurgerMenuIcon.propTypes = {
-  linkWidth: propTypes.number.isRequired,
-  isOpen: propTypes.bool.isRequired,
-};

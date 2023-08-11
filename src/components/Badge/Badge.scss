@@ -1,0 +1,9 @@
+@import '../App/App.scss';
+
+.badge-container {
+  border-radius: 10px;
+  background-color: blueviolet;
+  color: var(--text);
+  padding: 1px 5px 1px 5px;
+  font-weight: $badge--font--weight;
+}

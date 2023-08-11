@@ -1,3 +1,4 @@
+import React from 'react';
 import { Link } from 'react-scroll';
 import styled from 'styled-components';
 
@@ -35,7 +36,7 @@ export const NavLink = ({
   }
 
   return (
-    <Styled linkWidth={linkWidth}>
+    <StyledLink linkWidth={linkWidth}>
       <Link
         to={`${name}`}
         className="nav-links"
@@ -62,11 +63,11 @@ export const NavLink = ({
           />
         </svg>
       </Link>
-    </Styled>
+    </StyledLink>
   );
 };
 
-const Styled = styled.div`
+const StyledLink = styled.div`
   .nav-links {
     padding: 0.5rem 1.5rem;
     display: inline-block;
