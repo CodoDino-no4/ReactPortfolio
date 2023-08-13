@@ -24,7 +24,7 @@ export const Contact = (): JSX.Element => {
   };
 
   return (
-    <section className="contact">
+    <section id="contact">
       <h1>CONTACT</h1>
       <div className="contact-container">
         <div className="headings">

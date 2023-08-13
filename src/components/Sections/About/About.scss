@@ -1,6 +1,6 @@
 @import '../../App/App.scss';
 
-.about {
+#about {
   background-color: var(--bg);
   padding: $outerPadding;
 }
@@ -8,6 +8,7 @@
 .about-container {
   display: flex;
   flex-direction: column;
+  padding: 20px 0px 20px 0px;
 }
 
 .intro-container {
@@ -54,8 +55,11 @@
     width: 100%;
     margin-left: 0px;
   }
+}
 
+@media screen and (max-width: $breakpoint--tablet) {
   .key-info {
-    display: block;
+    grid-template-columns: 1fr;
+    grid-template-rows: repeat(1, max-content);
   }
 }

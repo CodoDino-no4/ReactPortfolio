@@ -5,15 +5,15 @@ interface props {
   dataOff: string;
   dataOn: string;
   name: string;
-  theme: boolean;
+  checked: boolean;
 }
 
-export const Toggle = ({ dataOff, dataOn, name, theme }: props) => {
-  const [isActive, setIsActive] = useState(theme);
+export const Toggle = ({ dataOff, dataOn, name, checked }: props) => {
+  const [isActive, setIsActive] = useState(checked);
 
   // Tells input if it is meant to be checked or not
   const setActive = () => {
-    setIsActive(!isActive);
+    setIsActive(isActive === true ? false : true);
   };
 
   return (
@@ -25,7 +25,7 @@ export const Toggle = ({ dataOff, dataOn, name, theme }: props) => {
           type="checkbox"
           onChange={setActive}
         />
-        <div className={`icon-${name}`} onClick={setActive}>
+        <div className={`icon-${name}`}>
           {isActive ? <img src={dataOff} /> : <img src={dataOn} />}
         </div>
       </label>

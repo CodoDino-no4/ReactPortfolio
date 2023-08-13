@@ -4,17 +4,17 @@ import { Badge } from '../../Badge';
 
 export const About = (): JSX.Element => {
   return (
-    <section className="about">
+    <section id="about">
       <h1>ABOUT</h1>
       <div className="about-container">
         <div className="intro-container">
           <div className="intro">
             <h2>
               Hiya, my name is Alice.
-              <br />
-              I am a creative professional with a passion for Software
-              Development,
-              <br /> UX and Software Architecture/Design.
+              <br />I am a creative developer with a passion for{' '}
+              <strong>digital design</strong>,
+              <br /> <strong>UX</strong> and building{' '}
+              <strong>software architecture</strong>.
             </h2>
             <p></p>
           </div>

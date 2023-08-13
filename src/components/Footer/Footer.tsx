@@ -14,7 +14,7 @@ export const Footer = (): JSX.Element => {
           <div className="links-grid">
             <a
               className="grid-item"
-              href="https://github.com/Alicee5cha"
+              href="https://github.com/CodoDino-no4"
               target="_blank"
               rel="noopener noreferrer"
             >

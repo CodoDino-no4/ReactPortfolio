@@ -10,7 +10,7 @@ export const Projects = () => {
 
   return (
     <>
-      <section className="projects">
+      <section id="projects">
         <h1>PROJECTS</h1>
         <div className="projects-container">
           <div className="cards">

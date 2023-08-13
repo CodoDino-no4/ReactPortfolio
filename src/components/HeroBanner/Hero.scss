@@ -2,6 +2,7 @@
 
 .hero-container {
   width: 100%;
+  color: var(--bg);
 }
 
 .forground-text {
@@ -13,7 +14,7 @@
 }
 
 .forground-text > h1 {
-  color: rgba(104, 104, 104, 0.75);
+  color: $grey;
   font-size: 100px;
   text-align: left;
   animation: h1 3s ease-out;
@@ -36,10 +37,6 @@
 }
 
 @media screen and (max-width: $breakpoint--mob) {
-  .forground-text {
-    right: auto;
-  }
-
   .forground-text > h1 {
     font-size: 50px;
   }

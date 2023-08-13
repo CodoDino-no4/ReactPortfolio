@@ -6,13 +6,14 @@ import { Contact } from '../Contact';
 
 interface props {
   windowSize: number;
+  isDark: boolean;
 }
 
-export const Home = ({ windowSize }: props): JSX.Element => {
+export const Home = ({ windowSize, isDark }: props): JSX.Element => {
   return (
     <Fragment>
-      <section className="home">
-        <Hero windowSize={windowSize} />
+      <section id="home">
+        <Hero windowSize={windowSize} isDark={isDark} />
       </section>
       <About />
       <Projects />

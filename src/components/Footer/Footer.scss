@@ -1,17 +1,17 @@
 @import '../App/App.scss';
 
 .footer {
-  h1,
-  h2,
-  p {
-    color: var(--footer--text) !important;
-  }
-
   background-color: var(--footer--bg);
   position: unset;
   bottom: 0;
   padding: $outerPadding;
   padding-top: 30px;
+}
+
+.footer > h1,
+h2,
+p {
+  color: var(--text);
 }
 
 .footer-container {

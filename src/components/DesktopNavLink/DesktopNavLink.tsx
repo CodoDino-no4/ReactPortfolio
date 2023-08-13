@@ -1,19 +1,19 @@
 import React from 'react';
-import { Link } from 'react-scroll';
+import { Link } from 'react-router-dom';
 import styled from 'styled-components';
 
 interface props {
   linkWidth: number;
   name: string;
-  offsetHandler: number;
+  isDark: boolean;
 }
 
-export const NavLink = ({
+export const DesktopNavLink = ({
   linkWidth,
   name,
-  offsetHandler,
+  isDark,
 }: props): JSX.Element => {
-  function pathValue(linkWidth) {
+  const pathValue = (linkWidth) => {
     const moveYMin = 5;
     const moveYMax = 12;
 
@@ -33,19 +33,11 @@ export const NavLink = ({
     const endY = Math.floor(Math.random() * (endYMax - endYMin)) + endYMin;
 
     return `M5 ${moveY} Q ${curveX} ${curveY} ${linkWidth} ${endY}`;
-  }
+  };
 
   return (
-    <StyledLink linkWidth={linkWidth}>
-      <Link
-        to={`${name}`}
-        className="nav-links"
-        spy={true}
-        smooth={true}
-        duration={1000}
-        isDynamic={true}
-        offset={offsetHandler}
-      >
+    <StyledLink linkWidth={linkWidth} isDark={isDark}>
+      <Link to={`/#${name}`} className="nav-links">
         {name.toUpperCase()}
         <svg
           className="underline"
@@ -73,12 +65,13 @@ const StyledLink = styled.div`
     display: inline-block;
     cursor: pointer;
     transition: all 0.2s ease-out;
+    text-decoration: none;
+    color: ${(props) => (props.isDark ? '#211f30' : '#fff')};
   }
 
   .nav-links:hover {
     transform: scale(1.1);
     color: #f2695c;
-    position: sticky;
 
     .underline {
       opacity: 1;

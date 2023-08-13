@@ -6,9 +6,10 @@ import React from 'react';
 
 interface props {
   windowSize: number;
+  isDark: boolean;
 }
 
-export const HeroSVG = ({ windowSize }: props): JSX.Element => {
+export const HeroSVG = ({ windowSize, isDark }: props): JSX.Element => {
   const [inViewRef, inView] = useInView({});
   const pathRef = useRef<SVGPathElement>(null);
   const [pathLength, setPathLength] = useState<number>(0);
@@ -17,10 +18,11 @@ export const HeroSVG = ({ windowSize }: props): JSX.Element => {
     if (pathRef.current !== null) {
       setPathLength(pathRef.current.getTotalLength());
     }
+    console.log(isDark);
   }, [pathRef]);
 
   return (
-    <HeroWrapper ref={inViewRef} pathLength={pathLength}>
+    <HeroWrapper ref={inViewRef} pathLength={pathLength} isDark={isDark}>
       <svg
         className={inView ? 'animated visible' : 'animated'}
         viewBox={windowSize <= 600 ? '0 -20 140 240' : '0 15 450 250'}
@@ -30,7 +32,7 @@ export const HeroSVG = ({ windowSize }: props): JSX.Element => {
           ref={pathRef}
           d={windowSize <= 600 ? HeroPath.Mobile : HeroPath.Desktop}
           fill="none"
-          stroke="#000"
+          stroke={isDark ? '#fff' : '#211f30'}
           strokeLinecap="round"
           strokeLinejoin="round"
           strokeWidth={0.5}
@@ -42,6 +44,7 @@ export const HeroSVG = ({ windowSize }: props): JSX.Element => {
 
 const HeroWrapper = styled.div`
   height:inherit;
+  background-color: ${(props) => (props.isDark ? '#211f30' : '#fff')};
   
   z-index: 0;
    svg {

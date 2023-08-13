@@ -15,11 +15,6 @@ export const App = (): JSX.Element => {
     defaultDark ? 'dark' : 'light'
   );
 
-  const switchTheme = () => {
-    const newTheme = theme === 'light' ? 'dark' : 'light';
-    setTheme(newTheme);
-  };
-
   const [windowSize, setWindowSize] = useState<number>(window.innerWidth);
 
   const handleResize = () => {
@@ -31,10 +26,18 @@ export const App = (): JSX.Element => {
   return (
     <>
       <div data-theme={theme}>
-        <BrowserRouter>
+        <BrowserRouter basename="/">
           <Navbar theme={theme} windowSize={windowSize} />
           <Routes>
-            <Route path="/" element={<Home windowSize={windowSize} />} />
+            <Route
+              path="/"
+              element={
+                <Home
+                  windowSize={windowSize}
+                  isDark={theme === 'dark' ? true : false}
+                />
+              }
+            />
             <Route path="/blog" element={<Blog />} />
             <Route path="*" element={<NotFound />} />
           </Routes>

@@ -1,13 +1,13 @@
-import { useState } from 'react';
-import { Link } from 'react-scroll';
+import { useEffect, useState } from 'react';
+import { Link, useLocation } from 'react-router-dom';
 import DarkModeContent from '../../utils/resources/dark-mode.svg';
 import LightModeContent from '../../utils/resources/light-mode.svg';
 import { Button } from '../Button';
 import { Toggle } from '../Toggle/Toggle';
 import { BurgerMenuIcon } from '../BurgerMenu';
 import './Navbar.scss';
-import { NavLink } from '../NavLink/NavLink';
 import React from 'react';
+import { DesktopNavLink } from '../DesktopNavLink/DesktopNavLink';
 
 interface props {
   theme: string;
@@ -17,6 +17,9 @@ interface props {
 export const Navbar = ({ theme, windowSize }: props): JSX.Element => {
   const [mobMenu, setMobMenu] = useState(false);
   const [navbarOffset] = useState(-80);
+  const [newTheme, setNewTheme] = useState(theme);
+  const isDark = theme === 'dark' ? true : false;
+  const location = useLocation();
 
   const toggleMobMenu = () => {
     setMobMenu(!mobMenu);
@@ -26,34 +29,34 @@ export const Navbar = ({ theme, windowSize }: props): JSX.Element => {
     setMobMenu(false);
   };
 
-  const isDark = () => {
-    if (theme === 'dark') {
-      return true;
-    } else {
-      return false;
-    }
+  const switchTheme = () => {
+    setNewTheme(theme === 'light' ? 'dark' : 'light');
   };
 
+  useEffect(() => {
+    if (location.hash) {
+      const section = document.getElementById(location.hash.slice(1));
+      if (section) {
+        const sectionPosition = section?.getBoundingClientRect().top;
+        const scrollPosition = sectionPosition + window.scrollY + navbarOffset;
+        window.scrollTo({ top: scrollPosition, behavior: 'smooth' });
+      }
+    } else {
+      window.scrollTo({ top: navbarOffset, left: 0, behavior: 'smooth' });
+    }
+  }, [location]);
+
   const renderNav = (name, width) => {
+    // Mobile Nav Link
     if (windowSize <= 960) {
       return (
-        <Link
-          to={name}
-          className="nav-links"
-          onClick={closeMobMenu}
-          spy={true}
-          smooth={true}
-          duration={1000}
-          isDynamic={true}
-          offset={navbarOffset}
-        >
+        <Link to={`/#${name}`} className="nav-links" onClick={closeMobMenu}>
           {name.toUpperCase()}
         </Link>
       );
     } else {
-      return (
-        <NavLink offsetHandler={navbarOffset} linkWidth={width} name={name} />
-      );
+      // Desktop Nav Link
+      return <DesktopNavLink linkWidth={width} name={name} isDark={isDark} />;
     }
   };
 
@@ -79,7 +82,7 @@ export const Navbar = ({ theme, windowSize }: props): JSX.Element => {
                 name="theme"
                 dataOn={DarkModeContent}
                 dataOff={LightModeContent}
-                theme={isDark()}
+                checked={isDark}
               />
             </li>
           </div>
