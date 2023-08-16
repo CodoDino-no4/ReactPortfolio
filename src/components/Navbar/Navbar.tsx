@@ -75,7 +75,7 @@ export const Navbar = ({ theme, windowSize }: props): JSX.Element => {
           </ul>
           <div className="navbar-tools">
             <li className="tools-item">
-              <Button name="blog" />
+              <Button name="blog" link="./blog" theme={theme} />
             </li>
             <li className="tools-item">
               <Toggle

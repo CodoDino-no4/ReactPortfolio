@@ -1,38 +1,76 @@
 @import '../App/App.scss';
 
-$shadow: 0.3rem 0.3rem 0.6rem $greyLight-2, -0.2rem -0.2rem 0.5rem $white;
-$inner-shadow: inset 0.2rem 0.2rem 0.5rem $greyLight-2,
-  inset -0.2rem -0.2rem 0.5rem $white;
-
-.icon {
+.btn-container {
   a {
     text-decoration: none;
     color: $black;
   }
+}
 
-  &-blog,
-  &-other {
-    width: 80px;
-    height: 2.5rem;
-    border-radius: 20px;
-    box-shadow: $shadow;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    cursor: pointer;
-    background-color: $greyDark;
-    transition: all 0.9s ease;
-    font-weight: 400;
+.btn {
+  background-color: transparent;
+  outline: none;
+  color: #fff;
+  cursor: pointer;
+  border: none;
+  padding: 4px 20px;
+  width: 100%;
+  will-change: transform;
+
+  &::before {
+    border-radius: 8px;
+    content: '';
+    position: absolute;
+    top: 10px;
+    right: 0;
+    bottom: -6px;
+    left: 0;
+    z-index: -1;
+  }
+  &::after {
+    content: '';
+    border-radius: 8px;
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    z-index: -1;
+  }
+}
+/*.btn:focus,*/
+.btn:hover {
+  transform: translateY(2px);
+}
+
+/*.btn:focus:before,*/
+.btn:hover:before {
+  transform: translateY(-2px);
+}
+
+.btn:active {
+  transform: translateY(8px);
+  transition: none;
+}
+.btn:active:before {
+  transform: translateY(-8px);
+  transition: none;
+}
+
+.btn {
+  &::before {
+    background-color: #d1d1d1;
+  }
+  &::after {
+    background-color: #7e7e7e;
   }
 }
 
-.icon-blog > img {
-  width: 100%;
-  height: 100%;
-  margin: 5px;
-}
-
-.icon-blog:hover {
-  box-shadow: $inner-shadow;
-  background-color: $white;
-}
+// .btn.dark {
+//   &::before {
+//     background-color: #D1D1D1;
+//   }
+//   &::after {
+//     background-color: #7E7E7E;
+//   }
+// }
