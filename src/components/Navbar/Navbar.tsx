@@ -56,7 +56,7 @@ export const Navbar = ({ theme, windowSize }: props): JSX.Element => {
       );
     } else {
       // Desktop Nav Link
-      return <DesktopNavLink linkWidth={width} name={name} isDark={isDark} />;
+      return <DesktopNavLink linkWidth={width} name={name} />;
     }
   };
 
@@ -75,7 +75,7 @@ export const Navbar = ({ theme, windowSize }: props): JSX.Element => {
           </ul>
           <div className="navbar-tools">
             <li className="tools-item">
-              <Button name="blog" link="./blog" theme={theme} />
+              <Button name="blog" link="./blog" />
             </li>
             <li className="tools-item">
               <Toggle

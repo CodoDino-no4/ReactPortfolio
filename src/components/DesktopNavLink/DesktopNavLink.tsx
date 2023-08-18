@@ -5,14 +5,9 @@ import styled from 'styled-components';
 interface props {
   linkWidth: number;
   name: string;
-  isDark: boolean;
 }
 
-export const DesktopNavLink = ({
-  linkWidth,
-  name,
-  isDark,
-}: props): JSX.Element => {
+export const DesktopNavLink = ({ linkWidth, name }: props): JSX.Element => {
   const pathValue = (linkWidth) => {
     const moveYMin = 5;
     const moveYMax = 12;
@@ -36,7 +31,7 @@ export const DesktopNavLink = ({
   };
 
   return (
-    <StyledLink linkWidth={linkWidth} isDark={isDark}>
+    <StyledLink linkWidth={linkWidth}>
       <Link to={`/#${name}`} className="nav-links">
         {name.toUpperCase()}
         <svg
@@ -66,7 +61,7 @@ const StyledLink = styled.div`
     cursor: pointer;
     transition: all 0.2s ease-out;
     text-decoration: none;
-    color: ${(props) => (props.isDark ? '#211f30' : '#fff')};
+    color: var(--text);
   }
 
   .nav-links:hover {

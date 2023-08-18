@@ -17,7 +17,7 @@ export const Toggle = ({ dataOff, dataOn, name, checked }: props) => {
   };
 
   return (
-    <div className="icon">
+    <div className="toggle-container">
       <label>
         <input
           className="check"
@@ -25,7 +25,7 @@ export const Toggle = ({ dataOff, dataOn, name, checked }: props) => {
           type="checkbox"
           onChange={setActive}
         />
-        <div className={`icon-${name}`}>
+        <div className={`toggle ${name}-toggle`}>
           {isActive ? <img src={dataOff} /> : <img src={dataOn} />}
         </div>
       </label>

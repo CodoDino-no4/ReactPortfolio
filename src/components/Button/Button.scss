@@ -3,15 +3,15 @@
 .btn-container {
   a {
     text-decoration: none;
-    color: $black;
   }
 }
 
 .btn {
   background-color: transparent;
   outline: none;
-  color: #fff;
+  color: var(--text);
   cursor: pointer;
+  font-weight: 500;
   border: none;
   padding: 4px 20px;
   width: 100%;
@@ -59,18 +59,9 @@
 
 .btn {
   &::before {
-    background-color: #d1d1d1;
+    background-color: var(--button--before);
   }
   &::after {
-    background-color: #7e7e7e;
+    background-color: var(--button--after);
   }
 }
-
-// .btn.dark {
-//   &::before {
-//     background-color: #D1D1D1;
-//   }
-//   &::after {
-//     background-color: #7E7E7E;
-//   }
-// }

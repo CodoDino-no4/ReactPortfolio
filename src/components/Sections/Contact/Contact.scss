@@ -82,20 +82,67 @@ form .contactColumn.no2 .row textarea:valid ~ span {
 }
 
 form input[type='submit'] {
-  position: relative;
-  cursor: pointer;
-  border: none;
-  padding: 12px;
-  border: 0px solid;
-  border-radius: 10px;
+  background-color: transparent;
 }
 
-form input[type='submit'] {
-  -webkit-transition: box-shadow 500ms ease-in-out, color 500ms ease-in-out;
-  transition: box-shadow 500ms ease-in-out, color 500ms ease-in-out;
+.submit-container {
+  background-color: transparent;
+  outline: none;
+  color: var(--text);
+  cursor: pointer;
+  font-weight: 500;
+  border: none;
+  padding: 4px 20px;
+  width: 100%;
+  will-change: transform;
+
+  &::before {
+    border-radius: 8px;
+    content: '';
+    position: absolute;
+    top: 10px;
+    right: 0;
+    bottom: -6px;
+    left: 0;
+    z-index: -1;
+  }
+  &::after {
+    content: '';
+    border-radius: 8px;
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    z-index: -1;
+  }
 }
-form input[type='submit']:hover {
-  box-shadow: 0 0 40px 40px grey inset;
+/*.btn:focus,*/
+.submit-container:hover {
+  transform: translateY(2px);
+}
+
+/*.btn:focus:before,*/
+.submit-container:hover:before {
+  transform: translateY(-2px);
+}
+
+.submit-container:active {
+  transform: translateY(8px);
+  transition: none;
+}
+.submit-container:active:before {
+  transform: translateY(-8px);
+  transition: none;
+}
+
+.submit-container {
+  &::before {
+    background-color: var(--button--before);
+  }
+  &::after {
+    background-color: var(--button--after);
+  }
 }
 
 @media screen and (max-width: $breakpoint--mob) {
