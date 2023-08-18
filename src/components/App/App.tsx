@@ -25,7 +25,7 @@ export const App = (): JSX.Element => {
 
   return (
     <>
-      <div data-theme={theme}>
+      <div className="page" data-theme={theme}>
         <BrowserRouter basename="/">
           <Navbar theme={theme} windowSize={windowSize} />
           <Routes>

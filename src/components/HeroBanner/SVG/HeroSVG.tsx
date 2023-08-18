@@ -18,7 +18,6 @@ export const HeroSVG = ({ windowSize, isDark }: props): JSX.Element => {
     if (pathRef.current !== null) {
       setPathLength(pathRef.current.getTotalLength());
     }
-    console.log(isDark);
   }, [pathRef]);
 
   return (
@@ -32,7 +31,6 @@ export const HeroSVG = ({ windowSize, isDark }: props): JSX.Element => {
           ref={pathRef}
           d={windowSize <= 600 ? HeroPath.Mobile : HeroPath.Desktop}
           fill="none"
-          stroke={isDark ? '#fff' : '#211f30'}
           strokeLinecap="round"
           strokeLinejoin="round"
           strokeWidth={0.5}
@@ -44,11 +42,12 @@ export const HeroSVG = ({ windowSize, isDark }: props): JSX.Element => {
 
 const HeroWrapper = styled.div`
   height:inherit;
-  background-color: ${(props) => (props.isDark ? '#211f30' : '#fff')};
-  
+  background-color: var(--bg);
   z-index: 0;
+
    svg {
        max-height: 95vh;
+       stroke: var(--text);
    }
 
   .animated.visible {

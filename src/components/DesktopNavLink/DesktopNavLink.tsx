@@ -48,7 +48,6 @@ export const DesktopNavLink = ({
           <path
             d={pathValue(linkWidth)}
             fill="none"
-            stroke="#000"
             strokeLinecap="round"
             strokeLinejoin="round"
             strokeWidth={2}
@@ -67,6 +66,10 @@ const StyledLink = styled.div`
     transition: all 0.2s ease-out;
     text-decoration: none;
     color: ${(props) => (props.isDark ? '#211f30' : '#fff')};
+  }
+
+  svg {
+    stroke: var(--text);
   }
 
   .nav-links:hover {

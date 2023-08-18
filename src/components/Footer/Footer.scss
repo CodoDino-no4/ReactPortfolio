@@ -8,12 +8,6 @@
   padding-top: 30px;
 }
 
-.footer > h1,
-h2,
-p {
-  color: var(--text);
-}
-
 .footer-container {
 }
 
@@ -35,7 +29,6 @@ p {
 
 .grid-item {
   text-align: center;
-  color: var(--text);
   display: flex;
   align-items: center;
   text-decoration: none;
@@ -47,14 +40,14 @@ p {
 
 .grid-item > p {
   text-align: center;
-  color: var(--text);
   padding-left: 20px;
+  color: var(--footer--text) !important;
 }
 
 .footer-br > p {
   text-align: center;
-  color: var(--text);
   padding-bottom: 10px;
+  color: var(--footer--text) !important;
 }
 
 @media screen and (max-width: $breakpoint--mob) {
