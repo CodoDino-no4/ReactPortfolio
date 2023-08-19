@@ -65,7 +65,7 @@ const StyledLink = styled.div`
     cursor: pointer;
     transition: all 0.2s ease-out;
     text-decoration: none;
-    color: ${(props) => (props.isDark ? '#211f30' : '#fff')};
+    color: var(--text);
   }
 
   svg {

@@ -11,10 +11,10 @@ export const About = (): JSX.Element => {
           <div className="intro">
             <h2>
               Hiya, my name is Alice.
-              <br />I am a creative developer with a passion for{' '}
-              <strong>digital design</strong>,
-              <br /> <strong>UX</strong> and building{' '}
-              <strong>software architecture</strong>.
+              <br />I am a creative developer with a passion for building
+              performant <strong>software architecture</strong>,{' '}
+              <strong>digial design</strong> and friendly
+              <br /> <strong> UX</strong>.
             </h2>
             <p></p>
           </div>
