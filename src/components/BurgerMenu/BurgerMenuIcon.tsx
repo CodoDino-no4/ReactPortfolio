@@ -29,35 +29,34 @@ export const BurgerMenuIcon = ({ linkWidth, isOpen }: props): JSX.Element => {
     return `M5 ${moveY} Q ${curveX} ${curveY} ${linkWidth} ${endY}`;
   }
 
-  function lineNode(yPos) {
+  const lineNode = (name, yPos) => {
     return (
-      <svg x="0" y={yPos}>
+      <svg className={name} x="0" y={yPos}>
         <path
           className="linePaths"
           d={pathValue(linkWidth)}
           fill="none"
-          stroke="#000"
           strokeLinecap="round"
           strokeLinejoin="round"
           strokeWidth={3}
         />
       </svg>
     );
-  }
+  };
 
   if (isOpen) {
     return (
-      <Burger linkWidth={linkWidth}>
+      <BurgerOpen linkWidth={linkWidth}>
         <svg
           className="times"
           xmlns="http://www.w3.org/2000/svg"
           width={linkWidth}
           height="40"
         >
-          {lineNode(0)}
-          {lineNode(10)}
+          {lineNode('times-line 1', 10)}
+          {lineNode('times-line 2', 10)}
         </svg>
-      </Burger>
+      </BurgerOpen>
     );
   } else {
     return (
@@ -68,9 +67,9 @@ export const BurgerMenuIcon = ({ linkWidth, isOpen }: props): JSX.Element => {
           width={linkWidth}
           height="40"
         >
-          {lineNode(0)}
-          {lineNode(10)}
-          {lineNode(20)}
+          {lineNode('burger-line 1', 0)}
+          {lineNode('burger-line 2', 10)}
+          {lineNode('burger-line 3', 20)}
         </svg>
       </Burger>
     );
@@ -87,6 +86,18 @@ export const Burger = styled.div`
     width: 45px;
   }
 
+  svg {
+    stroke: var(--text);
+  }
+
+  @keyframes drawBurger {
+    to {
+      stroke-dashoffset: 5;
+    }
+  }
+`;
+
+export const BurgerOpen = styled.div`
   .times {
     stroke-dasharray: ${(props) => props.linkWidth};
     stroke-dashoffset: ${(props) => props.linkWidth};
@@ -96,10 +107,12 @@ export const Burger = styled.div`
     width: 45px;
   }
 
-  @keyframes drawBurger {
-    to {
-      stroke-dashoffset: 5;
-    }
+  svg {
+    stroke: var(--text);
+  }
+
+  .times-line 1 {
+    transform: rotate(45deg);
   }
 
   @keyframes drawTimes {
