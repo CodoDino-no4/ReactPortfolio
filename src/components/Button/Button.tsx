@@ -8,9 +8,9 @@ interface props {
 
 export const Button = ({ name }: props): JSX.Element => {
   return (
-    <div className="icon">
-      <Link to="/blog">
-        <div className={`icon-${name}`}>BLOG</div>
+    <div className="btn-container">
+      <Link to={`/${name}`}>
+        <div className={`btn ${name}-btn`}>{name.toUpperCase()}</div>
       </Link>
     </div>
   );

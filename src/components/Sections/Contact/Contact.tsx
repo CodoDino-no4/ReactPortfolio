@@ -90,7 +90,9 @@ export const Contact = (): JSX.Element => {
             </div>
             <div className="textAreaRow"></div>
           </div>
-          <input type="submit" value="Send" />
+          <div className="submit-container">
+            <input type="submit" value="Send" />
+          </div>
         </form>
       </div>
     </section>
