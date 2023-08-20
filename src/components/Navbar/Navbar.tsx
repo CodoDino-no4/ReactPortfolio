@@ -51,11 +51,15 @@ export const Navbar = ({ theme, windowSize }: props): JSX.Element => {
     setMobMenu(!mobMenu);
   };
 
-  const navClick = () => {
+  const navClick = (name) => {
     // Close mob menu
     setMobMenu(false);
 
     // Set active
+
+    linkList.map((item) => {
+      name === item.name ? (item.active = true) : (item.active = false);
+    });
   };
 
   const switchTheme = () => {
@@ -89,7 +93,13 @@ export const Navbar = ({ theme, windowSize }: props): JSX.Element => {
           <div className={mobMenu ? 'nav-menu active' : 'nav-menu'}>
             {linkList.map((item) => {
               return (
-                <div key={item.name} className="nav-item" onClick={navClick}>
+                <div
+                  key={item.name}
+                  className="nav-item"
+                  onClick={() => {
+                    navClick(item.name);
+                  }}
+                >
                   {windowSize <= 960 ? (
                     <MobNavLink name={item.name} active={item.active} />
                   ) : (
