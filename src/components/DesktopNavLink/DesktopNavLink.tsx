@@ -5,9 +5,14 @@ import styled from 'styled-components';
 interface props {
   linkWidth: number;
   name: string;
+  active: boolean;
 }
 
-export const DesktopNavLink = ({ linkWidth, name }: props): JSX.Element => {
+export const DesktopNavLink = ({
+  linkWidth,
+  name,
+  active,
+}: props): JSX.Element => {
   const [isActive, setIsActive] = useState<boolean>(false);
   const [path, setPath] = useState<string>('');
 
@@ -18,10 +23,10 @@ export const DesktopNavLink = ({ linkWidth, name }: props): JSX.Element => {
     const curveXMin = 20;
     const curveXMax = linkWidth;
     const curveYMin = 5;
-    const curveYMax = 20;
+    const curveYMax = 30;
 
     const endYMin = 5;
-    const endYMax = 10;
+    const endYMax = 7;
 
     const moveY = Math.floor(Math.random() * (moveYMax - moveYMin)) + moveYMin;
     const curveX =
@@ -33,29 +38,6 @@ export const DesktopNavLink = ({ linkWidth, name }: props): JSX.Element => {
     return `M5 ${moveY} Q ${curveX} ${curveY} ${linkWidth} ${endY}`;
   };
 
-  const toggleActive = () => {
-    setIsActive(!isActive);
-  };
-
-  const activeNav = () => {
-    let className = 'nav-links';
-
-    const section = document.getElementById(name)?.getBoundingClientRect().top;
-
-    if (section) {
-      //check if section is in view
-      //check OR is active
-      // change class name
-    }
-
-    if (isActive) {
-      className = 'nav-links active';
-    } else {
-      className = 'nav-links';
-    }
-    return className;
-  };
-
   useEffect(() => {
     setPath(pathValue(linkWidth));
   }, []);
@@ -64,8 +46,7 @@ export const DesktopNavLink = ({ linkWidth, name }: props): JSX.Element => {
     <StyledLink linkWidth={linkWidth}>
       <Link
         to={`/#${name}`}
-        className={isActive ? 'nav-links active' : 'nav-links'}
-        onClick={toggleActive}
+        className={active ? 'nav-link active' : 'nav-link'}
       >
         {name.toUpperCase()}
         <svg
@@ -88,7 +69,7 @@ export const DesktopNavLink = ({ linkWidth, name }: props): JSX.Element => {
 };
 
 const StyledLink = styled.div`
-  .nav-links {
+  .nav-link {
     padding: 0.5rem 1.5rem;
     display: inline-block;
     cursor: pointer;
@@ -101,8 +82,8 @@ const StyledLink = styled.div`
     stroke: var(--text);
   }
 
-  .nav-links:hover,
-  .nav-links.active {
+  .nav-link:hover,
+  .nav-link.active {
     transform: scale(1.1);
     color: #f2695c;
 

@@ -6,10 +6,9 @@ import React from 'react';
 
 interface props {
   windowSize: number;
-  isDark: boolean;
 }
 
-export const HeroSVG = ({ windowSize, isDark }: props): JSX.Element => {
+export const HeroSVG = ({ windowSize }: props): JSX.Element => {
   const [inViewRef, inView] = useInView({});
   const pathRef = useRef<SVGPathElement>(null);
   const [pathLength, setPathLength] = useState<number>(0);
@@ -21,7 +20,7 @@ export const HeroSVG = ({ windowSize, isDark }: props): JSX.Element => {
   }, [pathRef]);
 
   return (
-    <HeroWrapper ref={inViewRef} pathLength={pathLength} isDark={isDark}>
+    <HeroWrapper ref={inViewRef} pathLength={pathLength}>
       <svg
         className={inView ? 'animated visible' : 'animated'}
         viewBox={windowSize <= 600 ? '0 -20 140 240' : '0 15 450 250'}

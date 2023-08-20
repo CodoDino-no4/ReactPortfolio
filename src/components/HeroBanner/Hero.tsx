@@ -4,13 +4,12 @@ import HeroImg from './SVG/HeroSVG';
 
 interface props {
   windowSize: number;
-  isDark: boolean;
 }
 
-export const Hero = ({ windowSize, isDark }: props): JSX.Element => {
+export const Hero = ({ windowSize }: props): JSX.Element => {
   return (
     <div className="hero-container">
-      <HeroImg windowSize={windowSize} isDark={isDark} />
+      <HeroImg windowSize={windowSize} />
       <div className="forground-text">
         <h1>
           ALICE

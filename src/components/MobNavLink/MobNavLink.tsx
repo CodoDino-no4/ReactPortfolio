@@ -4,11 +4,15 @@ import React from 'react';
 
 interface props {
   name: string;
+  active: boolean;
 }
 
-export const MobNavLink = ({ name }: props): JSX.Element => {
+export const MobNavLink = ({ name, active }: props): JSX.Element => {
   return (
-    <Link className={'nav-link'} to={`/#${name}`}>
+    <Link
+      className={active ? 'mob-nav-link active' : 'mob-nav-link'}
+      to={`/#${name}`}
+    >
       {name.toUpperCase()}
     </Link>
   );

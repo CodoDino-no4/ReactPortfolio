@@ -22,19 +22,47 @@ export const Navbar = ({ theme, windowSize }: props): JSX.Element => {
   const isDark = theme === 'dark' ? true : false;
   const location = useLocation();
 
+  const links = [
+    {
+      name: 'home',
+      active: false,
+      width: 115,
+    },
+    {
+      name: 'about',
+      active: false,
+      width: 120,
+    },
+    {
+      name: 'projects',
+      active: false,
+      width: 145,
+    },
+    {
+      name: 'contact',
+      active: false,
+      width: 140,
+    },
+  ];
+
+  const [linkList, setLinkList] = useState(links);
+
   const toggleMobMenu = () => {
     setMobMenu(!mobMenu);
   };
 
-  const closeMobMenu = () => {
+  const navClick = () => {
+    // Close mob menu
     setMobMenu(false);
+
+    // Set active
   };
 
   const switchTheme = () => {
     setNewTheme(theme === 'light' ? 'dark' : 'light');
   };
 
-  useEffect(() => {
+  const scrollSmooth = () => {
     if (location.hash) {
       const section = document.getElementById(location.hash.slice(1));
       if (section) {
@@ -45,17 +73,11 @@ export const Navbar = ({ theme, windowSize }: props): JSX.Element => {
     } else {
       window.scrollTo({ top: navbarOffset, left: 0, behavior: 'smooth' });
     }
-  }, [location]);
-
-  const renderNav = (name, width) => {
-    // Mobile Nav Link
-    if (windowSize <= 960) {
-      return <MobNavLink name={name} />;
-    } else {
-      // Desktop Nav Link
-      return <DesktopNavLink linkWidth={width} name={name} />;
-    }
   };
+
+  useEffect(() => {
+    scrollSmooth();
+  }, [location]);
 
   return (
     <>
@@ -65,18 +87,21 @@ export const Navbar = ({ theme, windowSize }: props): JSX.Element => {
             <BurgerMenuIcon linkWidth={40} isOpen={mobMenu} />
           </div>
           <div className={mobMenu ? 'nav-menu active' : 'nav-menu'}>
-            <div className="nav-item" onClick={closeMobMenu}>
-              {renderNav('home', 115)}
-            </div>
-            <div className="nav-item" onClick={closeMobMenu}>
-              {renderNav('about', 125)}
-            </div>
-            <div className="nav-item" onClick={closeMobMenu}>
-              {renderNav('projects', 150)}
-            </div>
-            <div className="nav-item" onClick={closeMobMenu}>
-              {renderNav('contact', 140)}
-            </div>
+            {linkList.map((item) => {
+              return (
+                <div key={item.name} className="nav-item" onClick={navClick}>
+                  {windowSize <= 960 ? (
+                    <MobNavLink name={item.name} active={item.active} />
+                  ) : (
+                    <DesktopNavLink
+                      linkWidth={item.width}
+                      name={item.name}
+                      active={item.active}
+                    />
+                  )}
+                </div>
+              );
+            })}
           </div>
           <div className="navbar-tools">
             <li className="tools-item">

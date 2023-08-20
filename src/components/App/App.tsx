@@ -29,15 +29,7 @@ export const App = (): JSX.Element => {
         <BrowserRouter basename="/">
           <Navbar theme={theme} windowSize={windowSize} />
           <Routes>
-            <Route
-              path="/"
-              element={
-                <Home
-                  windowSize={windowSize}
-                  isDark={theme === 'dark' ? true : false}
-                />
-              }
-            />
+            <Route path="/" element={<Home windowSize={windowSize} />} />
             <Route path="/blog" element={<Blog />} />
             <Route path="*" element={<NotFound />} />
           </Routes>
