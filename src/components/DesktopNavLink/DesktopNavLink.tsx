@@ -1,18 +1,16 @@
-import React from 'react';
+import React, { useEffect, useState } from 'react';
 import { Link } from 'react-router-dom';
 import styled from 'styled-components';
 
 interface props {
   linkWidth: number;
   name: string;
-  isDark: boolean;
 }
 
-export const DesktopNavLink = ({
-  linkWidth,
-  name,
-  isDark,
-}: props): JSX.Element => {
+export const DesktopNavLink = ({ linkWidth, name }: props): JSX.Element => {
+  const [isActive, setIsActive] = useState<boolean>(false);
+  const [path, setPath] = useState<string>('');
+
   const pathValue = (linkWidth) => {
     const moveYMin = 5;
     const moveYMax = 12;
@@ -35,9 +33,40 @@ export const DesktopNavLink = ({
     return `M5 ${moveY} Q ${curveX} ${curveY} ${linkWidth} ${endY}`;
   };
 
+  const toggleActive = () => {
+    setIsActive(!isActive);
+  };
+
+  const activeNav = () => {
+    let className = 'nav-links';
+
+    const section = document.getElementById(name)?.getBoundingClientRect().top;
+
+    if (section) {
+      //check if section is in view
+      //check OR is active
+      // change class name
+    }
+
+    if (isActive) {
+      className = 'nav-links active';
+    } else {
+      className = 'nav-links';
+    }
+    return className;
+  };
+
+  useEffect(() => {
+    setPath(pathValue(linkWidth));
+  }, []);
+
   return (
-    <StyledLink linkWidth={linkWidth} isDark={isDark}>
-      <Link to={`/#${name}`} className="nav-links">
+    <StyledLink linkWidth={linkWidth}>
+      <Link
+        to={`/#${name}`}
+        className={isActive ? 'nav-links active' : 'nav-links'}
+        onClick={toggleActive}
+      >
         {name.toUpperCase()}
         <svg
           className="underline"
@@ -46,7 +75,7 @@ export const DesktopNavLink = ({
           height="15"
         >
           <path
-            d={pathValue(linkWidth)}
+            d={path}
             fill="none"
             strokeLinecap="round"
             strokeLinejoin="round"
@@ -72,7 +101,8 @@ const StyledLink = styled.div`
     stroke: var(--text);
   }
 
-  .nav-links:hover {
+  .nav-links:hover,
+  .nav-links.active {
     transform: scale(1.1);
     color: #f2695c;
 

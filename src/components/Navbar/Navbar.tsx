@@ -1,5 +1,5 @@
 import { useEffect, useState } from 'react';
-import { Link, useLocation } from 'react-router-dom';
+import { useLocation } from 'react-router-dom';
 import DarkModeContent from '../../utils/resources/dark-mode.svg';
 import LightModeContent from '../../utils/resources/light-mode.svg';
 import { Button } from '../Button';
@@ -7,7 +7,8 @@ import { Toggle } from '../Toggle/Toggle';
 import { BurgerMenuIcon } from '../BurgerMenu';
 import './Navbar.scss';
 import React from 'react';
-import { DesktopNavLink } from '../DesktopNavLink/DesktopNavLink';
+import { DesktopNavLink } from '../DesktopNavLink';
+import { MobNavLink } from '../MobNavLink';
 
 interface props {
   theme: string;
@@ -49,14 +50,10 @@ export const Navbar = ({ theme, windowSize }: props): JSX.Element => {
   const renderNav = (name, width) => {
     // Mobile Nav Link
     if (windowSize <= 960) {
-      return (
-        <Link to={`/#${name}`} className="nav-links" onClick={closeMobMenu}>
-          {name.toUpperCase()}
-        </Link>
-      );
+      return <MobNavLink name={name} />;
     } else {
       // Desktop Nav Link
-      return <DesktopNavLink linkWidth={width} name={name} isDark={isDark} />;
+      return <DesktopNavLink linkWidth={width} name={name} />;
     }
   };
 
@@ -67,12 +64,20 @@ export const Navbar = ({ theme, windowSize }: props): JSX.Element => {
           <div className="menu-icon" onClick={toggleMobMenu}>
             <BurgerMenuIcon linkWidth={40} isOpen={mobMenu} />
           </div>
-          <ul className={mobMenu ? 'nav-menu active' : 'nav-menu'}>
-            <li className="nav-item">{renderNav('home', 115)}</li>
-            <li className="nav-item">{renderNav('about', 125)}</li>
-            <li className="nav-item">{renderNav('projects', 150)}</li>
-            <li className="nav-item">{renderNav('contact', 140)}</li>
-          </ul>
+          <div className={mobMenu ? 'nav-menu active' : 'nav-menu'}>
+            <div className="nav-item" onClick={closeMobMenu}>
+              {renderNav('home', 115)}
+            </div>
+            <div className="nav-item" onClick={closeMobMenu}>
+              {renderNav('about', 125)}
+            </div>
+            <div className="nav-item" onClick={closeMobMenu}>
+              {renderNav('projects', 150)}
+            </div>
+            <div className="nav-item" onClick={closeMobMenu}>
+              {renderNav('contact', 140)}
+            </div>
+          </div>
           <div className="navbar-tools">
             <li className="tools-item">
               <Button name="blog" />

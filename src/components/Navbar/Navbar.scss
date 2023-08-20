@@ -138,8 +138,8 @@
 }
 
 @media screen and (max-width: $breakpoint--tablet) {
-  .nav-items {
-    position: relative;
+  .nav-item {
+    margin: 20px;
   }
 
   .nav-menu {
@@ -147,80 +147,18 @@
     flex-direction: column;
     width: 100%;
     position: absolute;
-    top: 80px;
+    top: 0;
     left: -100%;
     transition: all 0.5s ease;
     padding: 20px;
     background-color: var(--bg);
+    background-color: var(--bg);
+    padding-top: 80px;
+    z-index: -1;
   }
 
   .nav-menu.active {
     left: 0;
-  }
-
-  .nav-links {
-    text-decoration: none;
-    color: var(--text);
-    font-weight: 500;
-  }
-
-  .nav-item {
-    text-align: center;
-    padding: 2rem;
-    width: 100%;
-    display: table;
-    background-color: transparent;
-    outline: none;
-    cursor: pointer;
-    border: none;
-    will-change: transform;
-
-    &::before {
-      border-radius: 8px;
-      content: '';
-      position: absolute;
-      top: 10px;
-      right: 0;
-      bottom: -6px;
-      left: 0;
-      z-index: -1;
-    }
-    &::after {
-      content: '';
-      border-radius: 8px;
-      position: absolute;
-      top: 0;
-      right: 0;
-      bottom: 0;
-      left: 0;
-      z-index: -1;
-    }
-  }
-
-  .nav-item:hover {
-    transform: translateY(2px);
-  }
-
-  .nav-item:hover:before {
-    transform: translateY(-2px);
-  }
-
-  .nav-item:active {
-    transform: translateY(8px);
-    transition: none;
-  }
-  .nav-item:active:before {
-    transform: translateY(-8px);
-    transition: none;
-  }
-
-  .nav-item {
-    &::before {
-      background-color: var(--grey--before);
-    }
-    &::after {
-      background-color: var(--grey--after);
-    }
   }
 
   .menu-icon {

@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useEffect, useState } from 'react';
 import styled from 'styled-components';
 
 interface props {
@@ -7,7 +7,9 @@ interface props {
 }
 
 export const BurgerMenuIcon = ({ linkWidth, isOpen }: props): JSX.Element => {
-  function pathValue(linkWidth) {
+  const [path, setPath] = useState<string>('');
+
+  const pathValue = (linkWidth) => {
     const moveYMin = 5;
     const moveYMax = 12;
 
@@ -27,14 +29,18 @@ export const BurgerMenuIcon = ({ linkWidth, isOpen }: props): JSX.Element => {
     const endY = Math.floor(Math.random() * (endYMax - endYMin)) + endYMin;
 
     return `M5 ${moveY} Q ${curveX} ${curveY} ${linkWidth} ${endY}`;
-  }
+  };
+
+  useEffect(() => {
+    setPath(pathValue(linkWidth));
+  }, [isOpen]);
 
   const lineNode = (name, yPos) => {
     return (
       <svg className={name} x="0" y={yPos}>
         <path
           className="linePaths"
-          d={pathValue(linkWidth)}
+          d={path}
           fill="none"
           strokeLinecap="round"
           strokeLinejoin="round"
@@ -111,7 +117,7 @@ export const BurgerOpen = styled.div`
     stroke: var(--text);
   }
 
-  .times-line 1 {
+  .times-line.1 {
     transform: rotate(45deg);
   }
 
