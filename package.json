@@ -52,7 +52,7 @@
     "typescript": "^5.1.6",
     "use-local-storage": "^2.3.6",
     "web-vitals": "^1.1.1",
-    "webpack": "^5.76.0"
+    "webpack": "^5.94.0"
   },
   "devDependencies": {
     "@babel/cli": "^7.18.6",
